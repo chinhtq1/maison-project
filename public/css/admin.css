@@ -1,0 +1,68 @@
+table#users-list tr td {
+    word-break: break-all;
+}
+
+@media screen and (max-width: 767px){
+    .table-responsive .col-sm-12 {
+        width: 100%;
+        margin-bottom: 15px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid #ddd;
+    }
+
+    #users-list_length, #users-list_filter {
+        margin: 1rem 2px 2px 2px ;
+    }
+
+    #users-list_info {
+        margin: 2px 2px 1rem 2px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    #users-list_paginate {
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+}
+
+.help-block {
+    color: red;
+}
+
+img.thumbnail-article-small {
+    height: 100px;
+    width: auto;
+    border: 1px solid #333;
+
+}
+
+td.title-article-table, th.title-article-table {
+    width: 250px;
+    word-break: break-all;
+}
+
+td.col-300, th.col-300 {
+    width: 300px;
+}
+
+td.col-200, th.col-200 {
+    width: 200px;
+}
+
+td.col-100, th.col-100 {
+    width: 100px;
+}
+
+td.col-50, th.col-50 {
+    width: 50px;
+}
+
+.text-slide-color {
+    background-color: #f4f6f9;
+}
+
+
+
+
