@@ -103,9 +103,19 @@ function modalController() {
         $('.modal-wrapper ').toggleClass('open');
         $('.modal-wrapper .overlay').toggleClass('open');
         $('.modal-wrapper .modal').toggleClass('open');
-
-        return false;
     });
+    $('.modal-wrapper .overlay').click(function() {
+        $('.modal-wrapper ').toggleClass('open');
+        $('.modal-wrapper .overlay').toggleClass('open');
+        $('.modal-wrapper .modal').toggleClass('open');
+    });
+
+    $('.intro-post .inner-image-post-container').click(function() {
+        $('.modal-wrapper ').toggleClass('open');
+        $('.modal-wrapper .overlay').toggleClass('open');
+        $('.modal-wrapper .modal').toggleClass('open');
+    });
+    return false;
 }
 
 function cssHeader() {

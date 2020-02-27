@@ -30,11 +30,35 @@
     <div class="modal-wrapper">
         <div class="overlay"> </div>
         <div class="modal">
-            <div class="head">
-                <a class="btn-close trigger" href="javascript:;"></a>
-            </div>
+            <a class="btn-close-modal trigger" href="javascript:;"></a>
             <div class="content">
-                hahahahaha
+                <div class="img-banner-modal">
+                    <img class="img-fluid" src="{{ asset('client/img/banner-modal.png')}}">
+                    <div class="time-post">
+                        <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
+                        <span>21 Tháng 5 Năm 2020</span>
+                    </div>
+    
+                </div>
+                <div class="description-modal-text">
+                        <h1>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit  </h1>
+                        <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        </p>
+                    </div>
             </div>
         </div>
     </div>
