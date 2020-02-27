@@ -79,13 +79,16 @@ class Helper {
     }
     
     static function makeNonNested(array $in){
-        $tags = array();
-        self:: makeNonNestedRecursive($tags, '', $in);
-        foreach($tags as $tag => $value){
-            MetaTag::set_raw($tag,$value);
+        if (!is_null($in)){
+            $tags = array();
+            self:: makeNonNestedRecursive($tags, '', $in);
+            foreach($tags as $tag => $value){
+                MetaTag::set_raw($tag,$value);
+            }
+            // dd($tags);
+            return $tags;
         }
-        // dd($tags);
-        return $tags;
+        return null;
     }
 
 

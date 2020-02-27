@@ -17,9 +17,12 @@ class Init
      * @return mixed
      */
     public function handle($request, Closure $next,  $guard = null)
-    {      
+    {   Setting::firstOrCreate(['name' => 'section', 'type' => 'setting']);
+        Setting::firstOrCreate(['name' => 'section', 'type' => 'setting']);
+
         $section_setting = Setting::where('name', 'section')->firstOrFail();
         Helper::makeNonNested($section_setting->content);
+        
 
         $general_setting = Setting::where('name', 'general')->firstOrFail();
         Helper::makeNonNested($general_setting->content);
