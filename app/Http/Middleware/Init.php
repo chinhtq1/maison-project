@@ -18,7 +18,7 @@ class Init
      */
     public function handle($request, Closure $next,  $guard = null)
     {   Setting::firstOrCreate(['name' => 'section', 'type' => 'setting']);
-        Setting::firstOrCreate(['name' => 'section', 'type' => 'setting']);
+        Setting::firstOrCreate(['name' => 'general', 'type' => 'setting']);
 
         $section_setting = Setting::where('name', 'section')->firstOrFail();
         Helper::makeNonNested($section_setting->content);
