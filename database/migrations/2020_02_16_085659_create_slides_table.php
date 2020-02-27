@@ -22,7 +22,7 @@ class CreateSlidesTable extends Migration
             $table->boolean('is_public')->default(false);
             $table->dateTime('date_public')->nullable();
             $table->text('description')->nullable();
-            $table->json('seo')->nullable();
+            $table->text('seo')->nullable();
             $table->string('fb_link')->default('#')->nullable();
             $table->json('data')->nullable();
             $table->integer('user_id')->unsigned()->nullable();

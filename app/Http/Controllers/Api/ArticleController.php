@@ -8,7 +8,7 @@ use  App\Http\Resources\Article as ArticleResource;
 use App\Models\Article;
 
 class ArticleController extends Controller
-{
+{    
     /**
      * Display a listing of the resource.
      *
@@ -20,8 +20,7 @@ class ArticleController extends Controller
         if($request->has('public')){
             $articles = Article::where('is_public', true)->get();
         }else {
-            $articles = Article::all();
-            
+            $articles = Article::all();    
         }
         $articles = $articles->makeHidden(['content','seo','is_public']);
 

@@ -6,10 +6,10 @@
       <h3 class="card-title">Chỉnh sửa cho từng phần</h3>
 
       <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-          <i class="fas fa-minus"></i></button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-          <i class="fas fa-times"></i></button>
+      <button type="submit" class="btn btn-info" >Lưu chỉnh sửa</button>
+        @if(env('APP_ENV') === 'dev')
+        <a href="{{ route('settings_show_api', 'section')}}" type="button" class="btn btn-warning" >Api</a>
+        @endif
       </div>
     </div>
     <div class="card-body">
@@ -34,8 +34,8 @@
     
                         <div class="row m-b-md">
                             <div class="col-md-12">
-                                <button class="btn-primary btn" type="submit">
-                                    Save Settings
+                                <button class="btn btn-info" type="submit">
+                                    Lưu chỉnh sửa
                                 </button>
                             </div>
                         </div>

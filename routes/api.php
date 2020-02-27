@@ -31,3 +31,9 @@ Route::group(['prefix' => 'articles'], function(){
     Route::get('/', 'Api\ArticleController@index')->name('article_list_api');
 
 });
+
+Route::group(['prefix' => 'settings'], function(){
+
+    Route::get('/{name}', 'Api\SettingsController@show')->name('settings_show_api');
+
+});

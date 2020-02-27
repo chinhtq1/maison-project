@@ -2318,7 +2318,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       list: [],
-      selected: this.value
+      selected: this.value ? this.value : []
     };
   },
   mounted: function mounted() {
@@ -2400,6 +2400,9 @@ __webpack_require__.r(__webpack_exports__);
     getImageUrl: function getImageUrl() {
       if (this.image_url) return this.image_url;else if (this.main_image) return this.main_image;
       return 'https://via.placeholder.com/' + this.width + 'x' + this.height;
+    },
+    getHeight: function getHeight() {
+      if (this.height <= 100) return 50;else if (this.height > 100 && this.height <= 300) return 100;else if (this.height > 300 && this.height < 500) return 300;else return 500;
     }
   },
   watch: {
@@ -37989,7 +37992,7 @@ var render = function() {
           { staticClass: "btn btn-info", on: { click: _vm.openFileManager } },
           [
             _c("i", { staticClass: "fa fa-picture-o" }),
-            _vm._v(" Choose\r\n        ")
+            _vm._v(" Choose\n        ")
           ]
         )
       ]),
@@ -38021,7 +38024,7 @@ var render = function() {
     _c("img", {
       staticClass: "mt-3",
       staticStyle: { border: "1px solid #333" },
-      attrs: { src: _vm.getImageUrl, height: "300", width: "auto" }
+      attrs: { src: _vm.getImageUrl, height: _vm.getHeight, width: "auto" }
     })
   ])
 }
@@ -50696,7 +50699,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\MMO\Xampp\htdocs\test\test\resources\js\settings.js */"./resources/js/settings.js");
+module.exports = __webpack_require__(/*! D:\Xampp\htdocs\test\resources\js\settings.js */"./resources/js/settings.js");
 
 
 /***/ })

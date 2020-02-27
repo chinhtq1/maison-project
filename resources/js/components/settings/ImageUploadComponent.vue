@@ -11,7 +11,7 @@
         style="max-width: 300px"
         :name="name">
     </div>
-    <img class="mt-3" :src="getImageUrl"  height="300" width="auto" style="border: 1px solid #333" />
+    <img class="mt-3" :src="getImageUrl"  :height="getHeight" width="auto" style="border: 1px solid #333" />
 
 </div>
 
@@ -44,6 +44,13 @@
                 if(this.image_url) return this.image_url
                 else if (this.main_image) return this.main_image
                 return 'https://via.placeholder.com/'+ this.width +'x'+this.height
+            },
+
+            getHeight() {
+                if(this.height <= 100 ) return 50;
+                else if(this.height > 100 && this.height <= 300) return 100;
+                else if (this.height > 300 && this.height < 500 ) return 300;
+                else return 500;
             }
         },
        watch: {

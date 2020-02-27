@@ -63,7 +63,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'backend' => \App\Http\Middleware\Backend::class,
         'article.backend' => \App\Http\Middleware\ArticleBackend::class,
-
+        'slides.backend' => \App\Http\Middleware\SlideBackend::class,
     ];
 
     /**

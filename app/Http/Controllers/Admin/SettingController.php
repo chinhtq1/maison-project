@@ -33,6 +33,13 @@ class SettingController extends Controller
         return view('admin.settings.index', ['page_name' => 'Trang Settings', 'result'=>$result]);
     }
 
+    function general_index(){
+        $setting = Setting::firstOrCreate(['name' => 'general', 'type' => 'setting']);
+        $result = empty($setting->content)? []: $setting->content;
+        // dd($result);
+        return view('admin.settings.general-index', ['page_name' => 'Trang Settings', 'result'=>$result]);
+    }
+
 
     function store(Request $request){
         $data= $request->only(config('config.sections'));
@@ -55,6 +62,28 @@ class SettingController extends Controller
                 }
             }
         }
+        $setting->fill(['content' => $data])->save();
+        return redirect()->back()->with('status', 'Settings has been saved.');
+    }
+
+    function general_store(Request $request){
+        $data= $request->all();
+        $setting = Setting::firstOrCreate(['name' => 'general', 'type' => 'setting']);
+                if(array_key_exists("images",$data)){
+                    $images = $data['images'];
+                    foreach ($images as $key => $image){
+                        if($image["url"] != null){
+                            $imageUrl = Helper::upload_picture(0,0,
+                            config('lfm.base_directory').(Str::after($image['url'],config('lfm.url_prefix'))),
+                            'generals/',
+                            'image-'.$key.'.PNG'
+                            );
+        
+                            $data['images'][$key]["main_url"] = asset($imageUrl);
+                        }
+                    }
+                }
+
         $setting->fill(['content' => $data])->save();
         return redirect()->back()->with('status', 'Settings has been saved.');
     }

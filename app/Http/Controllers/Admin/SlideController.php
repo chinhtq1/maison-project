@@ -89,10 +89,10 @@ class SlideController extends Controller
             $slide->fill($data);
             \File::deleteDirectory(public_path('slides/slide-'.$slide->id));
             $slide->save();
+            $user->slides()->save($slide);
         }else{
             $data['user_id'] = $user->id;
             $slide = Slides::create($data);
-            mkdir(public_path('slides/slide-'.$slide->id), 0777, true);
             $user->slides()->save($slide);
         }
 

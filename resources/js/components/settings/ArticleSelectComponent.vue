@@ -18,7 +18,7 @@
         data () {
             return {
                 list: [],
-                selected: this.value
+                selected: this.value? this.value:[]
             }
         },
         mounted () {

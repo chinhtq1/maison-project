@@ -57665,7 +57665,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\MMO\Xampp\htdocs\test\test\resources\js\slide.js */"./resources/js/slide.js");
+module.exports = __webpack_require__(/*! D:\Xampp\htdocs\test\resources\js\slide.js */"./resources/js/slide.js");
 
 
 /***/ })
