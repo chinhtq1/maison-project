@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Setting;
+use App\Models\Article;
 use App\Helper\Helper;
 
 class HomeController extends Controller
@@ -16,9 +16,8 @@ class HomeController extends Controller
     }
 
     public function index() {
-        $section_setting = Setting::where('name', 'section')->firstOrFail();
-        Helper::makeNonNested($section_setting->content);
-        
-        return view("index");
+        $articles = Article::all()->toArray();
+        //  dd($articles);
+        return view('index', compact('articles'));
     }
 }

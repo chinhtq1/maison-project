@@ -287,88 +287,35 @@
                 </div>
             </div>
             <div id="owl-carousel-1" class="owl-carousel">
+
+                @foreach ($articles  as $article)
                 <div class="intro-post">
-                    <a class="image-post-container">
-                        <div class="inner-image-post-container">
-                            <img class=" img-fluid " src="client/img/image-post.png">
-                            <div class="time-post">
-                                <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
-                                <span>21 Tháng 5 Năm 2020</span>
+                        <a class="image-post-container">
+                            <div class="inner-image-post-container">
+                            <img class=" img-fluid " src="{{$article['picture_data']['origin_url'] }}">
+                                <div class="time-post">
+                                    <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
+                                    <span>{{ App\Helper\Helper::render_time_to_vietnamese($article['created_at']) }}</span>
+                                </div>
                             </div>
+    
+                        </a>
+                        <h2>{{$article['title']}} </h2>
+                        <p>{{$article['description']}}.</p>
+                        <hr>
+                        <div class="more-info d-flex justify-content-between">
+                            <a class="more-info-title">TÌM HIỂU THÊM
+                                <svg viewBox="0 0 38.07 13.8799">
+                                    <path
+                                        d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />
+                                    <rect y="6.2878" width="30" height="1.4966" /></svg>
+                            </a>
+                         <a target="_blank" href="{{$article['fb_link'] }}" class="fb-link">
+                                <img class=" img-fluid " src="{{asset('client/img/fb-link-news.png')}}" class="img-fluid">
+                            </a>
                         </div>
-
-                    </a>
-                    <h2>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit </h2>
-                    <p>laudantium, totam rem aperiam, eaqulaudatium, totam rem aperiam, eaque ipsa quae ab illo
-                        inventore veritatis et ...</p>
-                    <hr>
-                    <div class="more-info d-flex justify-content-between">
-                        <a class="more-info-title">TÌM HIỂU THÊM
-                            <svg viewBox="0 0 38.07 13.8799">
-                                <path
-                                    d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />
-                                <rect y="6.2878" width="30" height="1.4966" /></svg>
-                        </a>
-                        <a class="fb-link">
-                            <img class=" img-fluid " src="{{asset('client/img/fb-link-news.png')}}" class="img-fluid">
-                        </a>
                     </div>
-                </div>
-
-                <div class="intro-post">
-                    <a class="image-post-container">
-                        <div class="inner-image-post-container">
-                            <img class=" img-fluid " class="img-fluid" src="{{asset('client/img/image-post.png')}}">
-                            <div class="time-post">
-                                <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
-                                <span>21 Tháng 5 Năm 2020</span>
-                            </div>
-                        </div>
-
-                    </a>
-                    <h2>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit </h2>
-                    <p>laudantium, totam rem aperiam, eaqulaudatium, totam rem aperiam, eaque ipsa quae ab illo
-                        inventore veritatis et ...</p>
-                    <hr>
-                    <div class="more-info d-flex justify-content-between">
-                        <a class="more-info-title">TÌM HIỂU THÊM
-                            <svg viewBox="0 0 38.07 13.8799">
-                                <path
-                                    d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />
-                                <rect y="6.2878" width="30" height="1.4966" /></svg>
-                        </a>
-                        <a class="fb-link">
-                            <img src="{{asset('client/img/fb-link-news.png')}}" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-                <div class="intro-post">
-                    <a class="image-post-container">
-                        <div class="inner-image-post-container">
-                            <img class="img-fluid" src="{{asset('client/img/image-post.png')}}">
-                            <div class="time-post">
-                                <i class="fa fa-calendar-alt" aria-hidden="true"></i>
-                                <span>21 Tháng 5 Năm 2020</span>
-                            </div>
-                        </div>
-
-                    </a>
-                    <h2>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit </h2>
-                    <p>laudantium, totam rem aperiam, eaqulaudatium, totam rem aperiam, eaque ipsa quae ab illo
-                        inventore veritatis et ...</p>
-                    <hr>
-                    <div class="more-info d-flex justify-content-between">
-                        <a class="more-info-title">TÌM HIỂU THÊM
-                            <svg viewBox="0 0 38.07 13.8799">
-                                <path
-                                    d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />
-                                <rect y="6.2878" width="30" height="1.4966" /></svg>
-                        </a>
-                        <a class="fb-link">
-                            <img src="{{asset('client/img/fb-link-news.png')}}" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </section>
 
