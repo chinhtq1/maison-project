@@ -12,10 +12,10 @@
       <h3 class="card-title">Users List</h3>
 
       <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-          <i class="fas fa-minus"></i></button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-          <i class="fas fa-times"></i></button>
+        @if(env('APP_ENV') === 'dev')
+          <a href="{{ route('article_list_api')}}" type="button" class="btn btn-warning" >Api - List</a>
+          <a href="{{ route('article_list_api')}}?public" type="button" class="btn btn-warning" >Api - List - Public</a>
+        @endif
       </div>
     </div>
     <div class="card-body">
@@ -27,7 +27,7 @@
         <div  class="">
           <div class="" style="overflow: hidden">
             <div class="table-responsive">
-              <table id="articles-list" class="table table-bordered table-vcenter table-striped table-hover">
+              <table id="articles-list" class="table table-bordered table-vcenter ">
                   <thead>
                   <tr>
                     <th>ID</th>

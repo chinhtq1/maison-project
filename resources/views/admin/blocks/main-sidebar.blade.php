@@ -56,13 +56,28 @@
           </li>
 
           <!-- Slide -->
-          <li class="nav-item">
-            <a href="{{ route('admin_settings')}}" class="nav-link">
-              <i class="nav-icon fas fa-cogs"></i>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-folder"></i>
               <p>
-                  Settings
+                Settings
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="{{ route('image_manager')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Chỉnh sửa chung</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin_settings')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Chỉnh sửa từng nội dung</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-item has-treeview">

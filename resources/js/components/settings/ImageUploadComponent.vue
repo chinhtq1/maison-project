@@ -6,9 +6,12 @@
         <i class="fa fa-picture-o"></i> Choose
         </a>
     </div>
-    <input type="text" readonly class="form-control" v-model="main_image" style="max-width: 300px">
+    <input type="text" readonly class="form-control link-image" 
+        v-model="main_image" 
+        style="max-width: 300px"
+        :name="name">
     </div>
-    <img v-if="main_image" class="mt-3" :src="main_image" width="auto" height="300" style="border: 1px solid #333" />
+    <img class="mt-3" :src="getImageUrl"  height="300" width="auto" style="border: 1px solid #333" />
 
 </div>
 
@@ -18,9 +21,10 @@
     export default {
         data(){
             return {
-                main_image: null 
+                main_image:  this.value 
             }
         },
+        props: ["name", "width", "height", "image_url", "value"],
 
         methods: {
             openFileManager () {
@@ -29,10 +33,23 @@
                 window.SetUrl = function (items) {
                     console.log(items)
                     self.main_image = items
+                    self.image_url = null
+
                 }
                     return false
             }
         },
-
+        computed: {
+            getImageUrl() {
+                if(this.image_url) return this.image_url
+                else if (this.main_image) return this.main_image
+                return 'https://via.placeholder.com/'+ this.width +'x'+this.height
+            }
+        },
+       watch: {
+            value: function() {
+                this.main_image = this.value
+            },          
+        },       
     }
 </script>

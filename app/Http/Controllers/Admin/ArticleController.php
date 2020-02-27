@@ -45,7 +45,7 @@ class ArticleController extends Controller
 
         if ($request->has('unpublic') && !is_null($article)) {
             $article->fill(['is_public' => false])->save();
-            session()->flash('message', ['text' => 'Đã xét trạng thái chưa xuất bản cho bài viết: '.$article->title, 'type' => 'success']);
+            session()->flash('message', ['text' => 'Đã xét trạng thái chưa xuất bản cho bài viết: '.$article->title, 'type' => 'warning']);
             return redirect()->back();
         }
         $page_name = is_null($article)? "Tạo bài viết": 'Chỉnh sửa bài viết';
@@ -68,7 +68,7 @@ class ArticleController extends Controller
             'picture_data[main_picture_data][width]' => 'integer|min:10|max:2000',
         ];
 
-        $data = $request->only(['title', 'slug', 'is_public', 'description', 'seo', 'content']);
+        $data = $request->only(['title', 'slug', 'is_public', 'description', 'seo', 'content','fb_link']);
         $pic_data= $request->only(["picture_data"]);
 
         $validated = $request->validate($rules,[
@@ -117,8 +117,8 @@ class ArticleController extends Controller
 
                 $main_thumb = Helper::upload_picture($width,$height,
                     config('lfm.base_directory').(Str::after($origin,'/'.config('lfm.url_prefix'))),
-                    'articles/'.$article->id.'/',
-                    $article->id.'-thumbnail.JPG'
+                    'articles/article-'.$article->id.'/',
+                    'article-'.$article->id.'-thumbnail.JPG'
                 );
                 $pic_data["picture_data"]["thumb_data"]["url"] = $main_thumb;
 
@@ -135,8 +135,8 @@ class ArticleController extends Controller
                 
                 $main_pic = Helper::upload_picture($width,$height,
                     config('lfm.base_directory').(Str::after($origin,'/'.config('lfm.url_prefix'))),
-                    'articles/'.$article->id.'/',
-                    $article->id.'-main-picture.JPG'
+                    'articles/article-'.$article->id.'/',
+                    'article-'.$article->id.'-main-picture.JPG'
                 );
 
             $pic_data["picture_data"]["main_picture_data"]["url"] = $main_pic;
@@ -157,6 +157,7 @@ class ArticleController extends Controller
 
     }
 
+
     public function delete($id, Request $request) {
         $article = Article::where('id', '=', $id)->firstOrFail ();
         return view('admin.articles.delete', ['article'=> $article, 'page_name' => 'Xóa bài viết']);
@@ -165,7 +166,7 @@ class ArticleController extends Controller
     public function delete_comfirm($id, Request $request) {
         $article = Article::where('id', '=', $id)->firstOrFail ();
         $article->delete();
-        \File::deleteDirectory(public_path('articles/'.$article->id));
+        \File::deleteDirectory(public_path('articles/article-'.$article->id));
 
         Session::flash('message', ['text'=>'deleted!','type'=>'success' ]);
 

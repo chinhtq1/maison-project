@@ -28,7 +28,11 @@ class User extends Authenticatable
     ];
 
     public function articles() {
-        return $this->hasMany('App\Article');
+        return $this->hasMany('App\Models\Article');
+    }
+
+    public function slides() {
+        return $this->hasMany('App\Models\Slides');
     }
 
 }

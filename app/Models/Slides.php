@@ -12,7 +12,7 @@ class Slides extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'slug', 'is_public','date_public','data','description','seo', 'fb_link', 'type'
+        'title', 'slug', 'is_public','date_public','data','description','seo', 'fb_link'
     ];
 
     protected $casts = [

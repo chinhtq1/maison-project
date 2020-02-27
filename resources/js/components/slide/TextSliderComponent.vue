@@ -17,7 +17,7 @@
                             <button 
                                 type="button" 
                                 class="btn btn-tool" 
-                                v-on:click="$emit('remove-text-slider', id)"
+                                v-on:click="$emit('remove-slider')"
                                 data-toggle="tooltip" title="Remove">
                             <i class="fas fa-times"></i></button>
                         </div>
@@ -26,9 +26,7 @@
                     <div class="card-body">
 
                         <editor
-                        @onKeyUp="$emit('save-input', $event, id)"
-                        v-bind:name = "input_name"
-                        model-events='change keydown keyup blur focus paste'
+                        v-bind:name = "input_text"
                         v-model="localValue"
                         api-key="no-api-key"
                         :init="{
@@ -44,7 +42,10 @@
                             alignleft aligncenter alignright alignjustify | \
                             bullist numlist outdent indent | removeformat | help',
                         }"
-                        />                        
+                        />
+
+                        <input type="text"  v-bind:name="input_type" readonly hidden v-bind:value="type">                  
+                      
                     </div>
                 </div>
             </div>
@@ -56,7 +57,7 @@
     import Editor from '@tinymce/tinymce-vue'
 
     export default {
-        props: ['id', 'value'],
+        props: ['id', 'value', 'type'],
 
         components: {
             'editor': Editor,
@@ -64,23 +65,28 @@
 
         data(){
             return {
-                localValue: ""
+                localValue: this.value
             }
         },
 
-        mounted() {
-            console.log('Component mounted.')
-        },
         computed: {
-            input_name() {
+            input_text() {
                 return "slides[" + this.id + "][text]"
             },
+
+            input_type() {
+                return "slides[" + this.id + "][type]"
+            }
         },
 
         watch: {
-            value: function(val) {
+            value: function() {
                 this.localValue = this.value
+            },
+            localValue: function() {
+                this.$root.slides[this.id]["text"] = this.localValue
             }
-        }
+        },        
+
     }
 </script>

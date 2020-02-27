@@ -1,7 +1,8 @@
 <template>
 <editor
-	@onKeyUp="$emit('save-input', $event, id)"
-
+	@onKeyUp="$emit('save-input', $event)"
+	v-bind:name ="name"
+	v-model="localValue"
 	api-key="no-api-key"
 	:init="{
 		height: 5,
@@ -23,8 +24,20 @@
     import Editor from '@tinymce/tinymce-vue'
 
     export default {
+		props:["name", "value"],
+		        data(){
+            return {
+                localValue: this.value
+            }
+        },
         components: {
             'editor': Editor,
         },
+        watch: {
+            value: function() {
+                this.localValue = this.value
+            },
+
+        },  
     }
 </script>

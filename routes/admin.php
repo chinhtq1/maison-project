@@ -45,10 +45,15 @@ Route::group(['prefix' => 'articles'], function(){
 Route::group(['prefix' => 'slides'], function(){
     Route::get('/', 'Admin\SlideController@index')->name('admin_slides');
     Route::get('/{id}', 'Admin\SlideController@edit')->name('admin_slide');
+    Route::post('/store/{id}', 'Admin\SlideController@store')->name('admin_slide_store');
+    Route::get('/delete/{id}', 'Admin\SlideController@delete')->name('admin_slide_delete');
+    Route::get('/delete-comfirm/{id}','Admin\SlideController@delete_comfirm')->name('admin_slide_delete_comfirm');
+
 });
 
 Route::group(['prefix' => 'settings'], function(){
-    Route::get('images', 'Admin\SettingController@index')->name('admin_settings');
+    Route::get('/', 'Admin\SettingController@index')->name('admin_settings');
+    Route::post('/store', 'Admin\SettingController@store')->name('admin_settings_store');
 });
 
 

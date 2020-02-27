@@ -11,6 +11,8 @@ window.Vue = require('vue');
 import VueSession from 'vue-session'
 Vue.use(VueSession)
 
+import draggable from 'vuedraggable'
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -34,15 +36,32 @@ Vue.component('image-slide', require('./components/slide/ImageSliderComponent.vu
 
 const app = new Vue({
     el: '#slide-app',
-
+    components:{
+        draggable,
+    },
     data: {
         max_slide: 20,
         min_slide:1,
         current_slide: 0,
         slides: [],
+        reload: false,
     },
+    display: "Table",
+    mounted () {
+            axios
+            .get('/api/slides/detail/' + window.slideId)
+            .then(response => (
+                this.slides = response.data.data.slides,
+                console.log(response.data.data.slides)
+            ))
+            .catch(error => {
+                return
+            })
+    
+    },
+
     methods: {
-        addTextSlide(type) {
+        addSlide(typeSlide, type ) {
             if(this.current_slide++ > this.max_slide) {
                 this.$session.set('message', {'text': 'Quá giới hạn số lượng slide', 'type': 'warning'})
                 console.log('Quá giới hạn số lượng slide')
@@ -53,21 +72,39 @@ const app = new Vue({
             //     id: this.current_slide ,
             //     title: "Slide " + (this.current_slide )
             // }
-            this.slides.push({
-                type: type,
-                id: this.current_slide,
-                title: "Slide " + (this.current_slide ),
-                text:''
-            })
+            if(type == 0 ) {
+                this.slides.push({
+                    type: typeSlide,
+                    text:''
+                })
+            }else if (type == 1) {
+                this.slides.push({
+                    type: typeSlide,
+                    originUrl:'',
+                    imageUrl: null
+                })
+            }
+
         },
         
-        removeTextSlide(id) {
+        
+        removeSlide(id) {
             this.current_slide--
             this.slides.splice(id,1)
         },
 
-        saveInput($event, id) {
-            this.slides[id]['text'] = $event.target.innerHTML
+        saveInput($event, id, type) {
+            if(type == 0){
+                this.slides[id]['text'] = $event.target.innerHTML
+            }
+        },
+
+        reLoading(){
+            console.log("drag remove")
+            this.reload = true
+            setTimeout(() => {
+                this.reload = false
+            },100)
         }
     }
 });

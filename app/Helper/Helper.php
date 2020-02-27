@@ -29,7 +29,7 @@ class Helper {
 
     }
 
-    static function upload_picture($width=300, $height=200, $originPath, $targetPath, $filename) {
+    static function upload_picture($width=0, $height=0, $originPath, $targetPath, $filename) {
         $originPath = base_path(Str::replaceFirst('/','\\',$originPath));
         // dd(base_path(Str::replaceFirst('/','\\',$originPath)));
         $uploadDir = public_path($targetPath); // public/web/articles/article-id/
@@ -38,10 +38,32 @@ class Helper {
             mkdir($uploadDir, 0777, true);
         }
         try {
-            $img = Image::make($originPath)->resize($width, $height)->save($uploadDir.$filename); // public/web/articles/article-id/{slug}.extension
+            if($width == 0 || $height == 0) {
+                $img = Image::make($originPath)->save($uploadDir.$filename); // public/web/articles/article-id/{slug}.extension
+            }else{
+                $img = Image::make($originPath)->resize($width, $height)->save($uploadDir.$filename); // public/web/articles/article-id/{slug}.extension
+            }
         } catch (\Exception $e){
             Session::flash('message_errors', ['text' => "Không tìm thấy ảnh gốc", 'type' => 'error']);
         }
         return $targetPath.$filename;
+    }
+
+    static function getValueField($str,$result) {
+        $splits =  preg_split('/([\[\]])/', $str);
+        if(!is_null($splits)){
+            foreach($splits as $match){
+                if($match !=='' && !is_null($result)){
+                    if(array_key_exists($match,$result))
+                        $result = $result[$match];
+                    else{
+                        $result = null;
+                        break;
+                    }
+                }
+            }
+        }
+        return $result;
+
     }
 }

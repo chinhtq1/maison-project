@@ -13,6 +13,9 @@
         @if(!empty($article))
           <a href="{{ route('admin_article_delete', $article->id)}}" type="button" class="btn btn-danger" >Xóa bài viết</a>
         @endif
+        @if(env('APP_ENV') === 'dev' && !empty($article))
+        <a href="{{ route('article_show_api', $article->id)}}" type="button" class="btn btn-warning" >Api</a>
+        @endif
         <a href="{{ route('admin_articles')}}" type="button" class="btn btn-default" >Hủy bỏ</a>
       </div>
     </div>
@@ -91,7 +94,7 @@
                             <i class="fa fa-picture-o"></i> Chọn ảnh
                           </a>
                         </span>
-                        <input readonly id="image" class="form-control" type="text" name="picture_data[origin_url]" value="{{ !empty($article)? $article->picture_data['origin_url']:'' }}">
+                        <input readonly id="image" class="form-control link-image" type="text" name="picture_data[origin_url]" value="{{ !empty($article)? $article->picture_data['origin_url']:'' }}">
                       </div>
                       <img id="holder" style="margin-top:15px;max-height:100px; margin-bottom: 15px;">
 

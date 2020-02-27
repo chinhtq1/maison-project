@@ -20,6 +20,9 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('textarea-editor', require('./components/settings/TextareaEditorComponent.vue').default);
+Vue.component('image-upload', require('./components/settings/ImageUploadComponent.vue').default);
+Vue.component('article-selected', require('./components/settings/ArticleSelectComponent.vue').default);
+Vue.component('slide-selected', require('./components/settings/SlideSelectComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

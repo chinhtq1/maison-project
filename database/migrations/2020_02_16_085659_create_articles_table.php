@@ -24,7 +24,7 @@ class CreateArticlesTable extends Migration
             $table->longText('content')->nullable();
             $table->text('description')->nullable();
             $table->json('seo')->nullable();
-            $table->string('fb_link')->default('#');
+            $table->string('fb_link')->default('#')->nullable();
             $table->json('picture_data')->nullable();
 
             $table->integer('user_id')->unsigned()->nullable();
@@ -40,7 +40,9 @@ class CreateArticlesTable extends Migration
      * @return void
      */
     public function down()
-    {
+    {   
         Schema::dropIfExists('articles');
+        \File::delete(public_path('articles'));
+
     }
 }

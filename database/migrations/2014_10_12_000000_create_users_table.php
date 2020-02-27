@@ -36,7 +36,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {   
-        \File::deleteDirectory(public_path('articles/'));
         Schema::dropIfExists('users');
     }
 }

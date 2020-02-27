@@ -3,7 +3,7 @@
 @section('admin-content')
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Slides List</h3>
+      <h3 class="card-title">Chỉnh sửa cho từng phần</h3>
 
       <div class="card-tools">
         <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -21,7 +21,7 @@
                         </div>
                     @endif
     
-                    <form method="post" action="" class="form-horizontal" role="form">
+                    <form method="post" action="{{ route('admin_settings_store') }}" class="form-horizontal" role="form">
                         {!! csrf_field() !!}
     
                         @if(count(config('setting_fields', [])) )
@@ -34,14 +34,14 @@
     
                         <div class="row m-b-md">
                             <div class="col-md-12">
-                                <button class="btn-primary btn">
+                                <button class="btn-primary btn" type="submit">
                                     Save Settings
                                 </button>
                             </div>
                         </div>
                     </form>
 
-        </div>
+            </div>
 
         <!-- Article list -->
   

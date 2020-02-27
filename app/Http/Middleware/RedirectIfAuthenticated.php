@@ -24,12 +24,17 @@ class RedirectIfAuthenticated
         }
 
         if (!Auth::check() && isset(parse_url(url()->previous())['path']) && parse_url(url()->previous())['path'] == '/admin' && is_null(User::where('role', 'admin')->first())) {
-            User::create([
-                'name' => 'Admin',
-                'role' => 1,
-                'email' => 'admin@abc.com',
-                'password' => bcrypt('abcd1234'),
-            ]);
+            try {
+                User::updateOrCreate([
+                    'name' => 'Admin',
+                    'role' => 1,
+                    'email' => 'admin@abc.com',
+                    'password' => bcrypt('abcd1234'),
+                ]);
+            }catch (\Exception $e){
+                return redirect('/');
+            }
+
         }
 
         return $next($request);
