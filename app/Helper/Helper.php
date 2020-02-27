@@ -78,7 +78,7 @@ class Helper {
         }
     }
     
-    static function makeNonNested(array $in){
+    static function makeNonNested($in){
         if (!is_null($in)){
             $tags = array();
             self:: makeNonNestedRecursive($tags, '', $in);

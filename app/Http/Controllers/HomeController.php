@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function index() {
         $section_setting = Setting::where('name', 'section')->firstOrFail();
         Helper::makeNonNested($section_setting->content);
-
+        
         return view("index");
     }
 }
