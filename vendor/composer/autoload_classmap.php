@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Article' => $baseDir . '/app/Article.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Handlers\\LfmConfigHandler' => $baseDir . '/app/Handlers/LfmConfigHandler.php',
@@ -15,6 +16,9 @@ return array(
     'App\\Http\\Controllers\\Admin\\SettingController' => $baseDir . '/app/Http/Controllers/Admin/SettingController.php',
     'App\\Http\\Controllers\\Admin\\SlideController' => $baseDir . '/app/Http/Controllers/Admin/SlideController.php',
     'App\\Http\\Controllers\\Admin\\UserController' => $baseDir . '/app/Http/Controllers/Admin/UserController.php',
+    'App\\Http\\Controllers\\Api\\ArticleController' => $baseDir . '/app/Http/Controllers/Api/ArticleController.php',
+    'App\\Http\\Controllers\\Api\\SettingsController' => $baseDir . '/app/Http/Controllers/Api/SettingsController.php',
+    'App\\Http\\Controllers\\Api\\SlidesController' => $baseDir . '/app/Http/Controllers/Api/SlidesController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -30,9 +34,13 @@ return array(
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
+    'App\\Http\\Middleware\\SlideBackend' => $baseDir . '/app/Http/Middleware/SlideBackend.php',
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Http\\Resources\\Article' => $baseDir . '/app/Http/Resources/Article.php',
+    'App\\Http\\Resources\\Settings' => $baseDir . '/app/Http/Resources/Settings.php',
+    'App\\Http\\Resources\\Slides' => $baseDir . '/app/Http/Resources/Slides.php',
     'App\\Models\\Article' => $baseDir . '/app/Models/Article.php',
     'App\\Models\\Setting' => $baseDir . '/app/Models/Setting.php',
     'App\\Models\\Slides' => $baseDir . '/app/Models/Slides.php',

@@ -465,6 +465,7 @@ class ComposerStaticInitba6077695ba76670d1892b47e2e64e35
     );
 
     public static $classMap = array (
+        'App\\Article' => __DIR__ . '/../..' . '/app/Article.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Handlers\\LfmConfigHandler' => __DIR__ . '/../..' . '/app/Handlers/LfmConfigHandler.php',
@@ -474,6 +475,9 @@ class ComposerStaticInitba6077695ba76670d1892b47e2e64e35
         'App\\Http\\Controllers\\Admin\\SettingController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SettingController.php',
         'App\\Http\\Controllers\\Admin\\SlideController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SlideController.php',
         'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
+        'App\\Http\\Controllers\\Api\\ArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ArticleController.php',
+        'App\\Http\\Controllers\\Api\\SettingsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/SettingsController.php',
+        'App\\Http\\Controllers\\Api\\SlidesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/SlidesController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -489,9 +493,13 @@ class ComposerStaticInitba6077695ba76670d1892b47e2e64e35
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
+        'App\\Http\\Middleware\\SlideBackend' => __DIR__ . '/../..' . '/app/Http/Middleware/SlideBackend.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Resources\\Article' => __DIR__ . '/../..' . '/app/Http/Resources/Article.php',
+        'App\\Http\\Resources\\Settings' => __DIR__ . '/../..' . '/app/Http/Resources/Settings.php',
+        'App\\Http\\Resources\\Slides' => __DIR__ . '/../..' . '/app/Http/Resources/Slides.php',
         'App\\Models\\Article' => __DIR__ . '/../..' . '/app/Models/Article.php',
         'App\\Models\\Setting' => __DIR__ . '/../..' . '/app/Models/Setting.php',
         'App\\Models\\Slides' => __DIR__ . '/../..' . '/app/Models/Slides.php',
