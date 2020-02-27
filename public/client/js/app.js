@@ -74,6 +74,7 @@ $(document).ready(function() {
     textSliderController();
     addAnimationWhenScroll();
     cssHeader();
+    modalController();
     preLoadController();
 });
 
@@ -96,6 +97,16 @@ function preLoadController() {
         }
     });
 
+}
+
+function modalController() {
+    $('.more-info-title').click(function() {
+        $('.modal-wrapper ').toggleClass('open');
+        $('.modal-wrapper .overlay').toggleClass('open');
+        $('.modal-wrapper .modal').toggleClass('open');
+
+        return false;
+    });
 }
 
 function cssHeader() {
