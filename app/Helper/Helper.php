@@ -85,6 +85,8 @@ class Helper {
             foreach($tags as $tag => $value){
                 MetaTag::set_raw($tag,$value);
             }
+            dd(MetaTag::get('fuck'));
+
             // dd($tags);
             return $tags;
         }
