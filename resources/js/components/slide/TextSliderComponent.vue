@@ -32,6 +32,9 @@
                         :init="{
                             height: 5,
                             menubar: false,
+                            force_br_newlines : true,
+                            force_p_newlines : true,
+                            forced_root_block : '',
                             plugins: [
                             'advlist autolink lists link image charmap print preview anchor',
                             'searchreplace visualblocks code fullscreen',

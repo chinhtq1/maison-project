@@ -175,7 +175,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        // Torann\LaravelMetaTags\MetaTagsServiceProvider::class,
+        App\Providers\MetaTagsServiceProvider::class,
 
 
     ],
@@ -231,7 +231,7 @@ return [
         
         'Helper' => App\Helpers\Helper::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        // 'MetaTag'   => Torann\LaravelMetaTags\Facades\MetaTag::class,
+        'MetaTag'   => App\Facades\MetaTag::class,
 
 
     ],

@@ -1,0 +1,17 @@
+
+  "app-name"
+  "phone" 
+  "seo-title" 
+  "seo-description" 
+  "images.shotcut-icon.url" 
+  "images.shotcut-icon.main_url" 
+  "images.logo-desktop.url" 
+  "images.logo-desktop.main_url" 
+  "images.logo-mobile.url" 
+  "images.logo-mobile.main_url" 
+  "images.logo-poem.url" 
+  "images.logo-poem.main_url" 
+  "images.logo-footer.url" 
+  "images.logo-footer.main_url" 
+  "images.banner-desktop.url" => null
+  "images.banner-logo.url" => null

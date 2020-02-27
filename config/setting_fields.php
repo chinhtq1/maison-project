@@ -322,7 +322,7 @@ return [
             ],
             [
                 'type' => 'select-model.slide-select',
-                'name' => 'section8[slides][4][title]',
+                'name' => 'section8[slides][3][title]',
                 'label' => 'Slide đại diện cho ảnh thứ 4',
                 'class-root' => 'col-6'
             ],

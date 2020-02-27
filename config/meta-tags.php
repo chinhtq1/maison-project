@@ -75,4 +75,6 @@ return array(
      */
 
     'locales' => ['en', 'es'],
+
+    'section2.num-1' => '',
 );

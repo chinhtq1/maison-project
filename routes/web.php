@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+Route::group(['middleware' => ['client']], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+});
 
 Auth::routes();

@@ -5,6 +5,7 @@ use Carbon\Carbon;
 use Image;
 use Str;
 use Session;
+use MetaTag;
 
 class Helper {
     static function update_time_public($article) {
@@ -66,4 +67,26 @@ class Helper {
         return $result;
 
     }
+
+    static function makeNonNestedRecursive(array &$out, $key, array $in){
+        foreach($in as $k=>$v){
+            if(is_array($v)){
+                self::makeNonNestedRecursive($out, $key . $k . '.', $v);
+            }else{
+                $out[$key . $k] = $v;
+            }
+        }
+    }
+    
+    static function makeNonNested(array $in){
+        $tags = array();
+        self:: makeNonNestedRecursive($tags, '', $in);
+        foreach($tags as $tag => $value){
+            MetaTag::set_raw($tag,$value);
+        }
+        // dd($tags);
+        return $tags;
+    }
+
+
 }
