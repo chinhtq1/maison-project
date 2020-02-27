@@ -16,36 +16,48 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet"
+        href="    https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
 </head>
 
 <body>
-    <div class="pre-loading">
-        <div class="spinner-border text-warning" role="status">
-            <span class="fa-5x  sr-only">Loading...</span>
+    <div class="modal-wrapper">
+        <div class="overlay"> </div>
+        <div class="modal">
+            <div class="head">
+                <a class="btn-close trigger" href="javascript:;"></a>
+            </div>
+            <div class="content">
+                hahahahaha
+            </div>
         </div>
     </div>
+    <div id="loader">
+        <div class="count">100%</div>
+    </div>
+
     <div class="container-fluid">
         <header>
             <div class="container-fluid d-flex justify-content-between menu-container">
                 <a class="logo-desktop" href="#"><img class="img-fluid" src="{{asset('client/img/logo.svg.png')}}"></a>
-                <a class="logo-mobile" href="#"><img class="img-fluid" src="{{ asset('client/img/logo-mobile.png')}}"></a>
+                <a class="logo-mobile" href="#"><img class="img-fluid"
+                        src="{{ asset('client/img/logo-mobile.png')}}"></a>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link expand" href="#">Giới thiệu</a>
+                        <a class="nav-link expand" href="#gioi-thieu">Giới thiệu</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#vi-tri" class="nav-link expand" href="#">Vị trí</a>
+                        <a href="#vi-tri" class="nav-link expand">Vị trí</a>
                     </li>
                     <li class="nav-item">
                         <a href="#kien-truc" class="nav-link expand">Kiến trúc</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#tien-ich" class="nav-link expand" href="#">Tiện ích</a>
+                        <a href="#tien-ich" class="nav-link expand">Tiện ích</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#tin-tuc" class="nav-link expand" href="#">Tin tức</a>
+                        <a href="#tin-tuc" class="nav-link expand">Tin tức</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  expand" href="#">Thư viện</a>
@@ -88,11 +100,15 @@
 
         <section class="header-background-image">
             <div class="inner-background-image">
-                <img src="{{asset('client/img/header-image.png')}}" class="header-desktop img-header img-fluid object-fit-cover">
-                <img src="{{asset('client/img/header-image-mobile.png')}}" class="header-mobile img-header img-fluid object-fit-cover">
+                <img src="{{asset('client/img/header-image.png')}}"
+                    class="header-desktop img-header img-fluid object-fit-cover">
+                <img src="{{asset('client/img/header-image-mobile.png')}}"
+                    class="header-mobile img-header img-fluid object-fit-cover">
 
-                <a class="company-logo" href="#"> <img src="{{asset('client/img/company-logo.png')}}" class="img-fluid"></a>
-                <a class="fb-logo" href="#"> <img src="{{asset('client/img/facebook-header.png')}}" class="img-fluid"></a>
+                <a class="company-logo" href="#"> <img src="{{asset('client/img/company-logo.png')}}"
+                        class="img-fluid"></a>
+                <a class="fb-logo" href="#"> <img src="{{asset('client/img/facebook-header.png')}}"
+                        class="img-fluid"></a>
                 <div class="container-slogan-text">
                     <div class="slogan-text">
                         <h2>Giữa Núi Đồi Cao Nguyên</h2>
@@ -106,7 +122,9 @@
         <div data-aos="flip-up" class="poem text-center">
             <img class="img-fluid" src="{{asset('client/img/logo_poem.png')}}">
             <p>
-                ​Có một nơi được gọi là nhà và cũng là nơi trú ẩn bình yên <br> không khói bụi, ồn ào và vội vã. Hãy trở về để cảm nhận một không gian<br> sống riêng tư, sang trọng giữa lòng Châu Âu biệt lập và tiện nghi.<br> Đó là chốn thiên đường lý
+                ​Có một nơi được gọi là nhà và cũng là nơi trú ẩn bình yên <br> không khói bụi, ồn ào và vội vã. Hãy trở
+                về để cảm nhận một không gian<br> sống riêng tư, sang trọng giữa lòng Châu Âu biệt lập và tiện nghi.<br>
+                Đó là chốn thiên đường lý
                 tưởng để tận hưởng một cuộc sống<br> thời thượng, an nhiên và hạnh phúc.
             </p>
         </div>
@@ -117,7 +135,9 @@
                         Thưởng Ngoạn <strong>Mỹ Cảnh</strong> <br> <strong>Châu Âu</strong> Ngay Tại Nhà
                     </div>
                     <p>
-                        Maison de Mộc Châu chính là viên kim cương vẹn sắc bích, sánglấp lánh giữa núi đồi Tây Bắc. Cảnh sắc Châu Âu sang trọng,kiêu sa cùng hệ thống tiện ích toàn mỹ tạo nên một chuẩn mực sống đô thị đẳng cấp mới lần đầu tiên xuất hiện tại Mộc Châu.
+                        Maison de Mộc Châu chính là viên kim cương vẹn sắc bích, sánglấp lánh giữa núi đồi Tây Bắc. Cảnh
+                        sắc Châu Âu sang trọng,kiêu sa cùng hệ thống tiện ích toàn mỹ tạo nên một chuẩn mực sống đô thị
+                        đẳng cấp mới lần đầu tiên xuất hiện tại Mộc Châu.
                     </p>
                     <div class="list-group-info">
 
@@ -171,15 +191,17 @@
                 <div class="Absolute-Center">
                     <span class="bg-position-project">
                         <img class="logo-position-project" src="{{asset('client/img/logo-project-position.png')}}">
-                        <span class="circle-fill-level-1">  </span>
-                    <div class="circle-fill-level-2"> </div>
+                        <span class="circle-fill-level-1"> </span>
+                        <div class="circle-fill-level-2"> </div>
                     </span>
 
                 </div>
             </div>
             <div data-aos="fade-left" class="map-info-content-right">
                 <h1>Vị trí <strong>Kim Cương</strong> <br> <strong>Tầm Nhìn</strong> Đắt Giá </h1>
-                <p>Nằm tựa bên sườn đồi thảo nguyên xanh ngát, Maison de MộcChâu được thừa hưởng một vị trí đắt giá, thuận tiện kết nối tới trung tâm hành chính, kinh tế và các địa điểm tham quan du lịch nổi tiếng từ trục đường quốc lộ 43 nhanh chóng, dễ
+                <p>Nằm tựa bên sườn đồi thảo nguyên xanh ngát, Maison de MộcChâu được thừa hưởng một vị trí đắt giá,
+                    thuận tiện kết nối tới trung tâm hành chính, kinh tế và các địa điểm tham quan du lịch nổi tiếng từ
+                    trục đường quốc lộ 43 nhanh chóng, dễ
                     dàng.
                 </p>
                 <a class="custom-button ">
@@ -196,7 +218,9 @@
 
         <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="tien-ich" class="utilities">
             <h1><strong>Tiện Ích</strong> Toàn Mỹ</h1>
-            <p class="utilities-intro">Maison de Mộc Châu tạo ra một miền sống mới vượt lên trên cả những chuẩn mực tiện ích từng có. Đó là một đẳng <br> cấp sống thời thượng giao hòa giữa nghệ thuật, thiên nhiên và tiện ích.</p>
+            <p class="utilities-intro">Maison de Mộc Châu tạo ra một miền sống mới vượt lên trên cả những chuẩn mực tiện
+                ích từng có. Đó là một đẳng <br> cấp sống thời thượng giao hòa giữa nghệ thuật, thiên nhiên và tiện ích.
+            </p>
             <img class="img-fluid" src="{{asset('client/img/tien-ich.png')}}">
 
         </section>
@@ -210,7 +234,9 @@
                         <h2>
                             <strong>Kiến Trúc Châu Âu </strong><br>Thời Thượng
                         </h2>
-                        <p>Kiến trúc hoàn mỹ đậm chất nghệ thuật thời thượng được ghi dấu trong từng chi tiết. Mỗi căn biệt thự đều được thiết kế trang nhã, tinh tế gần gũi với thiên nhiên kết hợp cùng hệ thống váchkính an toàn trong phòng sẽ đem đến cho
+                        <p>Kiến trúc hoàn mỹ đậm chất nghệ thuật thời thượng được ghi dấu trong từng chi tiết. Mỗi căn
+                            biệt thự đều được thiết kế trang nhã, tinh tế gần gũi với thiên nhiên kết hợp cùng hệ thống
+                            váchkính an toàn trong phòng sẽ đem đến cho
                             gia chủ góc nhìn toàn cảnh núi đồi thơ mộng.</p>
                         <a class="custom-button ">
                             <div class="custom-button-div button-style-house"><span>Mẫu Biệt Thự</span></div>
@@ -230,10 +256,16 @@
                     </div> -->
                 <div id="customNav">
                     <span class="btn am-next">
-                        <svg  viewBox="0 0 38.07 13.8799"><path d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" /><rect y="6.2878" width="30" height="1.4966" /></svg>
+                        <svg viewBox="0 0 38.07 13.8799">
+                            <path
+                                d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />
+                            <rect y="6.2878" width="30" height="1.4966" /></svg>
                     </span>
                     <span class="btn am-prev">
-                            <svg  viewBox="0 0 38.07 13.8799"><path d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" /><rect y="6.2878" width="30" height="1.4966" /></svg>
+                        <svg viewBox="0 0 38.07 13.8799">
+                            <path
+                                d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />
+                            <rect y="6.2878" width="30" height="1.4966" /></svg>
                     </span>
                 </div>
             </div>
@@ -250,11 +282,15 @@
 
                     </a>
                     <h2>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit </h2>
-                    <p>laudantium, totam rem aperiam, eaqulaudatium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et ...</p>
+                    <p>laudantium, totam rem aperiam, eaqulaudatium, totam rem aperiam, eaque ipsa quae ab illo
+                        inventore veritatis et ...</p>
                     <hr>
                     <div class="more-info d-flex justify-content-between">
                         <a class="more-info-title">TÌM HIỂU THÊM
-                            <svg  viewBox="0 0 38.07 13.8799"><path d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" /><rect y="6.2878" width="30" height="1.4966" /></svg>
+                            <svg viewBox="0 0 38.07 13.8799">
+                                <path
+                                    d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />
+                                <rect y="6.2878" width="30" height="1.4966" /></svg>
                         </a>
                         <a class="fb-link">
                             <img class=" img-fluid " src="{{asset('client/img/fb-link-news.png')}}" class="img-fluid">
@@ -274,12 +310,16 @@
 
                     </a>
                     <h2>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit </h2>
-                    <p>laudantium, totam rem aperiam, eaqulaudatium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et ...</p>
+                    <p>laudantium, totam rem aperiam, eaqulaudatium, totam rem aperiam, eaque ipsa quae ab illo
+                        inventore veritatis et ...</p>
                     <hr>
                     <div class="more-info d-flex justify-content-between">
                         <a class="more-info-title">TÌM HIỂU THÊM
-                                    <svg  viewBox="0 0 38.07 13.8799"><path d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" /><rect y="6.2878" width="30" height="1.4966" /></svg>
-                                </a>
+                            <svg viewBox="0 0 38.07 13.8799">
+                                <path
+                                    d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />
+                                <rect y="6.2878" width="30" height="1.4966" /></svg>
+                        </a>
                         <a class="fb-link">
                             <img src="{{asset('client/img/fb-link-news.png')}}" class="img-fluid">
                         </a>
@@ -297,12 +337,16 @@
 
                     </a>
                     <h2>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit </h2>
-                    <p>laudantium, totam rem aperiam, eaqulaudatium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et ...</p>
+                    <p>laudantium, totam rem aperiam, eaqulaudatium, totam rem aperiam, eaque ipsa quae ab illo
+                        inventore veritatis et ...</p>
                     <hr>
                     <div class="more-info d-flex justify-content-between">
                         <a class="more-info-title">TÌM HIỂU THÊM
-                                    <svg  viewBox="0 0 38.07 13.8799"><path d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" /><rect y="6.2878" width="30" height="1.4966" /></svg>
-                                </a>
+                            <svg viewBox="0 0 38.07 13.8799">
+                                <path
+                                    d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />
+                                <rect y="6.2878" width="30" height="1.4966" /></svg>
+                        </a>
                         <a class="fb-link">
                             <img src="{{asset('client/img/fb-link-news.png')}}" class="img-fluid">
                         </a>
@@ -316,11 +360,13 @@
                 <div id="owl-carousel-2" class="owl-carousel">
                     <div class="inner-text-slider">
                         <h1><strong>Niềm Tin</strong> Trọn Vẹn</h1>
-                        <p>Công ty TNHH Phát triển đô thị và Xây dựng 379 tiên phong kiến tạo những khu <br> đô thị kiểu mẫu tại Thái Bình và là phát triển uy tín các dự án chung cư phức <br> hợp tại Hà Nội</p>
+                        <p>Công ty TNHH Phát triển đô thị và Xây dựng 379 tiên phong kiến tạo những khu <br> đô thị kiểu
+                            mẫu tại Thái Bình và là phát triển uy tín các dự án chung cư phức <br> hợp tại Hà Nội</p>
                     </div>
                     <div class="inner-text-slider">
                         <h1><strong>Niềm Tin</strong> Đã Trọn Vẹn</h1>
-                        <p>Lorem lorem lorem <br> đô thị kiểu mẫu tại Thái Bình và là phát triển uy tín các dự án chung cư phức <br> hợp tại Hà Nội</p>
+                        <p>Lorem lorem lorem <br> đô thị kiểu mẫu tại Thái Bình và là phát triển uy tín các dự án chung
+                            cư phức <br> hợp tại Hà Nội</p>
                     </div>
                 </div>
                 <div class="btn btn-pre-slider">
@@ -378,7 +424,8 @@
                         <ul class="width-50 u-ul-footer">
                             <li><img src="{{asset('client/img/maison-footer.png')}}" class="img-fluid"></li>
                             <li><span>M</span> <span>Mall</span></li>
-                            <li><span>A</span> <span>But I must explain to you <br> how all this mistaken idea <br> of denounc</span></li>
+                            <li><span>A</span> <span>But I must explain to you <br> how all this mistaken idea <br> of
+                                    denounc</span></li>
                         </ul>
                         <ul class=" width-50 u-ul-footer">
                             <li>Tổng Quan</li>
@@ -398,7 +445,8 @@
                             <li>Cập nhật</li>
                             <li> <a class="expand footer-menu-item ">Tin tức</a></li>
                             <li> <a class="expand footer-menu-item ">Thư viện</a></li>
-                            <button id="scroll_to_top" class="btn btn-to-top"><i class="fa fa-3x fa-long-arrow-alt-up" ></i></button>
+                            <button id="scroll_to_top" class="btn btn-to-top"><i
+                                    class="fa fa-3x fa-long-arrow-alt-up"></i></button>
                         </ul>
 
 

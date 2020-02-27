@@ -74,23 +74,46 @@ $(document).ready(function() {
     textSliderController();
     addAnimationWhenScroll();
     cssHeader();
-    preLoading();
+    modalController();
+    preLoadController();
 });
 
+function preLoadController() {
+    var count = $('.count');
+    var loader = $('#loader');
+    $({ Counter: 0 }).animate({ Counter: count.text() }, {
+        duration: 3000,
+        step: function() {
+            count.text(Math.ceil(this.Counter) + "%");
+        },
+        start: function() {
+            $('html').addClass('is-main-menu-open');
+        },
+        complete: function() {
+            setAnimationForSloganWhenFirstScroll();
+            initAnimationForAllSection();
+            $('html').removeClass('is-main-menu-open');
+            $('#loader').css("display", "none");
+        }
+    });
 
+}
+
+function modalController() {
+    $('.more-info-title').click(function() {
+        $('.modal-wrapper ').toggleClass('open');
+        $('.modal-wrapper .overlay').toggleClass('open');
+        $('.modal-wrapper .modal').toggleClass('open');
+
+        return false;
+    });
+}
 
 function cssHeader() {
     var heightHeader = $("header").height();
     $(".header-background-image").css("margin-top", -heightHeader);
 }
 
-function preLoading() {
-    $(".img-header").on('load', function() {
-        $(".pre-loading").hide();
-        setAnimationForSloganWhenFirstScroll();
-        initAnimationForAllSection();
-    });
-}
 
 function initAnimationForAllSection() {
     AOS.init({
