@@ -21,11 +21,9 @@
 </head>
 
 <body>
-    <div class="pre-loading">
-        <div class="spinner-border text-warning" role="status">
-            <span class="fa-5x  sr-only">Loading...</span>
-        </div>
-    </div>
+    <div id="loader">
+        <div class="count">100%</div>
+      </div>
     <div class="container-fluid">
         <header>
             <div class="container-fluid d-flex justify-content-between menu-container">
@@ -33,19 +31,19 @@
                 <a class="logo-mobile" href="#"><img class="img-fluid" src="{{ asset('client/img/logo-mobile.png')}}"></a>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link expand" href="#">Giới thiệu</a>
+                        <a class="nav-link expand" href="#gioi-thieu">Giới thiệu</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#vi-tri" class="nav-link expand" href="#">Vị trí</a>
+                        <a href="#vi-tri" class="nav-link expand" >Vị trí</a>
                     </li>
                     <li class="nav-item">
                         <a href="#kien-truc" class="nav-link expand">Kiến trúc</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#tien-ich" class="nav-link expand" href="#">Tiện ích</a>
+                        <a href="#tien-ich" class="nav-link expand" >Tiện ích</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#tin-tuc" class="nav-link expand" href="#">Tin tức</a>
+                        <a href="#tin-tuc" class="nav-link expand" >Tin tức</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  expand" href="#">Thư viện</a>
