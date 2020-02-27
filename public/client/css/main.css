@@ -564,7 +564,7 @@
             margin-bottom: 2.5rem;
         }
         
-        .utilities p.utilities-intro {
+        .utilities .utilities-intro p {
             font-family: 'Montserrat Regular';
             font-size: 1.6rem;
             color: rgb(125, 115, 114);
@@ -1889,7 +1889,7 @@
                 font-size: 1.6rem;
                 line-height: 1.875;
             }
-            .utilities p.utilities-intro {
+            .utilities .utilities-intro p {
                 padding-left: 5.2rem;
                 padding-right: 5.2rem;
             }

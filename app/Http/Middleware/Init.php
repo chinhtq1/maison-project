@@ -22,9 +22,10 @@ class Init
 
         $section_setting = Setting::where('name', 'section')->firstOrFail();
         Helper::makeNonNested($section_setting->content);
-        
+        // dd($section_setting->content);
 
         $general_setting = Setting::where('name', 'general')->firstOrFail();
+        // dd($general_setting->content);
         Helper::makeNonNested($general_setting->content);
         return $next($request);
     }

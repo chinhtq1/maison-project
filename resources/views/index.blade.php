@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta property="og:title" content="{!! MetaTag::get('seo-title') !!}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>{!! MetaTag::get('seo-title') !!}</title>
+    <meta name="description" content="{!! MetaTag::get('seo-description') !!}">
+    <meta property="og:description" content="{!! MetaTag::get('seo-description') !!}">
+    <meta property="og:url" content="{!! url()->current() !!}">
 
+    <link rel="shortcut icon" href="{!! MetaTag::get('images.shotcut-icon.url') !!}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
     <link href="https://unpkg.com/aos@2.3.0/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{asset('client/css/main.css')}}">
@@ -100,9 +105,10 @@
 
         <section class="header-background-image">
             <div class="inner-background-image">
-                <img src="{{asset('client/img/header-image.png')}}"
+                <img src="{!! MetaTag::get("images.banner-desktop.url") !!}"
                     class="header-desktop img-header img-fluid object-fit-cover">
-                <img src="{{asset('client/img/header-image-mobile.png')}}"
+
+                <img src="{!! MetaTag::get("images.banner-logo.url") !!}"
                     class="header-mobile img-header img-fluid object-fit-cover">
 
                 <a class="company-logo" href="#"> <img src="{{asset('client/img/company-logo.png')}}"
@@ -185,7 +191,7 @@
                 <img class="map-mobile custom-image-map" src="{{asset('client/img/map-custom-mobile.png')}}">
                 <div class="Absolute-Center">
                     <span class="bg-position-project">
-                        <img class="logo-position-project" src="{!! MetaTag::get("section3.images.1.main_url") !!}">
+                        <img class="logo-position-project" src="{{asset('client/img/logo-project-position.png')}}">
                         <span class="circle-fill-level-1"> </span>
                         <div class="circle-fill-level-2"> </div>
                     </span>
@@ -208,10 +214,11 @@
         </section>
 
         <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="tien-ich" class="utilities">
-            <h1><strong>Tiện Ích</strong> Toàn Mỹ</h1>
-            <p class="utilities-intro">Maison de Mộc Châu tạo ra một miền sống mới vượt lên trên cả những chuẩn mực tiện
-                ích từng có. Đó là một đẳng <br> cấp sống thời thượng giao hòa giữa nghệ thuật, thiên nhiên và tiện ích.
-            </p>
+            {!! MetaTag::get("section4.title") !!}
+            <div class="utilities-intro"> 
+                    {!! MetaTag::get("section4.description") !!}
+
+            </div>
             <img class="img-fluid" src="{{asset('client/img/tien-ich.png')}}">
 
         </section>
@@ -222,13 +229,8 @@
             <div data-aos="fade-left" class="design-building-right">
                 <div class="design-building-content">
                     <div class="inner-design-building-content">
-                        <h2>
-                            <strong>Kiến Trúc Châu Âu </strong><br>Thời Thượng
-                        </h2>
-                        <p>Kiến trúc hoàn mỹ đậm chất nghệ thuật thời thượng được ghi dấu trong từng chi tiết. Mỗi căn
-                            biệt thự đều được thiết kế trang nhã, tinh tế gần gũi với thiên nhiên kết hợp cùng hệ thống
-                            váchkính an toàn trong phòng sẽ đem đến cho
-                            gia chủ góc nhìn toàn cảnh núi đồi thơ mộng.</p>
+                        {!! MetaTag::get("section5.title") !!}
+                        {!! MetaTag::get("section5.description") !!}
                         <a class="custom-button ">
                             <div class="custom-button-div button-style-house"><span>Mẫu Biệt Thự</span></div>
                             <div class="container-arrow">
