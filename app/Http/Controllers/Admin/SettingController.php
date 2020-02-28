@@ -69,7 +69,24 @@ class SettingController extends Controller
         $setting->fill(['content' => $data])->save();
         return redirect()->back()->with('status', 'Settings has been saved.');
     }
+    function text_single_index()
+    {
+        $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
+        // dd($result->content);
+        return view('admin.settings.text-single-index', ['page_name' => 'Chỉnh Sửa Text Đơn', 'result' => $result]);
+    }
 
+    function text_single_store(Request $request) {
+        $data = $request->all();
+        $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
+        $setting = is_null($result->content) ? [] : json_decode($result->content, true);
+        foreach ($data as $key => $value) {
+            $setting[$key] = $value;
+        }
+        $result->content = json_encode($setting);
+        $result->save();
+        return redirect()->back()->with('status', 'Settings has been saved.');
+    }
     function general_store(Request $request)
     {
         $data = $request->all();

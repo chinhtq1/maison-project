@@ -26,6 +26,7 @@
                 <?php $data = json_decode($result->content); ?>
                 <div class="row">
                     <div class="col-md-6">
+                        
                         <div class="block">
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input">Title</label>

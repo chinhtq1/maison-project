@@ -72,6 +72,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                  <a href="{{ route('admin_settings_text_single')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Chỉnh Sửa Text Đơn</p>
+                    </a>
+                  </li>
+              <li class="nav-item">
                 <a href="{{ route('admin_settings')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Chỉnh sửa từng nội dung</p>

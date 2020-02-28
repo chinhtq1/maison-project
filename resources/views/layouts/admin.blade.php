@@ -24,7 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- My Css -->
   <link href="{{ asset('css/admin.css') }}" type="text/css" rel="stylesheet">
-
+  <link href="{{ asset('css/admin.css') }}" type="text/css" rel="stylesheet">
   <!-- Extra CSS -->
   @yield('extra-css')
 
@@ -103,6 +103,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+<script src="{{ asset('css/admin.css') }}"></script>
+<script src="{{ asset('admin-theme/plugins/ckeditor/ckeditor.js') }}"></script>
+
 
 <script>
   @if(Session::has('message'))

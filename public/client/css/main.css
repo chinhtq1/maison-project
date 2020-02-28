@@ -433,7 +433,7 @@
             top: 25.4vw;
         }
         
-        .detail-infomation .info-left .title {
+        .detail-infomation .info-left h1:not(.h1-small) {
             font-size: 4.2rem;
             font-family: "Playfair Display";
             color: rgb(56, 48, 47);
@@ -596,7 +596,7 @@
             margin-bottom: 2.5rem;
         }
         
-        .utilities .utilities-intro p {
+        .utilities p {
             font-family: 'Montserrat Regular';
             font-size: 1.6rem;
             color: rgb(125, 115, 114);
@@ -909,7 +909,7 @@
             padding-right: 78px;
         }
         
-        .inner-design-building-content h2 {
+        .inner-design-building-content h1 {
             text-align: left;
             font-size: 42px;
             font-family: "Playfair Display";
@@ -1877,7 +1877,7 @@
                 padding-left: 5rem;
                 padding-right: 5rem;
             }
-            .detail-infomation .info-left .title {
+            .detail-infomation .info-left h1:first-child {
                 font-size: 2.8rem;
             }
             .detail-infomation .info-left .list-group-info p {
@@ -1935,7 +1935,7 @@
                 font-size: 1.6rem;
                 line-height: 1.875;
             }
-            .utilities .utilities-intro p {
+            .utilities p {
                 padding-left: 5.2rem;
                 padding-right: 5.2rem;
             }
@@ -1982,7 +1982,7 @@
                 padding-top: 5rem;
                 padding-bottom: 4rem;
             }
-            .inner-design-building-content h2 {
+            .inner-design-building-content h1 {
                 font-size: 2.8rem;
             }
             .inner-design-building-content p {

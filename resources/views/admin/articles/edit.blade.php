@@ -33,14 +33,6 @@
 
                       </div>
 
-                        <!-- Slug -->
-                      <div class="form-group row">
-                        <label for="inputTitle" class="col-sm-2 col-form-label">Slug</label>
-                        <input type="text" id="inputTitle" class="form-control col-sm-10" name="slug" value="{{ !empty($article)? $article->slug: null }}">
-                        <span class="help-block">{{$errors->first('slug')}}</span>
-
-                      </div>
-
                       <div class="form-group row">
                         <label for="inputFBLink" class="col-sm-2 col-form-label">Facebook Link</label>
                         <input type="text" id="inputFBLink" class="form-control col-sm-10" name="fb_link" value="{{ !empty($article)? $article->fb_link: null }}">
@@ -81,12 +73,6 @@
                             <span class="help-block">{{$errors->first('description')}}</span>
 
                           </div>
-
-                        <!-- Slug -->
-                      <div class="form-group row">
-                        <label for="inputSeo" class="col-sm-2 col-form-label">Seo</label>
-                        <input type="text" id="inputSeo" class="form-control col-sm-10" name="seo">
-                      </div>
 
                       <div class="input-group">
                         <span class="input-group-prepend">

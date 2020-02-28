@@ -48,27 +48,27 @@
                         <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
                         <span>21 Tháng 5 Năm 2020</span>
                     </div>
-    
+
                 </div>
                 <div class="description-modal-text">
-                        <h1>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit  </h1>
-                        <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        </p>
-                    </div>
+                    <h1>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit </h1>
+                    <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -79,8 +79,9 @@
     <div class="container-fluid">
         <header>
             <div class="container-fluid d-flex justify-content-between menu-container">
-                <a href="/" class="logo-desktop" href="#"><img class="img-fluid" src="{{asset('static/logo_desktop.png')}}"></a>
-                <a href="/"  class="logo-mobile" href="#"><img class="img-fluid"
+                <a href="/" class="logo-desktop" href="#"><img class="img-fluid"
+                        src="{{asset('static/logo_desktop.png')}}"></a>
+                <a href="/" class="logo-mobile" href="#"><img class="img-fluid"
                         src="{{ asset('static/logo_mobile.png')}}"></a>
                 <ul class="nav">
                     <li class="nav-item">
@@ -102,7 +103,7 @@
                         <a class="nav-link  expand" href="#">Thư viện</a>
                     </li>
                 </ul>
-            <a  href="tel:{!! MetaTag::get('phone_number') !!}" class="phone-call">
+                <a href="tel:{!! MetaTag::get('phone_number') !!}" class="phone-call">
                     <div class="contact-vi"> Liên Hệ</div>
                     <div class="quick-alo-ph-circle"></div>
                     <div class="quick-alo-ph-circle-fill"></div>
@@ -139,15 +140,15 @@
 
         <section class="header-background-image">
             <div class="inner-background-image">
-                    <img src="{{asset('static/banner_desktop.png')}}"
+                <img src="{{asset('static/banner_desktop.png')}}"
                     class="header-desktop img-header img-fluid object-fit-cover">
                 <img src="{{asset('static/banner_mobile.png')}}"
                     class="header-mobile img-header img-fluid object-fit-cover">
 
-                <a target="_blank" href="{!! MetaTag::get('company_link') !!}" class="company-logo" href="#"> <img src="{{asset('client/img/company-logo.png')}}"
-                        class="img-fluid"></a>
-                <a target="_blank" href="{!! MetaTag::get('fb_link') !!}" class="fb-logo" href="#"> <img src="{{asset('client/img/facebook-header.png')}}"
-                        class="img-fluid"></a>
+                <a target="_blank" href="{!! MetaTag::get('company_link') !!}" class="company-logo" href="#"> <img
+                        src="{{asset('client/img/company-logo.png')}}" class="img-fluid"></a>
+                <a target="_blank" href="{!! MetaTag::get('fb_link') !!}" class="fb-logo" href="#"> <img
+                        src="{{asset('client/img/facebook-header.png')}}" class="img-fluid"></a>
                 <div class="container-slogan-text">
                     <div class="slogan-text">
                         <h2>Giữa Núi Đồi Cao Nguyên</h2>
@@ -160,54 +161,44 @@
 
         <div data-aos="flip-up" class="poem text-center">
             <img class="img-fluid" src="{{asset('static/logo_poem.png')}}">
-            <p>
-                    ​Có một nơi được gọi là nhà và cũng là nơi trú ẩn bình yên <br> không khói bụi, ồn ào và vội vã. Hãy trở
-                    về để cảm nhận một không gian<br> sống riêng tư, sang trọng giữa lòng Châu Âu biệt lập và tiện nghi.<br>
-                    Đó là chốn thiên đường lý
-                    tưởng để tận hưởng một cuộc sống<br> thời thượng, an nhiên và hạnh phúc.
-                </p>
+            {!! $setting['poem_text'] ?? '' !!}
         </div>
         <div class="full-width">
             <div id="gioi-thieu" class="detail-infomation">
                 <div data-aos="fade-left" class="info-left">
-                    <div class="title">
-                        {!! MetaTag::get(  "section2.title" ) !!}
-                    </div>
-                    <p>
-                        {!! MetaTag::get( "section2.description" ) !!}
-                    </p>
+                        {!! $setting['thuong_ngoan_my_canh'] ?? '' !!}
                     <div class="list-group-info">
 
-                            <div class="d-flex w-100 justify-content-between">
-                                <div>
-                                    <h1>30 <span>Km</span></h1>
-                                    <p>Tổng diện tích quy <br> hoạch dự án</p>
-                                </div>
-                                <div>
-                                    <h1>20 <span>Km</span></h1>
-                                    <p>Diện tích đường nội bộ <br> và các tiện ích dự án</p>
-                                </div>
+                        <div class="d-flex w-100 justify-content-between">
+                            <div>
+                                <h1 class="h1-small">30 <span>Km</span></h1>
+                                <p>Tổng diện tích quy <br> hoạch dự án</p>
                             </div>
-    
-    
-                            <div class="d-flex w-100 justify-content-between">
-                                <div>
-                                    <h1>50 <span>Km</span></h1>
-                                    <p>Mật độ xây dựng </p>
-                                </div>
-                                <div>
-                                    <h1>90 <span>Km</span></h1>
-                                    <p>Diện tích đất ở</p>
-                                </div>
-                            </div>
-                            <div class="d-flex w-100 justify-content-between">
-                                <div>
-                                    <h1>70 <span>Km</span></h1>
-                                    <p>Diện tích các lô đất</p>
-                                </div>
+                            <div>
+                                <h1 class="h1-small">20 <span>Km</span></h1>
+                                <p>Diện tích đường nội bộ <br> và các tiện ích dự án</p>
                             </div>
                         </div>
-                    <a target="_blank" href = "{{route('pdf','hinh_anh_du_an')}}"class="custom-button block-1 ">
+
+
+                        <div class="d-flex w-100 justify-content-between">
+                            <div>
+                                <h1 class="h1-small">50 <span>Km</span></h1>
+                                <p>Mật độ xây dựng </p>
+                            </div>
+                            <div>
+                                <h1 class="h1-small">90 <span>Km</span></h1>
+                                <p>Diện tích đất ở</p>
+                            </div>
+                        </div>
+                        <div class="d-flex w-100 justify-content-between">
+                            <div>
+                                <h1 class="h1-small">70 <span>Km</span></h1>
+                                <p>Diện tích các lô đất</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a target="_blank" href="{{route('pdf','hinh_anh_du_an')}}" class="custom-button block-1 ">
                         <div class="custom-button-div button-image-project"><span>Hình ảnh dự án</span></div>
                         <div class="container-arrow">
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -215,9 +206,9 @@
                     </a>
                 </div>
                 <div data-aos="fade-right" class="info-right">
-                        <img class="img-fluid object-fit-cover" src="{{asset('client/img/big-image-detail-right.png')}}">
-                        <img class="object-fit-cover" src="client/img/small-image-detail-right.png">
-                    </div>
+                    <img class="img-fluid object-fit-cover" src="{{asset('client/img/big-image-detail-right.png')}}">
+                    <img class="object-fit-cover" src="client/img/small-image-detail-right.png">
+                </div>
             </div>
         </div>
 
@@ -235,32 +226,22 @@
                 </div>
             </div>
             <div data-aos="fade-left" class="map-info-content-right">
-                    <h1>Vị trí <strong>Kim Cương</strong> <br> <strong>Tầm Nhìn</strong> Đắt Giá </h1>
-                    <p>Nằm tựa bên sườn đồi thảo nguyên xanh ngát, Maison de MộcChâu được thừa hưởng một vị trí đắt giá,
-                        thuận tiện kết nối tới trung tâm hành chính, kinh tế và các địa điểm tham quan du lịch nổi tiếng từ
-                        trục đường quốc lộ 43 nhanh chóng, dễ
-                        dàng.
-                    </p>
-                <a target="_blank" href = "{{route('pdf','ban_do_vi_tri')}}" class="custom-button ">
+                {!! $setting['vi_tri_kim_cuong'] ?? '' !!}
+                <a target="_blank" href="{{route('pdf','ban_do_vi_tri')}}" class="custom-button ">
                     <div class="custom-button-div button-style-map"><span>Bản Đồ Vị Trí</span></div>
                     <div class="container-arrow">
                         <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                     </div>
                 </a>
                 <div class="image-tower">
-                    <img src="{!! MetaTag::get("section3.images.0.main_url") !!}" class="img-fluid">
+                    <img src="{!! MetaTag::get(" section3.images.0.main_url") !!}" class="img-fluid">
                 </div>
             </div>
         </section>
 
         <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="tien-ich" class="utilities">
-                <h1><strong>Tiện Ích</strong> Toàn Mỹ</h1>
-            <div class="utilities-intro"> 
-                    <p class="utilities-intro">Maison de Mộc Châu tạo ra một miền sống mới vượt lên trên cả những chuẩn mực tiện
-                            ích từng có. Đó là một đẳng <br> cấp sống thời thượng giao hòa giữa nghệ thuật, thiên nhiên và tiện ích.
-                        </p>
+                {!! $setting['tien_ich_toan_my']  ?? '' !!}
 
-            </div>
             <img class="img-fluid" src="{{asset('client/img/tien-ich.png')}}">
 
         </section>
@@ -271,9 +252,8 @@
             <div data-aos="fade-left" class="design-building-right">
                 <div class="design-building-content">
                     <div class="inner-design-building-content">
-                        {!! MetaTag::get("section5.title") !!}
-                        {!! MetaTag::get("section5.description") !!}
-                        <a target="_blank" href = "{{route('pdf','mau_biet_thu_moi')}}" class="custom-button ">
+                            {!! $setting['kien_truc_chau_au'] ?? '' !!}
+                        <a target="_blank" href="{{route('pdf','mau_biet_thu_moi')}}" class="custom-button ">
                             <div class="custom-button-div button-style-house"><span>Mẫu Biệt Thự</span></div>
                             <div class="container-arrow">
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -306,33 +286,33 @@
             </div>
             <div id="owl-carousel-1" class="owl-carousel">
 
-                @foreach ($articles  as $article)
+                @foreach ($articles as $article)
                 <div class="intro-post">
-                        <a class="image-post-container">
-                            <div class="inner-image-post-container">
+                    <a class="image-post-container">
+                        <div class="inner-image-post-container">
                             <img class=" img-fluid " src="{{$article['picture_data']['origin_url'] }}">
-                                <div class="time-post">
-                                    <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
-                                    <span>{{ App\Helper\Helper::render_time_to_vietnamese($article['created_at']) }}</span>
-                                </div>
+                            <div class="time-post">
+                                <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
+                                <span>{{ App\Helper\Helper::render_time_to_vietnamese($article['created_at']) }}</span>
                             </div>
-    
-                        </a>
-                        <h2>{{$article['title']}} </h2>
-                        <p>{{$article['description']}}.</p>
-                        <hr>
-                        <div class="more-info d-flex justify-content-between">
-                            <a class="more-info-title">TÌM HIỂU THÊM
-                                <svg viewBox="0 0 38.07 13.8799">
-                                    <path
-                                        d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />
-                                    <rect y="6.2878" width="30" height="1.4966" /></svg>
-                            </a>
-                         <a target="_blank" href="{{$article['fb_link'] }}" class="fb-link">
-                                <img class=" img-fluid " src="{{asset('client/img/fb-link-news.png')}}" class="img-fluid">
-                            </a>
                         </div>
+
+                    </a>
+                    <h2>{{$article['title']}} </h2>
+                    <p>{{$article['description']}}.</p>
+                    <hr>
+                    <div class="more-info d-flex justify-content-between">
+                        <a class="more-info-title">TÌM HIỂU THÊM
+                            <svg viewBox="0 0 38.07 13.8799">
+                                <path
+                                    d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />
+                                <rect y="6.2878" width="30" height="1.4966" /></svg>
+                        </a>
+                        <a target="_blank" href="{{$article['fb_link'] }}" class="fb-link">
+                            <img class=" img-fluid " src="{{asset('client/img/fb-link-news.png')}}" class="img-fluid">
+                        </a>
                     </div>
+                </div>
                 @endforeach
             </div>
         </section>
@@ -438,10 +418,10 @@
                 <div class="below-footer d-flex justify-content-between">
                     <div class="logo-footer-left">
                         <img src="{{asset('static/logo_footer.png')}}" class="img-fluid logo-footer">
-                    <p>{!! MetaTag::get('footer_text') !!}</p>
+                        <p>{!! MetaTag::get('footer_text')  !!}</p>
                     </div>
-                    <a  href="tel:{!! MetaTag::get('phone_number') !!}" class="call-footer-right">
-                    <h1>{!! MetaTag::get('phone_number') !!}</h1>
+                    <a href="tel:{!! MetaTag::get('phone_number') !!}" class="call-footer-right">
+                        <h1>{!! MetaTag::get('phone_number') !!}</h1>
                         <div class="call-phone-footer"></div>
                     </a>
                 </div>
