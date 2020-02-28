@@ -116,3 +116,14 @@ a.btn-info {
     width: 100%;
     height: auto;
 }
+
+.block {
+    padding: 20px;
+    text-align: left;
+    border: solid 1px grey;
+    margin: 10px;
+}
+
+.block input {
+    margin-bottom: 20px;
+}

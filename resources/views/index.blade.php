@@ -25,7 +25,7 @@
     <link rel="shortcut icon" href="{!! MetaTag::get('images.shotcut-icon.url') !!}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
     <link href="https://unpkg.com/aos@2.3.0/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="{{asset('client/css/main.css?v=1.5')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('client/css/main.css?v=1.6')}}">
     <link rel="stylesheet" href="{{asset('client/font/font.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
@@ -206,8 +206,8 @@
                     </a>
                 </div>
                 <div data-aos="fade-right" class="info-right">
-                    <img class="img-fluid object-fit-cover" src="{{asset('client/img/big-image-detail-right.png')}}">
-                    <img class="object-fit-cover" src="client/img/small-image-detail-right.png">
+                    <img class="img-fluid object-fit-cover" src="{{asset('static/thuong_ngoan_my_canh_big.png')}}">
+                    <img class="object-fit-cover" src="static/thuong_ngoan_my_canh_small.png">
                 </div>
             </div>
         </div>
@@ -234,7 +234,7 @@
                     </div>
                 </a>
                 <div class="image-tower">
-                    <img src="{!! MetaTag::get(" section3.images.0.main_url") !!}" class="img-fluid">
+                    <img src="{{asset('static/vi_tri_kim_cuong_image.png')}}" class="img-fluid">
                 </div>
             </div>
         </section>
@@ -242,12 +242,12 @@
         <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="tien-ich" class="utilities">
                 {!! $setting['tien_ich_toan_my']  ?? '' !!}
 
-            <img class="img-fluid" src="{{asset('client/img/tien-ich.png')}}">
+            <img class="img-fluid" src="{{asset('static/tien_ich_toan_my_image.png')}}">
 
         </section>
         <section id="kien-truc" class="design-building">
             <div data-aos="fade-right" class="design-building-left">
-                <img src="{{asset('client/img/design-building-left.png')}}" class=" u-pos-tl u-fit u-object-fit-cover">
+                <img src="{{asset('static/kien_truc_chau_au_image.png')}}" class=" u-pos-tl u-fit u-object-fit-cover">
             </div>
             <div data-aos="fade-left" class="design-building-right">
                 <div class="design-building-content">

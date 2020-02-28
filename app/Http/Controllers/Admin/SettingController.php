@@ -235,6 +235,52 @@ class SettingController extends Controller
             }
         }
 
+        if (\Request::hasFile('tien_ich_toan_my_image')) {
+            $extension = $data['tien_ich_toan_my_image']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'tien_ich_toan_my_image.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['tien_ich_toan_my_image']->move($uploadDir, $file_rename);
+                $setting['tien_ich_toan_my_image'] = asset($uploadDir . $file_rename);
+            }
+        }
+        if (\Request::hasFile('kien_truc_chau_au_image')) {
+            $extension = $data['kien_truc_chau_au_image']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'kien_truc_chau_au_image.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['kien_truc_chau_au_image']->move($uploadDir, $file_rename);
+                $setting['kien_truc_chau_au_image'] = asset($uploadDir . $file_rename);
+            }
+        }
+        if (\Request::hasFile('thuong_ngoan_my_canh_big')) {
+            $extension = $data['thuong_ngoan_my_canh_big']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'thuong_ngoan_my_canh_big.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['thuong_ngoan_my_canh_big']->move($uploadDir, $file_rename);
+                $setting['thuong_ngoan_my_canh_big'] = asset($uploadDir . $file_rename);
+            }
+        }
+        if (\Request::hasFile('vi_tri_kim_cuong_image')) {
+            $extension = $data['vi_tri_kim_cuong_image']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'vi_tri_kim_cuong_image.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['vi_tri_kim_cuong_image']->move($uploadDir, $file_rename);
+                $setting['vi_tri_kim_cuong_image'] = asset($uploadDir . $file_rename);
+            }
+        }
+        if (\Request::hasFile('thuong_ngoan_my_canh_small')) {
+            $extension = $data['thuong_ngoan_my_canh_small']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'thuong_ngoan_my_canh_small.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['thuong_ngoan_my_canh_small']->move($uploadDir, $file_rename);
+                $setting['thuong_ngoan_my_canh_small'] = asset($uploadDir . $file_rename);
+            }
+        }
+
 
         $result->content = json_encode($setting);
         $result->save();
