@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Middleware;
-use Session;
-use Auth;
+
 use Closure;
 use App\Models\Setting;
-use App\Helper\Helper;
+
+use MetaTag;
 
 class Init
 {
@@ -17,16 +17,31 @@ class Init
      * @return mixed
      */
     public function handle($request, Closure $next,  $guard = null)
-    {   Setting::firstOrCreate(['name' => 'section', 'type' => 'setting']);
-        Setting::firstOrCreate(['name' => 'general', 'type' => 'setting']);
 
-        $section_setting = Setting::where('name', 'section')->firstOrFail();
-        Helper::makeNonNested($section_setting->content);
-        // dd($section_setting->content);
+    
+    {   
+        
+        \Carbon\Carbon::setLocale('vi');
+        if (!cache()->has('general')) {
+            $result = Setting::firstOrCreate(['name' => 'general', 'type' => 'setting']);
+            $general = is_null($result->content)? []: json_decode($result->content, true);
+            cache()->put('general', $general, env('CACHE_TIME', 30));
+        }else{
+            $general = cache('general');
+        }
+        foreach ($general as $key => $value) {
+            if (is_string($value)) {
+                MetaTag::set($key, $value);
+            }
+        }
 
-        $general_setting = Setting::where('name', 'general')->firstOrFail();
-        // dd($general_setting->content);
-        Helper::makeNonNested($general_setting->content);
+        // Setting::firstOrCreate(['name' => 'section', 'type' => 'setting']);
+
+        // $section_setting = Setting::where('name', 'section')->firstOrFail();
+        // Helper::makeNonNested($section_setting->content);
+
+        // $general_setting = Setting::where('name', 'general')->firstOrFail();
+        // Helper::makeNonNested($general_setting->content);
         return $next($request);
     }
 }

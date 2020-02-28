@@ -129,10 +129,9 @@
 
         <section class="header-background-image">
             <div class="inner-background-image">
-                <img src="{!! MetaTag::get("images.banner-desktop.url") !!}"
+                    <img src="{{asset('static/banner_desktop.png')}}"
                     class="header-desktop img-header img-fluid object-fit-cover">
-
-                <img src="{!! MetaTag::get("images.banner-logo.url") !!}"
+                <img src="{{asset('static/banner_mobile.png')}}"
                     class="header-mobile img-header img-fluid object-fit-cover">
 
                 <a class="company-logo" href="#"> <img src="{{asset('client/img/company-logo.png')}}"
@@ -152,8 +151,11 @@
         <div data-aos="flip-up" class="poem text-center">
             <img class="img-fluid" src="{{asset('client/img/logo_poem.png')}}">
             <p>
-                {!! MetaTag::get(  "section1.content" ) !!}
-            </p>
+                    ​Có một nơi được gọi là nhà và cũng là nơi trú ẩn bình yên <br> không khói bụi, ồn ào và vội vã. Hãy trở
+                    về để cảm nhận một không gian<br> sống riêng tư, sang trọng giữa lòng Châu Âu biệt lập và tiện nghi.<br>
+                    Đó là chốn thiên đường lý
+                    tưởng để tận hưởng một cuộc sống<br> thời thượng, an nhiên và hạnh phúc.
+                </p>
         </div>
         <div class="full-width">
             <div id="gioi-thieu" class="detail-infomation">
@@ -166,35 +168,35 @@
                     </p>
                     <div class="list-group-info">
 
-                        <div class="d-flex w-100 justify-content-between">
-                            <div>
-                                <h1>{!! MetaTag::get("section2.num-1") !!} <span>Km</span></h1>
-                                <p>Tổng diện tích quy <br> hoạch dự án</p>
+                            <div class="d-flex w-100 justify-content-between">
+                                <div>
+                                    <h1>30 <span>Km</span></h1>
+                                    <p>Tổng diện tích quy <br> hoạch dự án</p>
+                                </div>
+                                <div>
+                                    <h1>20 <span>Km</span></h1>
+                                    <p>Diện tích đường nội bộ <br> và các tiện ích dự án</p>
+                                </div>
                             </div>
-                            <div>
-                                <h1>{!! MetaTag::get("section2.num-4") !!} <span>Km</span></h1>
-                                <p>Diện tích đường nội bộ <br> và các tiện ích dự án</p>
+    
+    
+                            <div class="d-flex w-100 justify-content-between">
+                                <div>
+                                    <h1>50 <span>Km</span></h1>
+                                    <p>Mật độ xây dựng </p>
+                                </div>
+                                <div>
+                                    <h1>90 <span>Km</span></h1>
+                                    <p>Diện tích đất ở</p>
+                                </div>
+                            </div>
+                            <div class="d-flex w-100 justify-content-between">
+                                <div>
+                                    <h1>70 <span>Km</span></h1>
+                                    <p>Diện tích các lô đất</p>
+                                </div>
                             </div>
                         </div>
-
-
-                        <div class="d-flex w-100 justify-content-between">
-                            <div>
-                                <h1>{!! MetaTag::get("section2.num-2") !!} <span>Km</span></h1>
-                                <p>Mật độ xây dựng </p>
-                            </div>
-                            <div>
-                                <h1>{!! MetaTag::get("section2.num-5") !!} <span>Km</span></h1>
-                                <p>Diện tích đất ở</p>
-                            </div>
-                        </div>
-                        <div class="d-flex w-100 justify-content-between">
-                            <div>
-                                <h1>{!! MetaTag::get("section2.num-3") !!} <span>Km</span></h1>
-                                <p>Diện tích các lô đất</p>
-                            </div>
-                        </div>
-                    </div>
                     <a class="custom-button block-1 ">
                         <div class="custom-button-div button-image-project"><span>Hình ảnh dự án</span></div>
                         <div class="container-arrow">
@@ -203,9 +205,9 @@
                     </a>
                 </div>
                 <div data-aos="fade-right" class="info-right">
-                    <img class="img-fluid object-fit-cover" src="{!! MetaTag::get("section2.images.1.main_url") !!}">
-                    <img class="object-fit-cover" src="{!! MetaTag::get("section2.images.0.main_url") !!}">
-                </div>
+                        <img class="img-fluid object-fit-cover" src="{{asset('client/img/big-image-detail-right.png')}}">
+                        <img class="object-fit-cover" src="client/img/small-image-detail-right.png">
+                    </div>
             </div>
         </div>
 
@@ -223,8 +225,12 @@
                 </div>
             </div>
             <div data-aos="fade-left" class="map-info-content-right">
-                {!! MetaTag::get("section3.title") !!}
-                {!! MetaTag::get("section3.description") !!}
+                    <h1>Vị trí <strong>Kim Cương</strong> <br> <strong>Tầm Nhìn</strong> Đắt Giá </h1>
+                    <p>Nằm tựa bên sườn đồi thảo nguyên xanh ngát, Maison de MộcChâu được thừa hưởng một vị trí đắt giá,
+                        thuận tiện kết nối tới trung tâm hành chính, kinh tế và các địa điểm tham quan du lịch nổi tiếng từ
+                        trục đường quốc lộ 43 nhanh chóng, dễ
+                        dàng.
+                    </p>
                 <a class="custom-button ">
                     <div class="custom-button-div button-style-map"><span>Bản Đồ Vị Trí</span></div>
                     <div class="container-arrow">
@@ -238,9 +244,11 @@
         </section>
 
         <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="tien-ich" class="utilities">
-            {!! MetaTag::get("section4.title") !!}
+                <h1><strong>Tiện Ích</strong> Toàn Mỹ</h1>
             <div class="utilities-intro"> 
-                    {!! MetaTag::get("section4.description") !!}
+                    <p class="utilities-intro">Maison de Mộc Châu tạo ra một miền sống mới vượt lên trên cả những chuẩn mực tiện
+                            ích từng có. Đó là một đẳng <br> cấp sống thời thượng giao hòa giữa nghệ thuật, thiên nhiên và tiện ích.
+                        </p>
 
             </div>
             <img class="img-fluid" src="{{asset('client/img/tien-ich.png')}}">

@@ -12,9 +12,9 @@ class Setting extends Model
         'name', 'type', 'content', 
     );
     
-	protected $casts = [
-        'content' => 'array'
-    ];
+	// protected $casts = [
+    //     'content' => 'array'
+    // ];
 
     public $timestamps = false;
 }
