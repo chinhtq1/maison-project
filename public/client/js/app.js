@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    preLoadController();
     $(window).resize(function() {
         if ($(window).width() <= 768) {
             cssHeader();
@@ -69,19 +70,32 @@ $(document).ready(function() {
         $('html, body').animate({ scrollTop: 0 }, 700);
         return false;
     });
+    scrollEventListener();
     newsSliderController();
     textSliderController();
     addAnimationWhenScroll();
     cssHeader();
     modalController();
-    preLoadController();
 });
+
+function scrollEventListener() {
+    $(window).scroll(function(event) {
+        var scroll = $(window).scrollTop();
+        if (scroll == 0) {
+            $(".header-background-image a.company-logo").removeClass("outTop");
+            $(".fb-logo").removeClass("outRight");
+        } else if (scroll > 0) {
+            $(".header-background-image a.company-logo").addClass("outTop");
+            $(".fb-logo").addClass("outRight");
+        }
+    });
+}
 
 function preLoadController() {
     var count = $('.count');
     var loader = $('#loader');
     $({ Counter: 0 }).animate({ Counter: count.text() }, {
-        duration: 3000,
+        duration: 4000,
         step: function() {
             count.text(Math.ceil(this.Counter) + "%");
         },
