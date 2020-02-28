@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="{!! MetaTag::get('images.shotcut-icon.url') !!}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
     <link href="https://unpkg.com/aos@2.3.0/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="{{asset('client/css/main.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('client/css/main.css?v=1.5')}}">
     <link rel="stylesheet" href="{{asset('client/font/font.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
@@ -69,9 +69,9 @@
     <div class="container-fluid">
         <header>
             <div class="container-fluid d-flex justify-content-between menu-container">
-                <a class="logo-desktop" href="#"><img class="img-fluid" src="{{asset('client/img/logo.svg.png')}}"></a>
+                <a class="logo-desktop" href="#"><img class="img-fluid" src="{{asset('static/logo_desktop.png')}}"></a>
                 <a class="logo-mobile" href="#"><img class="img-fluid"
-                        src="{{ asset('client/img/logo-mobile.png')}}"></a>
+                        src="{{ asset('static/logo_mobile.png')}}"></a>
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link expand" href="#gioi-thieu">Giới thiệu</a>
@@ -92,12 +92,12 @@
                         <a class="nav-link  expand" href="#">Thư viện</a>
                     </li>
                 </ul>
-                <div class="phone-call">
+            <a  href="tel:{!! MetaTag::get('phone_number') !!}" class="phone-call">
                     <div class="contact-vi"> Liên Hệ</div>
                     <div class="quick-alo-ph-circle"></div>
                     <div class="quick-alo-ph-circle-fill"></div>
                     <div class="quick-alo-ph-img-circle"> </div>
-                </div>
+                </a>
                 <div class="burgerIcon">
                     <div class="burgerLine"></div>
                     <div class="burgerLine"></div>
@@ -134,9 +134,9 @@
                 <img src="{{asset('static/banner_mobile.png')}}"
                     class="header-mobile img-header img-fluid object-fit-cover">
 
-                <a class="company-logo" href="#"> <img src="{{asset('client/img/company-logo.png')}}"
+                <a target="_blank" href="{!! MetaTag::get('company_link') !!}" class="company-logo" href="#"> <img src="{{asset('client/img/company-logo.png')}}"
                         class="img-fluid"></a>
-                <a class="fb-logo" href="#"> <img src="{{asset('client/img/facebook-header.png')}}"
+                <a target="_blank" href="{!! MetaTag::get('fb_link') !!}" class="fb-logo" href="#"> <img src="{{asset('client/img/facebook-header.png')}}"
                         class="img-fluid"></a>
                 <div class="container-slogan-text">
                     <div class="slogan-text">
@@ -149,7 +149,7 @@
         </section>
 
         <div data-aos="flip-up" class="poem text-center">
-            <img class="img-fluid" src="{{asset('client/img/logo_poem.png')}}">
+            <img class="img-fluid" src="{{asset('static/logo_poem.png')}}">
             <p>
                     ​Có một nơi được gọi là nhà và cũng là nơi trú ẩn bình yên <br> không khói bụi, ồn ào và vội vã. Hãy trở
                     về để cảm nhận một không gian<br> sống riêng tư, sang trọng giữa lòng Châu Âu biệt lập và tiện nghi.<br>
@@ -356,7 +356,7 @@
             <h2>Nhà Phát triển bất động sản uy tín</h2>
 
         </section>
-        <section data-aos="fade-up" class="project-feed">
+        <section id="thu-vien" data-aos="fade-up" class="project-feed">
             <div class="inner-project-feed">
                 <div class="project-feed-content-left">
                     <div class="container-feed-image">
@@ -402,21 +402,21 @@
                         <ul class=" width-50 u-ul-footer">
                             <li>Tổng Quan</li>
                             <li> <a class="expand footer-menu-item ">Giới thiệu</a></li>
-                            <li> <a class="expand footer-menu-item ">Vị trí</a></li>
-                            <li> <a class="expand footer-menu-item ">Kiến trúc</a></li>
+                            <li> <a href="#vi-tri" class="expand footer-menu-item ">Vị trí</a></li>
+                            <li> <a href="#kien-truc" class="expand footer-menu-item ">Kiến trúc</a></li>
                         </ul>
                     </div>
                     <div class="above-footer-right">
                         <ul class=" width-50 u-ul-footer">
                             <li>Tiện ích</li>
-                            <li> <a class="expand footer-menu-item ">Map</a></li>
+                            <li> <a href="#vi-tri" class="expand footer-menu-item ">Map</a></li>
                             <li> <a class="expand footer-menu-item ">Khu lân cận</a></li>
                         </ul>
 
                         <ul class="width-50 u-ul-footer">
                             <li>Cập nhật</li>
-                            <li> <a class="expand footer-menu-item ">Tin tức</a></li>
-                            <li> <a class="expand footer-menu-item ">Thư viện</a></li>
+                            <li> <a href="#tin-tuc" class="expand footer-menu-item ">Tin tức</a></li>
+                            <li> <a href="#thu-vien" class="expand footer-menu-item ">Thư viện</a></li>
                             <button id="scroll_to_top" class="btn btn-to-top"><i
                                     class="fa fa-3x fa-long-arrow-alt-up"></i></button>
                         </ul>
@@ -427,15 +427,13 @@
                 </div>
                 <div class="below-footer d-flex justify-content-between">
                     <div class="logo-footer-left">
-                        <img src="{{asset('client/img/logo-footer.png')}}" class="img-fluid logo-footer">
-                        <p>PHÁT TRIỂN BỞI 379</p>
+                        <img src="{{asset('static/logo_footer.png')}}" class="img-fluid logo-footer">
+                    <p>{!! MetaTag::get('footer_text') !!}</p>
                     </div>
-                    <div class="call-footer-right">
-                        <h1>0975152379
-
-                        </h1>
+                    <a  href="tel:{!! MetaTag::get('phone_number') !!}" class="call-footer-right">
+                    <h1>{!! MetaTag::get('phone_number') !!}</h1>
                         <div class="call-phone-footer"></div>
-                    </div>
+                    </a>
                 </div>
             </div>
 

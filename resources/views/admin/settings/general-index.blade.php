@@ -42,11 +42,11 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input">Link FB Trên Bannner</label>
-                                <input class="form-control" name="data[fb_app_id]" value="{{$data->fb_link ?? ''}}">
+                                <input class="form-control" name="data[fb_link]" value="{{$data->fb_link ?? ''}}">
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input">Link Company Trên Banner</label>
-                                <input class="form-control" name="data[fb_admin]" value="{{$data->company_link ?? ''}}">
+                                <input class="form-control" name="data[company_link]" value="{{$data->company_link ?? ''}}">
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input">Google Analytic ID</label>
