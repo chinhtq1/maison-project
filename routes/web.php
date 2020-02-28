@@ -13,6 +13,7 @@
 
 Route::group(['middleware' => ['client']], function () {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('pdf/{id}','HomeController@pdf')->name('pdf');
 });
 
 Auth::routes();

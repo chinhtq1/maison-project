@@ -46,12 +46,31 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input">Link Company Trên Banner</label>
-                                <input class="form-control" name="data[company_link]" value="{{$data->company_link ?? ''}}">
+                                <input class="form-control" name="data[company_link]"
+                                    value="{{$data->company_link ?? ''}}">
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input">Google Analytic ID</label>
                                 <input class="form-control" name="data[google_analytic]"
                                     value="{{$data->google_analytic ?? ''}}">
+                            </div>
+                            <div class="form-group">
+                                    <label class="control-label" for="example-text-input"> File PDF Hình Ảnh Dự Án </label>
+                                    <input type="file" accept="application/pdf,application/vnd.ms-excel" class="form-control"
+                                        name="mau_biet_thu_moi" >
+                                        <span class="text-danger"> {{$data->mau_biet_thu_moi ?? ''}}</span>
+                                </div>
+                            <div class="form-group">
+                                <label class="control-label" for="example-text-input"> File PDF Hình Ảnh Dự Án </label>
+                                <input type="file" accept="application/pdf,application/vnd.ms-excel" class="form-control"
+                                    name="hinh_anh_du_an" >
+                                    <span class="text-danger"> {{$data->hinh_anh_du_an ?? ''}}</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="example-text-input"> File PDF Bản Đồ Vị Trí </label>
+                                <input type="file" accept="application/pdf,application/vnd.ms-excel" class="form-control"
+                                    name="ban_do_vi_tri" >
+                                    <span class="text-danger"> {{$data->ban_do_vi_tri ?? ''}}</span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input"> Số Điện Thoại </label>
@@ -66,9 +85,26 @@
                             <div class="form-group">
                                 <div class="">
                                     <label class="control-label" for="example-text-input">Ảnh Niềm Tin Trọn Vẹn</label>
-                                    <input type="file" accept="image/*" class="form-control" name="image">
+                                    <input type="file" accept="image/*" class="form-control" name="niem_tin_tron_ven">
                                     <img src="{{$data->niem_tin_tron_ven ?? null}}" alt="Chưa có ảnh"
                                         style="max-width: 150px;" class="img-fluid">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="">
+                                    <label class="control-label" for="example-text-input">Ảnh Bản Đồ Desktop </label>
+                                    <input type="file" accept="image/*" class="form-control" name="map_desktop">
+                                    <img src="{{$data->map_desktop ?? null}}" alt="Chưa có ảnh"
+                                        style="max-width: 150px;" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="">
+                                    <label class="control-label" for="example-text-input">Ảnh Bản Đồ Mobile </label>
+                                    <input type="file" accept="image/*" class="form-control" name="map_mobile">
+                                    <img src="{{$data->map_mobile ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                        class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -103,8 +139,8 @@
                             <div class="">
                                 <label class="control-label" for="example-text-input">Logo Mobile</label>
                                 <input type="file" accept="image/*" class="form-control" name="logo_mobile">
-                                <img src="{{$data->logo_mobile ?? null}}" alt="Chưa có ảnh" style="max-width: 150px; background-color:grey;"
-                                    class="img-fluid">
+                                <img src="{{$data->logo_mobile ?? null}}" alt="Chưa có ảnh"
+                                    style="max-width: 150px; background-color:grey;" class="img-fluid">
                             </div>
                         </div>
 
@@ -137,8 +173,8 @@
                             <div class="">
                                 <label class="control-label" for="example-text-input">Logo Footer</label>
                                 <input type="file" accept="image/*" class="form-control" name="logo_footer">
-                                <img src="{{$data->logo_footer ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
-                                    class="img-fluid">
+                                <img src="{{$data->logo_footer ?? null}}" alt="Chưa có ảnh"
+                                    style="max-width: 150px;  background-color:grey;" class="img-fluid">
                             </div>
                         </div>
                     </div>

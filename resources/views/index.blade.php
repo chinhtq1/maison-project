@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:title" content="{!! MetaTag::get('seo-title') !!}">
+    <title>{!! MetaTag::get('title') !!}</title>
+    <meta property="og:title" content="{!! MetaTag::get('title') !!}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="vi_VN">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <title>{!! MetaTag::get('seo-title') !!}</title>
-    <meta name="description" content="{!! MetaTag::get('seo-description') !!}">
-    <meta property="og:description" content="{!! MetaTag::get('seo-description') !!}">
+    <meta name="description" content="{!! MetaTag::get('description') !!}">
+    <meta property="og:description" content="{!! MetaTag::get('description') !!}">
+    <meta property="og:type" content="{{ MetaTag::get('home_image') }}">
     <meta property="og:url" content="{!! url()->current() !!}">
-
+    <meta name="keywords" content="{!! MetaTag::get('keyword') !!}">
+    <meta property="og:image" content="{{ MetaTag::get('home_image') }}">
+    <meta property="og:image:width" content="480">
+    <meta property="og:image:height" content="360">
+    <link rel="shortcut icon" href="{{asset('favicon.ico')}}">
+    <meta name="twitter:title" content="{{ MetaTag::get('title') }}">
+    <meta name="twitter:image" content="{{ MetaTag::get('home_image') }}">
+    <link rel="image_src" href="{{ MetaTag::get('home_image') }}">
     <link rel="shortcut icon" href="{!! MetaTag::get('images.shotcut-icon.url') !!}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
     <link href="https://unpkg.com/aos@2.3.0/dist/aos.css" rel="stylesheet" />
@@ -69,8 +79,8 @@
     <div class="container-fluid">
         <header>
             <div class="container-fluid d-flex justify-content-between menu-container">
-                <a class="logo-desktop" href="#"><img class="img-fluid" src="{{asset('static/logo_desktop.png')}}"></a>
-                <a class="logo-mobile" href="#"><img class="img-fluid"
+                <a href="/" class="logo-desktop" href="#"><img class="img-fluid" src="{{asset('static/logo_desktop.png')}}"></a>
+                <a href="/"  class="logo-mobile" href="#"><img class="img-fluid"
                         src="{{ asset('static/logo_mobile.png')}}"></a>
                 <ul class="nav">
                     <li class="nav-item">
@@ -197,7 +207,7 @@
                                 </div>
                             </div>
                         </div>
-                    <a class="custom-button block-1 ">
+                    <a target="_blank" href = "{{route('pdf','hinh_anh_du_an')}}"class="custom-button block-1 ">
                         <div class="custom-button-div button-image-project"><span>Hình ảnh dự án</span></div>
                         <div class="container-arrow">
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -213,8 +223,8 @@
 
         <section id="vi-tri" class="map-info">
             <div data-aos="fade-right" class="container-image-map">
-                <img class="map-desktop custom-image-map" src="{{asset('client/img/map-custom.png')}}">
-                <img class="map-mobile custom-image-map" src="{{asset('client/img/map-custom-mobile.png')}}">
+                <img class="map-desktop custom-image-map" src="{{asset('static/map_desktop.png')}}">
+                <img class="map-mobile custom-image-map" src="{{asset('static/map_mobile.png')}}">
                 <div class="Absolute-Center">
                     <span class="bg-position-project">
                         <img class="logo-position-project" src="{{asset('client/img/logo-project-position.png')}}">
@@ -231,7 +241,7 @@
                         trục đường quốc lộ 43 nhanh chóng, dễ
                         dàng.
                     </p>
-                <a class="custom-button ">
+                <a target="_blank" href = "{{route('pdf','ban_do_vi_tri')}}" class="custom-button ">
                     <div class="custom-button-div button-style-map"><span>Bản Đồ Vị Trí</span></div>
                     <div class="container-arrow">
                         <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -263,7 +273,7 @@
                     <div class="inner-design-building-content">
                         {!! MetaTag::get("section5.title") !!}
                         {!! MetaTag::get("section5.description") !!}
-                        <a class="custom-button ">
+                        <a target="_blank" href = "{{route('pdf','mau_biet_thu_moi')}}" class="custom-button ">
                             <div class="custom-button-div button-style-house"><span>Mẫu Biệt Thự</span></div>
                             <div class="container-arrow">
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>

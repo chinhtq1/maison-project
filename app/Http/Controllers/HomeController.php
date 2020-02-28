@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Helper\Helper;
+use Response;
 
 class HomeController extends Controller
 {
@@ -15,9 +16,20 @@ class HomeController extends Controller
         // MetaTag::set('image', asset('images/default-share-image.png'));
     }
 
-    public function index() {
+    public function index()
+    {
         $articles = Article::all()->toArray();
         //  dd($articles);
         return view('index', compact('articles'));
+    }
+
+    public function pdf($id)
+    {
+        $file = 'static' . '/' . $id . '.pdf';
+        if (file_exists($file)) {
+            return response()->file($file);
+        } else {
+            abort(404, 'File not found!');
+        }
     }
 }
