@@ -290,7 +290,7 @@
                 <div class="intro-post">
                     <a class="image-post-container">
                         <div class="inner-image-post-container">
-                            <img class=" img-fluid " src="{{$article['picture_data']['origin_url'] }}">
+                            <img class=" img-fluid " src="{{ $article['thumbnail'] ?? null }}">
                             <div class="time-post">
                                 <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
                                 <span>{{ App\Helper\Helper::render_time_to_vietnamese($article['created_at']) }}</span>

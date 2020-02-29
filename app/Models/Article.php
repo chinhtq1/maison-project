@@ -12,28 +12,7 @@ class Article extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'is_public','date_public','content','description','picture_data', 'fb_link'
-    ];
-
-    protected $casts = [
-        'picture_data' => 'array'
-    ];
-
-    protected $attributes = [
-        'picture_data' => '
-        {
-              "origin_url": "",
-              "thumb_data": {
-                "width": "20",
-                "height": "20",
-                "url": ""
-              },
-              "main_picture_data": {
-                "width": "20",
-                "height": "20",
-                "url": ""
-              }
-        }'
+        'title', 'is_public','date_public','content','description','main_picture','thumbnail', 'fb_link','seo'
     ];
 
     public function auth() {

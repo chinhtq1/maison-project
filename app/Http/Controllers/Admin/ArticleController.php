@@ -9,6 +9,7 @@ use App\Models\Article;
 use \App\Helper\Helper;
 use Illuminate\Support\Str;
 use Validator, Session, Redirect;
+use Image;
 
 
 class ArticleController extends Controller
@@ -62,15 +63,14 @@ class ArticleController extends Controller
             'title' => 'required|string|max:255|min:2|unique:articles,title'.$unique,
             // 'slug' => 'string|max:512|min:2|unique:articles,slug'.$unique,
             'description' =>  'required|string|max:255',
-            'picture_data[thumb_data"[height]' => 'integer|min:10|max:1000',
-            'picture_data[thumb_data][width]' => 'integer|min:10|max:1000',
-            'picture_data[main_picture_data][height]' => 'integer|min:10|max:2000',
-            'picture_data[main_picture_data][width]' => 'integer|min:10|max:2000',
+            // 'picture_data[thumb_data"[height]' => 'integer|min:10|max:1000',
+            // 'picture_data[thumb_data][width]' => 'integer|min:10|max:1000',
+            // 'picture_data[main_picture_data][height]' => 'integer|min:10|max:2000',
+            // 'picture_data[main_picture_data][width]' => 'integer|min:10|max:2000',
         ];
 
-        $data = $request->only(['title', 'slug', 'is_public', 'description', 'seo', 'content','fb_link']);
-        $pic_data= $request->only(["picture_data"]);
-
+        $data = $request->only(['title', 'is_public', 'description','content','fb_link']);
+        $picture_data = $request->only('main_picture');
         $validated = $request->validate($rules,[
             'required' => 'Không để trống',
             'string' => 'Không dùng ký tự lạ',
@@ -80,11 +80,8 @@ class ArticleController extends Controller
             'confirmed' => 'Nhập lại mật khẩu không đúng',
         ]);
         
-        if(!isset($data['slug'])){
-            $data['slug'] = str_slug($data['title']);
-        }else{
-            $data['slug'] = str_slug($data['slug']);
-        }
+        $data['slug'] = str_slug($data['title']);
+
 
         // $data['auth'] = $user->id;
         if(isset($data['is_public'])){
@@ -93,58 +90,86 @@ class ArticleController extends Controller
             $data['is_public'] = false;
         }
 
+        $uploadDir = 'articles/article-'.$article->id.'/';
+
         if (!is_null($article)) {
             $article->fill($data);
-            \File::deleteDirectory(public_path('articles/'.$article->id));
             $article->save();
         }else{
             $data['user_id'] = $user->id;
             $article = Article::create($data);
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
             $user->articles()->save($article);
         }
 
-        $pic_data["picture_data"]["main_picture_data"]["url"]="";
-        $pic_data["picture_data"]["thumb_data"]["url"] = "";
+        // $pic_data["picture_data"]["main_picture_data"]["url"]="";
+        // $pic_data["picture_data"]["thumb_data"]["url"] = "";
 
-        // Create main and thumbnail pic
-        if(isset($pic_data["picture_data"]["origin_url"]) 
-                && isset($pic_data["picture_data"]["thumb_data"]["width"]) 
-                && isset($pic_data["picture_data"]["thumb_data"]["height"])) {
+        // // Create main and thumbnail pic
+        // if(isset($pic_data["picture_data"]["origin_url"]) 
+        //         && isset($pic_data["picture_data"]["thumb_data"]["width"]) 
+        //         && isset($pic_data["picture_data"]["thumb_data"]["height"])) {
                 
-                $origin = $pic_data["picture_data"]["origin_url"];
-                $height = $pic_data["picture_data"]["thumb_data"]["height"];
-                $width = $pic_data["picture_data"]["thumb_data"]["width"];
+        //         $origin = $pic_data["picture_data"]["origin_url"];
+        //         $height = $pic_data["picture_data"]["thumb_data"]["height"];
+        //         $width = $pic_data["picture_data"]["thumb_data"]["width"];
 
-                $main_thumb = Helper::upload_picture($width,$height,
-                    config('lfm.base_directory').(Str::after($origin,'/'.config('lfm.url_prefix'))),
-                    'articles/article-'.$article->id.'/',
-                    'article-'.$article->id.'-thumbnail.JPG'
-                );
-                $pic_data["picture_data"]["thumb_data"]["url"] = $main_thumb;
+        //         $main_thumb = Helper::upload_picture($width,$height,
+        //             config('lfm.base_directory').(Str::after($origin,'/'.config('lfm.url_prefix'))),
+        //             'articles/article-'.$article->id.'/',
+        //             'article-'.$article->id.'-thumbnail.JPG'
+        //         );
+        //         $pic_data["picture_data"]["thumb_data"]["url"] = $main_thumb;
 
+
+        // }
+
+        // if(isset($pic_data['picture_data']['origin_url']) 
+        //         && isset($pic_data["picture_data"]["main_picture_data"]["width"]) 
+        //         && isset($pic_data["picture_data"]["main_picture_data"]["height"])) {
+                
+        //         $origin = $pic_data["picture_data"]["origin_url"];
+        //         $height = $pic_data["picture_data"]["main_picture_data"]["height"];
+        //         $width = $pic_data["picture_data"]["main_picture_data"]["width"];
+                
+        //         $main_pic = Helper::upload_picture($width,$height,
+        //             config('lfm.base_directory').(Str::after($origin,'/'.config('lfm.url_prefix'))),
+        //             'articles/article-'.$article->id.'/',
+        //             'article-'.$article->id.'-main-picture.JPG'
+        //         );
+
+        //     $pic_data["picture_data"]["main_picture_data"]["url"] = $main_pic;
+
+        // }
+
+        if (\Request::hasFile("main_picture")) {
+            $file_path = $picture_data['main_picture']->getPathName();
+            $extension = $picture_data['main_picture']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'main-image.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                                // create thumbnail
+                $thumbnail_name = 'thumbnail.'.$extension;
+                // dd(public_path($uploadDir .$thumbnail_name));
+                $thumbnail = Image::make($file_path)->resize(
+                    config("config.article.thumbnail_size.width"), 
+                    config("config.article.thumbnail_size.height"))->save(public_path($uploadDir .$thumbnail_name));
+                $picture_data['thumbnail'] = asset($uploadDir . $thumbnail_name);
+
+                $picture_data['main_picture']->move($uploadDir, $file_rename);
+                $picture_data['main_picture'] = asset($uploadDir . $file_rename);
+
+                $article->main_picture = $picture_data["main_picture"];
+                $article->thumbnail = $picture_data["thumbnail"];
+            }
 
         }
 
-        if(isset($pic_data['picture_data']['origin_url']) 
-                && isset($pic_data["picture_data"]["main_picture_data"]["width"]) 
-                && isset($pic_data["picture_data"]["main_picture_data"]["height"])) {
-                
-                $origin = $pic_data["picture_data"]["origin_url"];
-                $height = $pic_data["picture_data"]["main_picture_data"]["height"];
-                $width = $pic_data["picture_data"]["main_picture_data"]["width"];
-                
-                $main_pic = Helper::upload_picture($width,$height,
-                    config('lfm.base_directory').(Str::after($origin,'/'.config('lfm.url_prefix'))),
-                    'articles/article-'.$article->id.'/',
-                    'article-'.$article->id.'-main-picture.JPG'
-                );
-
-            $pic_data["picture_data"]["main_picture_data"]["url"] = $main_pic;
-
-        }
         // dd($pic_data);
 
-        $article->picture_data = $pic_data["picture_data"];
+
 
         Helper::update_time_public($article);
 

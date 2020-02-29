@@ -36,15 +36,8 @@ return [
 
     'article' => [
         'thumbnail_size' => [
-            0 => [
-                'width' => 500,
-                'height' => 300
-            ],
-
-            1 => [
-                'width' => 300,
-                'height' => 300
-            ]
+            'width' => 400,
+            'height' => 260
         ],
 
         'picture_size' => [

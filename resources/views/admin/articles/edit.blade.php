@@ -3,7 +3,7 @@
 @section('admin-content')
 
 <!-- Main Content -->
-<form class="form-horizontal" action="{{ route('admin_article_store',  !is_null($article)? $article->id: '0') }}" method="POST">
+<form class="form-horizontal" action="{{ route('admin_article_store',  !is_null($article)? $article->id: '0') }}" method="POST" enctype="multipart/form-data">
   {!! csrf_field() !!}
 <div class="card">
     <div class="card-header">
@@ -47,14 +47,14 @@
                         <label class="form-check-label" for="inputPublic">Đã xuất bản bài viết</label>
                       </div>
 
-                      @if(!empty($article))
-                          <div class="form-group row">
-                              <label for="inputFBLink" class="col-sm-2 col-form-label">Hình ảnh của trang</label>
-                              <span class="col-sm-10 text-center">
-                                <img  src="{{ asset($article->picture_data['main_picture_data']['url'])}}" alt="" style="margin-top:1rem; width:auto; height:200px; border: 1px solid #333">
-                              </span>
-                          </div>
-                      @endif
+                                              <!-- Title -->
+                        <div class="form-group row">
+                            <label for="inputDescription" class="col-sm-2 col-form-label">Project Description</label>
+                            <textarea id="inputDescription" class="form-control col-sm-10" rows="4" name="description" >{{ html_entity_decode(!empty($article)?$article->description:'') }}</textarea>
+                            
+                            <span class="help-block">{{$errors->first('description')}}</span>
+
+                        </div>
 
                     </div>
                     <!-- /.card-body -->
@@ -64,56 +64,10 @@
             <div class="col-md-6 col-12">
                 <div class="card card-primary">
                     <div class="card-body">
-                        <!-- Title -->
-                        <div class="form-group row">
-                            <label for="inputDescription" class="col-sm-2 col-form-label">Project Description</label>
-                            <textarea id="inputDescription" class="form-control col-sm-10" rows="4" name="description" >{{ html_entity_decode(!empty($article)?$article->description:'') }}</textarea>
-                            
-                            <span class="help-block">{{$errors->first('description')}}</span>
-
-                          </div>
-
-                      <div class="input-group">
-                        <span class="input-group-prepend">
-                          <a id="lfm" data-input="image" data-preview="holder" class="btn btn-info">
-                            <i class="fa fa-picture-o"></i> Chọn ảnh
-                          </a>
-                        </span>
-                        <input readonly id="image" class="form-control link-image" type="text" name="picture_data[origin_url]" value="{{ !empty($article)? $article->picture_data['origin_url']:'' }}">
-                      </div>
-                      <img id="holder" style="margin-top:15px;max-height:100px; margin-bottom: 15px;">
-
-                      <div class="form-group row">
-                        <label  class="col-sm-2 col-form-label">Thumbnail Size</label>
-                        <input type="number" class="form-control col-sm-3" 
-                          name="picture_data[thumb_data][width]" 
-                          value="{{ empty($article)?config('config.article.thumbnail_size.0.width'):$article->picture_data['thumb_data']['width']}}" min="20" max="1000">
-                        <p class="col-sm-1 text-center"><span>x</span></p>
-                        <input type="number" class="form-control col-sm-3" 
-                          name="picture_data[thumb_data][height]"  
-                          value="{{ empty($article)?config('config.article.thumbnail_size.0.height'):$article->picture_data['thumb_data']['height']}}" min="20" max="1000">
-                      </div>
-
-                      <div class="form-group row">
-                        <label  class="col-sm-2 col-form-label">Main Picture Size</label>
-                        <input type="number" class="form-control col-sm-3" 
-                          name="picture_data[main_picture_data][width]" 
-                          value="{{ empty($article)?config('config.article.picture_size.0.width'):$article->picture_data['main_picture_data']['width']}}" min="20" max="2000">
-                        <p class="col-sm-1 text-center"><span>x</span></p>
-                        <input type="number" class="form-control col-sm-3"  
-                          name="picture_data[main_picture_data][height]" 
-                          value="{{ empty($article)?config('config.article.picture_size.0.height'):$article->picture_data['main_picture_data']['height']}}" min="20" max="2000">
-                      </div>
-
-                      @if(!empty($article))                          
-                      <div class="form-group row">
-                              <label for="inputFBLink" class="col-sm-2 col-form-label">Thumbnail của trang</label>
-                              <span class="col-sm-10 text-center">
-                                  <img src="{{ asset($article->picture_data['thumb_data']['url'])}}" alt="" style="margin-top:1rem; width: auto; height:100px; border: 1px solid #333">
-                              </span>
-                      </div>
-                      @endif
-
+                            <label>Ảnh bài viết</label>
+                            <input type="file" accept="image/*" name="main_picture" class="form-control-file" >
+                            <img src="{{$article->thumbnail ?? null}}" alt="Chưa có ảnh" width="auto" height="200"
+                                style="margin-top:15px;margin-bottom: 15px;">
                     </div>
 
                     <!-- /.card-body -->

@@ -51,24 +51,6 @@ class Helper {
         return $targetPath.$filename;
     }
 
-    static function getValueField($str,$result) {
-        $splits =  preg_split('/([\[\]])/', $str);
-        if(!is_null($splits)){
-            foreach($splits as $match){
-                if($match !=='' && !is_null($result)){
-                    if(array_key_exists($match,$result))
-                        $result = $result[$match];
-                    else{
-                        $result = null;
-                        break;
-                    }
-                }
-            }
-        }
-        return $result;
-
-    }
-
     static function makeNonNestedRecursive(array &$out, $key, array $in){
         foreach($in as $k=>$v){
             if(is_array($v)){

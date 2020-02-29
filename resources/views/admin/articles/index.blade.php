@@ -45,7 +45,7 @@
                           <td >{{ $article->id}}</th>
                           <td class="title-article-table" title="{{$article->title}}">{{ Illuminate\Support\Str::limit($article->title,$limit = 100,$end='...') }}</th>
                           <td class="col-200">              
-                            <img src="{{ asset($article->picture_data['thumb_data']['url']) }}" class="thumbnail-article-small" >      
+                            <img src="{{ asset($article->thumbnail)??null }}" class="thumbnail-article-small" >      
                           </th>
                           <td class="col-200">
                             {{ $article->auth->email }}
