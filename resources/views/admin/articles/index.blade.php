@@ -59,7 +59,7 @@
                               <div>
                               <p><b>Ngày tạo: </b>{{ App\Helper\Helper::render_time_to_vietnamese($article->created_at) }}</p>
                               <p><b>Ngày cập nhật: </b>{{ App\Helper\Helper::render_time_to_vietnamese($article->updated_at) }}</p>
-                              <p><b>Ngày xuất bản: </b>{{ App\Helper\Helper::render_time_to_vietnamese(!is_null($article->date_public)?$article->date_public:null) }}</p>
+                              <p><b>Ngày xuất bản: </b>{{ !is_null($article->date_public)?$article->date_public:null }}</p>
 
                               </div>
                           </td>

@@ -1,7 +1,6 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+
+            <div class="col-md-6">
                 <div class="card text-slide-color">
                     <div class="card-header">
                         <h3 class="card-title">Slide {{ id + 1 }}</h3>
@@ -52,8 +51,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
 </template>
 
 <script>

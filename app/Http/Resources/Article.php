@@ -20,7 +20,8 @@ class Article extends JsonResource
             'description' => $this->description,
             'is_public' => $this->is_public,
             'date_public' => $this->date_public,
-            'picture_data' => $this->picture_data,
+            'main_picture' => $this->main_picture,
+            'thumbnail'=>$this->thumbnail,
             'fb_link' => $this->fb_link,
             'seo' => $this->seo,
             'content' => $this->content

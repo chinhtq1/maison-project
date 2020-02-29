@@ -76,6 +76,7 @@ $(document).ready(function() {
     addAnimationWhenScroll();
     cssHeader();
     modalController();
+
 });
 
 function scrollEventListener() {
@@ -114,22 +115,44 @@ function preLoadController() {
 
 function modalController() {
     $('.more-info-title').click(function() {
+        
         $('.modal-wrapper ').toggleClass('open');
         $('.modal-wrapper .overlay').toggleClass('open');
         $('.modal-wrapper .modal').toggleClass('open');
     });
     $('.modal-wrapper .overlay').click(function() {
+
         $('.modal-wrapper ').toggleClass('open');
         $('.modal-wrapper .overlay').toggleClass('open');
         $('.modal-wrapper .modal').toggleClass('open');
     });
 
     $('.intro-post .inner-image-post-container').click(function() {
+        var id = $(this).data("id");
+        getDataArticle(id);
         $('.modal-wrapper ').toggleClass('open');
         $('.modal-wrapper .overlay').toggleClass('open');
         $('.modal-wrapper .modal').toggleClass('open');
     });
+
     return false;
+}
+
+function getDataArticle(id) {
+    $.ajax({
+        type: "GET",
+        url: "api/articles/detail/" + id,
+        dataType: "json",
+        success: function (data) {
+            var result = data["data"];
+            console.log(result);
+           $("#article-image").attr('src', result["main_picture"]);
+           $("#article-public-date").text(result["date_public"])
+           $("#article-title").text(result["title"])
+           $("#article-content").html(result["content"])
+
+        }
+      });
 }
 
 function cssHeader() {

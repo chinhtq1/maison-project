@@ -10,7 +10,10 @@ use MetaTag;
 class Helper {
     static function update_time_public($article) {
         if($article->is_public) {
-            $article->date_public = Carbon::now();
+            $now = Carbon::now();
+            $article->date_public = self::render_time_to_vietnamese(
+                $now
+            );
         }else{
             $article->date_public = null;
         }

@@ -25,8 +25,8 @@ import draggable from 'vuedraggable'
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('text-slide', require('./components/slide/TextSliderComponent.vue').default);
-Vue.component('image-slide', require('./components/slide/ImageSliderComponent.vue').default);
-
+// Vue.component('image-slide', require('./components/slide/ImageSliderComponent.vue').default);
+Vue.component('image-slide', require('./components/slide/InputImageComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -51,7 +51,7 @@ const app = new Vue({
             axios
             .get('/api/slides/detail/' + window.slideId)
             .then(response => (
-                this.slides = response.data.data.slides,
+                this.slides = typeof(response.data.data.slides) !== 'undefined'?response.data.data.slides:[],
                 console.log(response.data.data.slides)
             ))
             .catch(error => {
@@ -80,9 +80,8 @@ const app = new Vue({
             }else if (type == 1) {
                 this.slides.push({
                     type: typeSlide,
-                    originUrl:'',
-                    imageUrl: null
-                })
+                    text:'',
+            })
             }
 
         },

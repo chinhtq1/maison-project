@@ -12,7 +12,7 @@
 
 @section('admin-content')
 <!-- Main Content -->
-<form class="form-horizontal" action="{{ route('admin_slide_store',  !is_null($slide)? $slide->id: '0') }}" method="POST" id="slide-app" >
+<form class="form-horizontal"  enctype="multipart/form-data" action="{{ route('admin_slide_store',  !is_null($slide)? $slide->id: '0') }}" method="POST" id="slide-app" >
   {!! csrf_field() !!}
 <div class="card">
     <div class="card-header">
@@ -115,9 +115,8 @@
             </div>
         </div>
         <div class="row">
-          <div class="col-8" v-if="!reload">
             <template v-for="(slide,index) in slides">
-                <text-slide 
+                <text-slide
                     v-if="slide.type == '{{$types[0]}}'"
                     v-bind:id="index" 
                     v-bind:value="slide.text"
@@ -127,18 +126,20 @@
 
                 <image-slide
                     v-if="slide.type == '{{$types[1]}}'"
-                    v-bind:id="index" 
+                     v-bind:id="index"
                     v-bind:type="slide.type"
-                    v-bind:value="slide.originUrl"
+                    v-bind:value="slide.text"
                     v-bind:image_url="slide.imageUrl"
-                    v-on:remove-slider="removeSlide( index)">
+                    v-bind:placeholder="{{ json_encode(asset('admin-theme/img/placeholder_thumbnail.png'))}}"
+                    v-on:remove-slider="removeSlide( index)"
+                    >
                 </image-slide>
             </template>
           </div>
-          <div class="col-8 text-center" v-if="reload">
+          <div class="col-6 text-center" v-if="reload">
             <div class="lds-ripple"><div></div><div></div></div>
           </div>
-          <div class="col-4" v-if="!reload">
+          {{-- <div class="col-4" v-if="!reload">
               <label class="col-md-3 control-label">Sắp xếp slide</label>
               <br>
 
@@ -151,8 +152,7 @@
                   </transition-group>
                 </draggable>
               </div>
-            </div>
-        </div>
+            </div> --}}
 
     </div>
     <!-- /.card-body -->

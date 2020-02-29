@@ -85,6 +85,7 @@ class SlideController extends Controller
             $data['is_public'] = false;
         }
 
+
         if (!is_null($slide)) {
             $slide->fill($data);
             \File::deleteDirectory(public_path('slides/slide-'.$slide->id));
@@ -93,26 +94,41 @@ class SlideController extends Controller
         }else{
             $data['user_id'] = $user->id;
             $slide = Slides::create($data);
+            $uploadDir = "slides/slide-".$slide->id."/";
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
             $user->slides()->save($slide);
         }
 
+        $uploadDir = "slides/slide-".$slide->id."/";
         $slides_data = $request->only('slides');
-        foreach ($slides_data['slides'] as $key => $slide_data) {
-            if($slide_data['type']==config("config.slides.types.1")){
-                $width = config("config.slides.default.image_default_width");
-                $height = config("config.slides.default.image_default_height");
 
-                $imageUrl = Helper::upload_picture($width,$height,
-                config('lfm.base_directory').(Str::after($slide_data['originUrl'],config('lfm.url_prefix'))),
-                'slides/slide-'.$slide->id.'/',
-                'slide-'.$key.'.PNG'
-                );
-                $slides_data['slides'][$key]['imageUrl'] = asset($imageUrl);
+        if(isset($slides_data['slides'])){
+            foreach ($slides_data['slides'] as $key => $slide_data) {
+                if($slide_data['type']==config("config.slides.types.1")){
+
+                    if (\Request::hasFile("slides.".$key.".text")) {
+                        $file_path = $slide_data['text']->getPathName();
+                        $extension = $slide_data['text']->getClientOriginalExtension();
+                        $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+                        $file_rename   = 'slide-image-'.$key.'.'. $extension;
+                        if (in_array($extension, $allowedExtensions)) {
+                            $slide_data['text']->move($uploadDir, $file_rename);
+                            $slide_data['text'] = asset($uploadDir . $file_rename);
+            
+                            $slides_data['slides'][$key]["text"] =$slide_data['text'];
+                        }
+            
+                    }else {
+                        array_splice($slides_data['slides'], $key, 1);
+                    }
+                }
             }
+
+            $slide->data = $slides_data;
         
         }
-
-        $slide->data = $slides_data;
 
         Helper::update_time_public($slide);
 

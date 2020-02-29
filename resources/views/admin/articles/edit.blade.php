@@ -66,7 +66,7 @@
                     <div class="card-body">
                             <label>Ảnh bài viết</label>
                             <input type="file" accept="image/*" name="main_picture" class="form-control-file" >
-                            <img src="{{$article->thumbnail ?? null}}" alt="Chưa có ảnh" width="auto" height="200"
+                            <img src="{{$article->thumbnail ?? asset('admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
                                 style="margin-top:15px;margin-bottom: 15px;">
                     </div>
 

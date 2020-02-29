@@ -2503,6 +2503,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["name", "value"],
@@ -37992,7 +37995,7 @@ var render = function() {
           { staticClass: "btn btn-info", on: { click: _vm.openFileManager } },
           [
             _c("i", { staticClass: "fa fa-picture-o" }),
-            _vm._v(" Choose\n        ")
+            _vm._v(" Choose\r\n        ")
           ]
         )
       ]),
@@ -38141,6 +38144,9 @@ var render = function() {
       init: {
         height: 5,
         menubar: false,
+        force_br_newlines: true,
+        force_p_newlines: true,
+        forced_root_block: "",
         plugins: [
           "advlist autolink lists link image charmap print preview anchor",
           "searchreplace visualblocks code fullscreen",
@@ -50699,7 +50705,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Xampp\htdocs\test\resources\js\settings.js */"./resources/js/settings.js");
+module.exports = __webpack_require__(/*! D:\MMO\maison\maison-project\resources\js\settings.js */"./resources/js/settings.js");
 
 
 /***/ })

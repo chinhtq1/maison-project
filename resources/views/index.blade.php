@@ -37,22 +37,22 @@
 </head>
 
 <body>
-    <div class="modal-wrapper">
+    <div class="modal-wrapper" >
         <div class="overlay"> </div>
-        <div class="modal">
+        <div class="modal" id="article-modal">
             <a class="btn-close-modal trigger" href="javascript:;"></a>
             <div class="content">
                 <div class="img-banner-modal">
-                    <img class="img-fluid" src="{{ asset('client/img/banner-modal.png')}}">
+                    <img class="img-fluid" id="article-image">
                     <div class="time-post">
                         <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
-                        <span>21 Tháng 5 Năm 2020</span>
+                        <span id="article-public-date">21 Tháng 5 Năm 2020</span>
                     </div>
 
                 </div>
                 <div class="description-modal-text">
-                    <h1>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit </h1>
-                    <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                    <h1 id="article-title">Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit </h1>
+                    <p id="article-content"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -287,13 +287,13 @@
             <div id="owl-carousel-1" class="owl-carousel">
 
                 @foreach ($articles as $article)
-                <div class="intro-post">
-                    <a class="image-post-container">
-                        <div class="inner-image-post-container">
+            <div class="intro-post"  >
+                    <a class="image-post-container" >
+                        <div class="inner-image-post-container" data-id="{{ $article['id'] }}"">
                             <img class=" img-fluid " src="{{ $article['thumbnail'] ?? null }}">
                             <div class="time-post">
                                 <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
-                                <span>{{ App\Helper\Helper::render_time_to_vietnamese($article['created_at']) }}</span>
+                                <span>{{ $article['date_public'] }}</span>
                             </div>
                         </div>
 
