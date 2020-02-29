@@ -43,11 +43,11 @@ $(document).ready(function() {
         lazyLoad: false,
         autoplay: false,
         loop: true,
-        nav: true,
+        nav: false,
         center: center,
         navSpeed: 500,
         items: center ? 2 : 3,
-        dots: false,
+        dots: center ? true : false,
         margin: 40,
         slideSpeed: 300,
         paginationSpeed: 400
