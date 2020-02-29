@@ -10,6 +10,17 @@
             width: 100%;
         }
         
+        @media only screen and (min-width: 1116px) {
+            #vi-tri,
+            #gioi-thieu,
+            #kien-truc,
+            #tien-ich,
+            #tin-tuc,
+            #thu-vien {
+                scroll-margin: 110px;
+            }
+        }
+        
         .header-mobile {
             display: none;
         }
@@ -251,6 +262,7 @@
             color: rgb(125, 115, 114);
             line-height: 1.875;
             text-align: left;
+            margin: 0;
         }
         
         a.btn {
@@ -608,8 +620,11 @@
         
         .utilities {
             clear: both;
-            padding-top: 21rem;
             text-align: center;
+        }
+        
+        .map-info {
+            padding-bottom: 21rem;
         }
         
         .utilities h1 {
@@ -1038,6 +1053,13 @@
             transform-origin: 100% 50%;
         }
         
+        .nav-item .active:after {
+            display: block;
+            content: "";
+            border-bottom: 2px solid #d3a468;
+            transform: scaleX(1);
+        }
+        
         .expand:not(.active):hover:after {
             transform: scaleX(1);
             transform-origin: 0 50%;
@@ -1346,7 +1368,7 @@
             margin: auto;
             width: 100%;
             text-align: center;
-            padding-top: 14rem;
+            margin-top: 14rem;
         }
         
         .title-news {
@@ -1515,6 +1537,7 @@
             padding: 20px;
             padding-bottom: 10rem;
             display: flex;
+            position: relative;
         }
         
         .inner-project-feed .project-feed-content-left {
@@ -1815,8 +1838,8 @@
         }
         
         @media only screen and (max-width: 768px) {
-            .utilities {
-                padding-top: 11rem;
+            .map-info {
+                padding-bottom: 11rem;
             }
             .intro-post .time-post {
                 width: 50%;

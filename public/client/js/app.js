@@ -78,6 +78,16 @@ $(document).ready(function() {
     modalController();
 
 });
+activeRoute();
+
+function activeRoute() {
+    $(document).ready(function() {
+        $("header .nav li a").click(function(event) {
+            $("header .nav li a").removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+}
 
 function scrollEventListener() {
     $(window).scroll(function(event) {
@@ -120,11 +130,14 @@ function modalController() {
         $('.modal-wrapper ').toggleClass('open');
         $('.modal-wrapper .overlay').toggleClass('open');
         $('.modal-wrapper .modal').toggleClass('open');
+        $('html').addClass('is-main-menu-open');
+
     });
     $('.modal-wrapper .overlay').click(function() {
         $('.modal-wrapper ').toggleClass('open');
         $('.modal-wrapper .overlay').toggleClass('open');
         $('.modal-wrapper .modal').toggleClass('open');
+        $('html').removeClass('is-main-menu-open');
     });
 
     $('.intro-post .inner-image-post-container').click(function() {
@@ -143,16 +156,16 @@ function getDataArticle(id) {
         type: "GET",
         url: "api/articles/detail/" + id,
         dataType: "json",
-        success: function (data) {
+        success: function(data) {
             var result = data["data"];
             console.log(result);
-           $("#article-image").attr('src', result["main_picture"]);
-           $("#article-public-date").text(result["date_public"])
-           $("#article-title").text(result["title"])
-           $("#article-content").html(result["content"])
+            $("#article-image").attr('src', result["main_picture"]);
+            $("#article-public-date").text(result["date_public"])
+            $("#article-title").text(result["title"])
+            $("#article-content").html(result["content"])
 
         }
-      });
+    });
 }
 
 function cssHeader() {
