@@ -28,7 +28,7 @@ class ArticleController extends Controller
 
     public function index(Request $request){
         $page_name = "Danh sách bài viết";
-        $articles = Article::all()->sortByDesc('date_public');
+        $articles = Article::all()->sortBy('id');
         return view('admin.articles.index',['articles'=>$articles,'page_name'=> $page_name]);
     }
 

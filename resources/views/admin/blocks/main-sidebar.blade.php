@@ -55,7 +55,8 @@
             </a>
           </li>
 
-          <!-- Slide -->
+
+          <!-- Setting -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-folder"></i>

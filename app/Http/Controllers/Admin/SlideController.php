@@ -25,14 +25,16 @@ class SlideController extends Controller
     //
     public function index(Request $request)
     {   
-        $slides = Slides::all()->sortByDesc('date_public');
+        $slides = Slides::all()->sortBy('id');
         return view('admin.slides.index', ['slides' => $slides,  'page_name' => "Trang quản lý Slide"]);
 
     }
 
-    public function edit($id='0',Request $request){
-
-        $slide = Slides::where('id', $id)->first();
+    public function edit($type=null, $id='0',Request $request){
+        if($type != config("config.slides.types.0") && $type != config("config.slides.types.1") ) {
+            return redirect()->route('admin_slides');
+        }
+        $slide = Slides::where('type', $type)->where('id', $id)->first();
         $page_name = is_null($slide)? "Tạo Slide": 'Chỉnh sửa Slide';
 
                 // Active
@@ -48,10 +50,10 @@ class SlideController extends Controller
             return redirect()->back();
         }
 
-        return view('admin.slides.edit', ['slide'=>$slide,'page_name' => $page_name]);
+        return view('admin.slides.edit', ['type'=>$type,'slide'=>$slide,'page_name' => $page_name]);
     }
 
-    public function store($id='0',Request $request){
+    public function store($type = null,$id='0',Request $request){
         $slide = Slides::where('id', $id)->first();
         $unique = is_null($slide)? null: ','.$slide->id;
         $user = Auth::user();
@@ -62,7 +64,8 @@ class SlideController extends Controller
             'description' =>  'required|string|max:255',
         ];
 
-        $data = $request->only(['title', 'slug', 'is_public', 'description', 'seo','fb_link']);
+        $data = $request->only(['title', 'is_public', 'description','fb_link']);
+        $data["type"]=$type;
         $validated = $request->validate($rules,[
             'required' => 'Không để trống',
             'string' => 'Không dùng ký tự lạ',
@@ -72,13 +75,8 @@ class SlideController extends Controller
             'confirmed' => 'Nhập lại mật khẩu không đúng',
         ]);
 
-        if(!isset($data['slug'])){
-            $data['slug'] = str_slug($data['title']);
-        }else{
-            $data['slug'] = str_slug($data['slug']);
-        }
+        
 
-                // $data['auth'] = $user->id;
         if(isset($data['is_public'])){
             $data['is_public'] = true;
         }else{
@@ -105,7 +103,7 @@ class SlideController extends Controller
 
         if(isset($slides_data['slides'])){
             foreach ($slides_data['slides'] as $key => $slide_data) {
-                if($slide_data['type']==config("config.slides.types.1")){
+                if($slide_data['type']==config("config.slides.name-types.1")){
                     if (\Request::hasFile("slides.".$key.".text")) {
                         $file_path = $slide_data['text']->getPathName();
                         $extension = $slide_data['text']->getClientOriginalExtension();
