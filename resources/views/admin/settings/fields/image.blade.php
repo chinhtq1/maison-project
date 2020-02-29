@@ -4,16 +4,9 @@
     @endisset   
     @isset($field['desc']) <p class="text-muted">{{ $field['desc'] }}</p> @endisset
  
-    <?php   $name_url = "{$field['name']}[url]"; 
-            $name_main_url = "{$field['name']}[main_url]"; ?>
-
-    <image-upload 
-        :name="{{ json_encode($name_url) }}" 
-        :width="{{ json_encode($field['width']) }}"
-        :height="{{ json_encode($field['height']) }}"
-        :value="{{json_encode($result?App\Helper\Helper::getValueField($name_url, $result):'')}}"
-        :image_url="{{json_encode($result?App\Helper\Helper::getValueField($name_main_url, $result):'')}}">
-    </image-upload>
+    <input type="file" accept="image/*" name="main_picture" class="form-control-file" >
+    <img src="{{asset($article->thumbnail ?? 'admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
+        style="margin-top:15px;margin-bottom: 15px;">
     @if ($errors->has($field['name'])) <small class="help-block">{{ $errors->first($field['name']) }}</small> @endif
 
 </div>

@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $articles = Article::all()->toArray();
+        $articles = Article::where('is_public', true)->get()->sortByDesc('date_public')->toArray();
         $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
         $setting = is_null($result->content) ? [] : json_decode($result->content, true);
         // dd($setting);

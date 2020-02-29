@@ -2459,7 +2459,7 @@ __webpack_require__.r(__webpack_exports__);
       var slide = this.list.find(function (element) {
         return element.id == id;
       });
-      if (typeof slide !== 'undefined') return slide.title;else return '';
+      if (typeof slide !== 'undefined') return slide.id + " : " + slide.title;else return '';
     }
   },
   watch: {
@@ -38105,7 +38105,9 @@ var render = function() {
     _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.getSlide(_vm.selected)))])
+    _c("p", { staticStyle: { color: "green" } }, [
+      _vm._v(_vm._s(_vm.getSlide(_vm.selected)))
+    ])
   ])
 }
 var staticRenderFns = [

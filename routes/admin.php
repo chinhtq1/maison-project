@@ -55,10 +55,14 @@ Route::group(['prefix' => 'slides'], function(){
 Route::group(['prefix' => 'settings'], function(){
     // Route::get('/sections', 'Admin\SettingController@index')->name('admin_settings');
     Route::get('/', 'Admin\SettingController@general_index')->name('admin_settings_general');
+    Route::get('/slides', 'Admin\SettingController@slides_index')->name('admin_slides_settings');
+
     Route::get('/text-single', 'Admin\SettingController@text_single_index')->name('admin_settings_text_single');
-    Route::post('/store', 'Admin\SettingController@store')->name('admin_settings_store');
+    // Route::post('/store', 'Admin\SettingController@store')->name('admin_settings_store');
     Route::post('/general_store', 'Admin\SettingController@general_store')->name('admin_settings_general_store');
     Route::post('/text_single_store', 'Admin\SettingController@text_single_store')->name('admin_settings_text_single_store');
+    Route::post('/slides_store', 'Admin\SettingController@slides_store')->name('admin_slides_store');
+
 
 });
 

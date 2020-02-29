@@ -2341,6 +2341,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id', 'value', 'type', 'placeholder'],
   data: function data() {
@@ -2354,6 +2355,17 @@ __webpack_require__.r(__webpack_exports__);
     },
     input_type: function input_type() {
       return "slides[" + this.id + "][type]";
+    },
+    getImageSrc: function getImageSrc() {
+      if (this.image !== "") {
+        if (this.image.includes("slides/slide-")) {
+          return "/" + this.image;
+        }
+
+        return this.image;
+      }
+
+      return this.placeholder;
     }
   },
   methods: {
@@ -41613,7 +41625,7 @@ var render = function() {
             alt: "Chưa có ảnh",
             width: "auto",
             height: "200",
-            src: _vm.image ? _vm.image : _vm.placeholder
+            src: _vm.getImageSrc
           }
         }),
         _vm._v(" "),
@@ -41627,6 +41639,16 @@ var render = function() {
             hidden: ""
           },
           domProps: { value: _vm.type }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "text",
+            name: _vm.input_text,
+            readonly: "",
+            hidden: ""
+          },
+          domProps: { value: _vm.image }
         })
       ])
     ])

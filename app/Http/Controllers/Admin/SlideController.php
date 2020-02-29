@@ -9,7 +9,7 @@ use \App\Helper\Helper;
 
 use App\Models\Slides;
 use Auth;
-
+use Image;
 
 class SlideController extends Controller
 {   
@@ -25,7 +25,7 @@ class SlideController extends Controller
     //
     public function index(Request $request)
     {   
-        $slides = Slides::all();
+        $slides = Slides::all()->sortByDesc('date_public');
         return view('admin.slides.index', ['slides' => $slides,  'page_name' => "Trang quản lý Slide"]);
 
     }
@@ -88,7 +88,6 @@ class SlideController extends Controller
 
         if (!is_null($slide)) {
             $slide->fill($data);
-            \File::deleteDirectory(public_path('slides/slide-'.$slide->id));
             $slide->save();
             $user->slides()->save($slide);
         }else{
@@ -100,14 +99,13 @@ class SlideController extends Controller
             }
             $user->slides()->save($slide);
         }
-
         $uploadDir = "slides/slide-".$slide->id."/";
         $slides_data = $request->only('slides');
+
 
         if(isset($slides_data['slides'])){
             foreach ($slides_data['slides'] as $key => $slide_data) {
                 if($slide_data['type']==config("config.slides.types.1")){
-
                     if (\Request::hasFile("slides.".$key.".text")) {
                         $file_path = $slide_data['text']->getPathName();
                         $extension = $slide_data['text']->getClientOriginalExtension();
@@ -115,23 +113,27 @@ class SlideController extends Controller
                         $file_rename   = 'slide-image-'.$key.'.'. $extension;
                         if (in_array($extension, $allowedExtensions)) {
                             $slide_data['text']->move($uploadDir, $file_rename);
-                            $slide_data['text'] = asset($uploadDir . $file_rename);
-            
-                            $slides_data['slides'][$key]["text"] =$slide_data['text'];
+                            $slide_data['text'] = $uploadDir . $file_rename;
+                            $slides_data['slides'][$key]["text"] = $slide_data['text'];
                         }
-            
-                    }else {
-                        array_splice($slides_data['slides'], $key, 1);
+                    }else{
+                        if(array_key_exists('text',$slide_data) && !is_null($slide_data["text"]) ){
+                            $extension = Str::after($slide_data['text'],'.');
+                            $file_rename   = 'slide-image-'.$key.'.'. $extension;
+                            Image::make(public_path($slide_data['text']))->save(public_path($uploadDir .$file_rename));
+
+                        }else if (array_key_exists('text',$slide_data) && is_null($slide_data["text"])){
+                            $slides_data['slides'][$key]["text"] = "";
+                        }
                     }
                 }
             }
-
-            $slide->data = $slides_data;
         
         }
 
-        Helper::update_time_public($slide);
+        $slide->data = $slides_data;
 
+        Helper::update_time_public($slide);
 
         $text = is_null($slide)? "Đã tạo thành công bài viết:". $slide->title: "Đã cập nhật thành công bài viết:".$slide->name;
 

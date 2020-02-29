@@ -76,8 +76,16 @@ class SettingController extends Controller
         return view('admin.settings.text-single-index', ['page_name' => 'Chỉnh Sửa Text Đơn', 'result' => $result]);
     }
 
+    function slides_index()
+    {
+        $result = Setting::firstOrCreate(['name' => 'slides', 'type' => 'setting']);
+        // dd($result->content);
+        return view('admin.settings.slides-index', ['page_name' => 'Chỉnh Sửa Text Đơn', 'result' => $result]);
+    }
+
     function text_single_store(Request $request) {
         $data = $request->all();
+        dd($data);
         $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
         $setting = is_null($result->content) ? [] : json_decode($result->content, true);
         foreach ($data as $key => $value) {
@@ -87,10 +95,32 @@ class SettingController extends Controller
         $result->save();
         return redirect()->back()->with('status', 'Settings has been saved.');
     }
+
+    function slides_store(Request $request) {
+        $data = $request->all();
+        // dd($data);
+        $result = Setting::firstOrCreate(['name' => 'slides', 'type' => 'setting']);
+        $setting = is_null($result->content) ? [] : json_decode($result->content, true);
+
+        if (!is_dir('static')) {
+            mkdir('static', 0777, true);
+        }
+        foreach ($data as $key => $value) {
+            $setting[$key] = $value;
+        }
+
+        dd($setting);
+
+
+
+        $uploadDir = 'static/';
+
+
+    }
+
     function general_store(Request $request)
     {
         $data = $request->all();
-        // dd($data);
         $result = Setting::firstOrCreate(['name' => 'general', 'type' => 'setting']);
         $setting = is_null($result->content) ? [] : json_decode($result->content, true);
         if (!is_dir('static')) {
