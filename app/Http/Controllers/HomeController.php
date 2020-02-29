@@ -30,7 +30,11 @@ class HomeController extends Controller
         $slide_chu = [];
         if(array_key_exists('slide_chu', $slide_setting)){
             $slide_chu = Slides::where('id', $slide_setting['slide_chu'])->first();
-            $slide_chu = is_null($slide_chu->data) ? [] : json_decode(json_encode($slide_chu->data), true);
+            $slide_chu = !is_null($slide_chu) && array_key_exists('data', $slide_chu)  ?json_decode(json_encode($slide_chu->data), true):[];
+        }
+
+        if(array_key_exists('slide_chu', $slide_chu)){
+            $slide_chu = $slide_chu['slides'];
         }
         return view('index', compact('articles','setting','slide_chu'));
     }

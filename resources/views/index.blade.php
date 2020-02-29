@@ -320,7 +320,7 @@
         <section class="text-slider">
             <div data-aos="fade-down" data-aos-duration="1500" class="container-text-slider">
                 <div id="owl-carousel-2" class="owl-carousel">
-                    @foreach($slide_chu["slides"] as $slide )
+                    @foreach($slide_chu as $slide )
                     <div class="inner-text-slider">
                         {!! $slide['text'] ?? '' !!}
                     </div>
