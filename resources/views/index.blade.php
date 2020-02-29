@@ -264,7 +264,7 @@
             </div>
         </section>
         <section data-aos="fade-down" id="tin-tuc" class="news-section">
-            <div class="title-news d-flex justify-content-between">
+            <div class="title-news ">
                 <h2><strong>Tin tức</strong> Của Chúng Tôi</h2>
                 <!-- <div class="slider_nav">
                  
@@ -433,7 +433,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="{{asset('client/js/app.js')}}"></script>
+    <script src="{{asset('client/js/app.js?v=2.0')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
