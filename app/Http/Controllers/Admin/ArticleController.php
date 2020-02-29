@@ -163,7 +163,7 @@ class ArticleController extends Controller
                     config("config.article.thumbnail_size.height"))->save(public_path($uploadDir .$thumbnail_name));
                 $picture_data['thumbnail'] = $uploadDir . $thumbnail_name;
 
-                $picture_data['main_picture']->move($uploadDir, $file_rename);
+                $picture_data['main_picture']->move(public_path($uploadDir), $file_rename);
                 $picture_data['main_picture'] = $uploadDir . $file_rename;
 
                 $article->main_picture = $picture_data["main_picture"];

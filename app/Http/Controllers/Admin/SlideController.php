@@ -114,7 +114,7 @@ class SlideController extends Controller
                         $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
                         $file_rename   = 'slide-image-'.$key.'.'. $extension;
                         if (in_array($extension, $allowedExtensions)) {
-                            $slide_data['text']->move($uploadDir, $file_rename);
+                            $slide_data['text']->move(public_path($uploadDir), $file_rename);
                             $slide_data['text'] = $uploadDir . $file_rename;
                             $slides_data['slides'][$key]["text"] = $slide_data['text'];
                         }
