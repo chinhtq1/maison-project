@@ -121,7 +121,6 @@
                      v-bind:id="index"
                     v-bind:type="slide.type"
                     v-bind:value="slide.text"
-                    v-bind:image_url="slide.imageUrl"
                     v-bind:placeholder="{{ json_encode(asset('admin-theme/img/placeholder_thumbnail.png'))}}"
                     v-on:remove-slider="removeSlide( index)"
                     >

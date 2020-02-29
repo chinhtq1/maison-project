@@ -31,7 +31,9 @@ class SlideController extends Controller
     }
 
     public function edit($type=null, $id='0',Request $request){
-
+        if($type != config("config.slides.types.0") && $type != config("config.slides.types.1") ) {
+            return redirect()->route('admin_slides');
+        }
         $slide = Slides::where('type', $type)->where('id', $id)->first();
         $page_name = is_null($slide)? "Tạo Slide": 'Chỉnh sửa Slide';
 
@@ -101,7 +103,7 @@ class SlideController extends Controller
 
         if(isset($slides_data['slides'])){
             foreach ($slides_data['slides'] as $key => $slide_data) {
-                if($slide_data['type']==config("config.slides.types.1")){
+                if($slide_data['type']==config("config.slides.name-types.1")){
                     if (\Request::hasFile("slides.".$key.".text")) {
                         $file_path = $slide_data['text']->getPathName();
                         $extension = $slide_data['text']->getClientOriginalExtension();
