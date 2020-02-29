@@ -109,7 +109,6 @@ class SettingController extends Controller
             $setting[$key] = $value;
         }
 
-        dd($setting);
 
 
 

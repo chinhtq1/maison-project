@@ -54,19 +54,18 @@ return [
     ],
 
     'slides' => [
-        'types' => [
+        'name-types' => [
             0 => "Slide chữ",
             1 => "Slide ảnh"
+        ],
+        'types' => [
+            0 => "text",
+            1 => "image"
         ],
         'default' => [
             'image_default_width' => 1000,
             'image_default_height' => 500,
         ]
-        ],
-
-        'sections' => [
-            'section1','section2','section3','section4','section5','section6','section7','section8'
-        ],
-
+    ],
 
 ];

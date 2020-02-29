@@ -19,7 +19,6 @@ class Slides extends JsonResource
             'title' => $this->title,
             'description' => $this->description,
             'fb_link' => $this->fb_link,
-            'seo' => $this->seo,
             'is_public' => $this->is_public,
             'data' => $this->data,
         ];

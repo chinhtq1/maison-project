@@ -23,7 +23,6 @@ class Article extends JsonResource
             'main_picture' => asset($this->main_picture),
             'thumbnail'=>   asset($this->thumbnail),
             'fb_link' => $this->fb_link,
-            'seo' => $this->seo,
             'content' => $this->content
         ];
     }

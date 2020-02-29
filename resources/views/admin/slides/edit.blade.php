@@ -12,7 +12,7 @@
 
 @section('admin-content')
 <!-- Main Content -->
-<form class="form-horizontal"  enctype="multipart/form-data" action="{{ route('admin_slide_store',  !is_null($slide)? $slide->id: '0') }}" method="POST" id="slide-app" >
+<form class="form-horizontal"  enctype="multipart/form-data" action="{{ route('admin_slide_store',  ['type'=>$type, !is_null($slide)? $slide->id: '0']) }}" method="POST" id="slide-app" >
   {!! csrf_field() !!}
 <div class="card">
     <div class="card-header">
@@ -40,14 +40,6 @@
                     <label for="inputTitle" class="col-sm-2 col-form-label" >Tên Slide</label>
                     <input type="text" id="inputTitle" class="form-control col-sm-10" name="title" value="{{ !empty($slide)? $slide->title: null }}">
                     <span class="help-block">{{$errors->first('title')}}</span>
-
-                  </div>
-
-                    <!-- Slug -->
-                  <div class="form-group row">
-                    <label for="inputTitle" class="col-sm-2 col-form-label">Slug</label>
-                    <input type="text" id="inputTitle" class="form-control col-sm-10" name="slug" value="{{ !empty($slide)? $slide->slug: null }}">
-                    <span class="help-block">{{$errors->first('slug')}}</span>
 
                   </div>
 
@@ -83,11 +75,6 @@
 
                       </div>
 
-                    <!-- Slug -->
-                  <div class="form-group row">
-                    <label for="inputSeo" class="col-sm-2 col-form-label">Seo</label>
-                    <input type="text" id="inputSeo" class="form-control col-sm-10" name="seo">
-                  </div>
                 <!-- /.card-body -->
               </div>
               <!-- /.card -->
@@ -96,28 +83,33 @@
     </div>
 
 
-        <?php $types = config('config.slides.types');  ?>
+        <?php $name_types = config('config.slides.name-types');  
+              $types =  config('config.slides.types');
+        ?>
 
         <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-9">
-                <button type="button" v-on:click="addSlide('{{ $types[0] }}',0)" 
+            @if($type === $types[0])
+
+                <button type="button" v-on:click="addSlide('{{ $name_types[0] }}',0)" 
                 id="addBlock" class="btn btn-alt btn-default enable-tooltip" 
                 title="Thêm mới slide">
                   <i class="fa fa-plus"></i> Thêm slide chữ
                 </button>
-
-                <button type="button" v-on:click="addSlide('{{ $types[1] }}',1)" 
+            @elseif($type === $types[1])
+                <button type="button" v-on:click="addSlide('{{ $name_types[1] }}',1)" 
                 id="addBlock" class="btn btn-alt btn-default enable-tooltip" 
                 title="Thêm mới slide">
                   <i class="fa fa-plus"></i> Thêm slide ảnh
                 </button>
+              @endif
             </div>
         </div>
         <div class="row">
             <template v-for="(slide,index) in slides">
                 <text-slide
-                    v-if="slide.type == '{{$types[0]}}'"
+                    v-if="slide.type == '{{$name_types[0]}}'"
                     v-bind:id="index" 
                     v-bind:value="slide.text"
                     v-bind:type="slide.type"
@@ -125,7 +117,7 @@
                 </text-slide>
 
                 <image-slide
-                    v-if="slide.type == '{{$types[1]}}'"
+                    v-if="slide.type == '{{$name_types[1]}}'"
                      v-bind:id="index"
                     v-bind:type="slide.type"
                     v-bind:value="slide.text"
