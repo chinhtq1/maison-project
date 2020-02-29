@@ -262,6 +262,7 @@
             color: rgb(125, 115, 114);
             line-height: 1.875;
             text-align: left;
+            margin: 0;
         }
         
         a.btn {

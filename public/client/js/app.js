@@ -130,11 +130,14 @@ function modalController() {
         $('.modal-wrapper ').toggleClass('open');
         $('.modal-wrapper .overlay').toggleClass('open');
         $('.modal-wrapper .modal').toggleClass('open');
+        $('html').addClass('is-main-menu-open');
+
     });
     $('.modal-wrapper .overlay').click(function() {
         $('.modal-wrapper ').toggleClass('open');
         $('.modal-wrapper .overlay').toggleClass('open');
         $('.modal-wrapper .modal').toggleClass('open');
+        $('html').removeClass('is-main-menu-open');
     });
 
     $('.intro-post .inner-image-post-container').click(function() {
