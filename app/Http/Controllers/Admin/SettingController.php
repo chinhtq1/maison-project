@@ -72,7 +72,7 @@ class SettingController extends Controller
     function text_single_index()
     {
         $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
-        // dd($result->content);
+        dd($result->content);
         return view('admin.settings.text-single-index', ['page_name' => 'Chỉnh Sửa Text Đơn', 'result' => $result]);
     }
 
