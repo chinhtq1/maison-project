@@ -289,7 +289,7 @@
                 @foreach ($articles as $article)
             <div class="intro-post"  >
                     <a class="image-post-container" >
-                        <div class="inner-image-post-container" data-id="{{ $article['id'] }}"">
+                        <div class="inner-image-post-container" data-id="{{ $article['id'] }}">
                             <img class=" img-fluid " src="{{ $article['thumbnail'] ?? null }}">
                             <div class="time-post">
                                 <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
@@ -302,7 +302,7 @@
                     <p>{{$article['description']}}.</p>
                     <hr>
                     <div class="more-info d-flex justify-content-between">
-                        <a class="more-info-title">TÌM HIỂU THÊM
+                        <a class="more-info-title" data-id="{{ $article['id'] }}">TÌM HIỂU THÊM
                             <svg viewBox="0 0 38.07 13.8799">
                                 <path
                                     d="M28.07,13.88c.43-1.27.85-2.63,1.24-4.08.26-.98.49-1.93.69-2.86-.2-.92-.43-1.88-.69-2.86-.39-1.44-.81-2.8-1.24-4.08a50.327,50.327,0,0,0,4.6,3.62,52.5714,52.5714,0,0,0,5.4,3.32,52.7769,52.7769,0,0,0-5.4,3.33A50.3479,50.3479,0,0,0,28.07,13.88Z" />

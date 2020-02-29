@@ -115,13 +115,13 @@ function preLoadController() {
 
 function modalController() {
     $('.more-info-title').click(function() {
-        
+        var id = $(this).data("id");
+        getDataArticle(id);
         $('.modal-wrapper ').toggleClass('open');
         $('.modal-wrapper .overlay').toggleClass('open');
         $('.modal-wrapper .modal').toggleClass('open');
     });
     $('.modal-wrapper .overlay').click(function() {
-
         $('.modal-wrapper ').toggleClass('open');
         $('.modal-wrapper .overlay').toggleClass('open');
         $('.modal-wrapper .modal').toggleClass('open');
