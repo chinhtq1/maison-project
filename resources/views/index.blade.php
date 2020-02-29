@@ -37,7 +37,7 @@
 </head>
 
 <body>
-    <div class="modal-wrapper" >
+    <div class="modal-wrapper">
         <div class="overlay"> </div>
         <div class="modal" id="article-modal">
             <a class="btn-close-modal trigger" href="javascript:;"></a>
@@ -100,7 +100,7 @@
                         <a href="#tin-tuc" class="nav-link expand">Tin tức</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  expand" href="#">Thư viện</a>
+                        <a href="#thu-vien" class="nav-link  expand" href="#">Thư viện</a>
                     </li>
                 </ul>
                 <a href="tel:{!! MetaTag::get('phone_number') !!}" class="phone-call">
@@ -163,10 +163,10 @@
             <img class="img-fluid" src="{{asset('static/logo_poem.png')}}">
             {!! $setting['poem_text'] ?? '' !!}
         </div>
-        <div class="full-width">
-            <div id="gioi-thieu" class="detail-infomation">
+        <div id="gioi-thieu" class="full-width">
+            <div class="detail-infomation">
                 <div data-aos="fade-left" class="info-left">
-                        {!! $setting['thuong_ngoan_my_canh'] ?? '' !!}
+                    {!! $setting['thuong_ngoan_my_canh'] ?? '' !!}
                     <div class="list-group-info">
 
                         <div class="d-flex w-100 justify-content-between">
@@ -240,7 +240,7 @@
         </section>
 
         <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="tien-ich" class="utilities">
-                {!! $setting['tien_ich_toan_my']  ?? '' !!}
+            {!! $setting['tien_ich_toan_my'] ?? '' !!}
 
             <img class="img-fluid" src="{{asset('static/tien_ich_toan_my_image.png')}}">
 
@@ -252,7 +252,7 @@
             <div data-aos="fade-left" class="design-building-right">
                 <div class="design-building-content">
                     <div class="inner-design-building-content">
-                            {!! $setting['kien_truc_chau_au'] ?? '' !!}
+                        {!! $setting['kien_truc_chau_au'] ?? '' !!}
                         <a target="_blank" href="{{route('pdf','mau_biet_thu_moi')}}" class="custom-button ">
                             <div class="custom-button-div button-style-house"><span>Mẫu Biệt Thự</span></div>
                             <div class="container-arrow">
@@ -287,8 +287,8 @@
             <div id="owl-carousel-1" class="owl-carousel">
 
                 @foreach ($articles as $article)
-            <div class="intro-post"  >
-                    <a class="image-post-container" >
+                <div class="intro-post">
+                    <a class="image-post-container">
                         <div class="inner-image-post-container" data-id="{{ $article['id'] }}">
                             <img class=" img-fluid " src="{{ $article['thumbnail'] ?? null }}">
                             <div class="time-post">
@@ -317,8 +317,8 @@
             </div>
         </section>
 
-        <section data-aos="zoom-in-down" class="text-slider">
-            <div class="container-text-slider">
+        <section class="text-slider">
+            <div data-aos="fade-down" data-aos-duration="1500" class="container-text-slider">
                 <div id="owl-carousel-2" class="owl-carousel">
                     <div class="inner-text-slider">
                         <h1><strong>Niềm Tin</strong> Trọn Vẹn</h1>
@@ -339,39 +339,39 @@
                 </div>
             </div>
 
-
-            <div class="logo-379">
-                <img src="{{asset('client/img/logo-379.png')}}" class="img-fluid">
+            <div data-aos="fade-up" data-aos-duration="1500">
+                <div class="logo-379">
+                    <img src="{{asset('client/img/logo-379.png')}}" class="img-fluid">
+                </div>
+                <h2>Nhà Phát triển bất động sản uy tín</h2>
             </div>
-            <h2>Nhà Phát triển bất động sản uy tín</h2>
-
         </section>
-        <section id="thu-vien" data-aos="fade-up" class="project-feed">
+        <section id="thu-vien" class="project-feed">
             <div class="inner-project-feed">
-                <div class="project-feed-content-left">
-                    <div class="container-feed-image">
+                <div  data-aos="zoom-in" class="project-feed-content-left">
+                    <div  class="container-feed-image">
                         <a> <img src="{{asset('client/img/feed-left.png')}}" class="img-fluid"></a>
                         <h1>379 Real Estate</h1>
                     </div>
                 </div>
-                <div class="project-feed-content-right">
+                <div data-aos="zoom-in" class="project-feed-content-right">
                     <div class="feed-left">
-                        <div class="container-feed-image">
+                        <div  class="container-feed-image">
                             <a> <img src="{{asset('client/img/-right.png')}}" class="img-fluid"> </a>
                             <h1>Athena Complex</h1>
                         </div>
 
-                        <div class="container-feed-image">
+                        <div  class="container-feed-image">
                             <a> <img src="{{asset('client/img/-right.png')}}" class="img-fluid"> </a>
                             <h1>Monkey d Luffy</h1>
                         </div>
                     </div>
                     <div class="feed-right">
-                        <div class="container-feed-image">
-                            <a> <img src="{{asset('client/img/-right.png')}}" class="img-fluid"> </a>
+                        <div  class="container-feed-image">
+                            <a> <img  src="{{asset('client/img/-right.png')}}" class="img-fluid"> </a>
                             <h1>hahaha</h1>
                         </div>
-                        <div class="container-feed-image">
+                        <div  class="container-feed-image">
                             <a> <img src="{{asset('client/img/-right.png')}}" class="img-fluid"> </a>
                             <h1>hahaha</h1>
                         </div>
@@ -418,7 +418,7 @@
                 <div class="below-footer d-flex justify-content-between">
                     <div class="logo-footer-left">
                         <img src="{{asset('static/logo_footer.png')}}" class="img-fluid logo-footer">
-                        <p>{!! MetaTag::get('footer_text')  !!}</p>
+                        <p>{!! MetaTag::get('footer_text') !!}</p>
                     </div>
                     <a href="tel:{!! MetaTag::get('phone_number') !!}" class="call-footer-right">
                         <h1>{!! MetaTag::get('phone_number') !!}</h1>

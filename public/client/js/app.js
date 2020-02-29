@@ -78,6 +78,16 @@ $(document).ready(function() {
     modalController();
 
 });
+activeRoute();
+
+function activeRoute() {
+    $(document).ready(function() {
+        $("header .nav li a").click(function(event) {
+            $("header .nav li a").removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+}
 
 function scrollEventListener() {
     $(window).scroll(function(event) {
@@ -143,16 +153,16 @@ function getDataArticle(id) {
         type: "GET",
         url: "api/articles/detail/" + id,
         dataType: "json",
-        success: function (data) {
+        success: function(data) {
             var result = data["data"];
             console.log(result);
-           $("#article-image").attr('src', result["main_picture"]);
-           $("#article-public-date").text(result["date_public"])
-           $("#article-title").text(result["title"])
-           $("#article-content").html(result["content"])
+            $("#article-image").attr('src', result["main_picture"]);
+            $("#article-public-date").text(result["date_public"])
+            $("#article-title").text(result["title"])
+            $("#article-content").html(result["content"])
 
         }
-      });
+    });
 }
 
 function cssHeader() {
