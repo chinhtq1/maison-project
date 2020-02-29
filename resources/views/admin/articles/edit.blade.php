@@ -37,7 +37,6 @@
                         <label for="inputFBLink" class="col-sm-2 col-form-label">Facebook Link</label>
                         <input type="text" id="inputFBLink" class="form-control col-sm-10" name="fb_link" value="{{ !empty($article)? $article->fb_link: null }}">
                         <span class="help-block">{{$errors->first('fb_link')}}</span>
-
                       </div>
 
                       <div class="form-check">

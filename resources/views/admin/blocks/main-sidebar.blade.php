@@ -66,7 +66,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="{{ route('admin_settings_general')}}" class="nav-link">
+                <a href="{{ route('admin_settings_general')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Chỉnh sửa chung</p>
                 </a>
@@ -76,7 +76,8 @@
                       <i class="far fa-circle nav-icon"></i>
                       <p>Chỉnh Sửa Text Đơn</p>
                     </a>
-                  </li>
+              </li>
+
             </ul>
           </li>
 

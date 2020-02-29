@@ -32,9 +32,10 @@ class Helper {
 
     static function upload_picture($width=0, $height=0, $originPath, $targetPath, $filename) {
         $originPath = base_path(Str::replaceFirst('/','\\',$originPath));
-        // dd(base_path(Str::replaceFirst('/','\\',$originPath)));
+        print_r(base_path(Str::replaceFirst('/','\\',$originPath)));
         $uploadDir = public_path($targetPath); // public/web/articles/article-id/
-        // dd($uploadDir);
+        print_r($uploadDir);
+        print_r($originPath);
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }

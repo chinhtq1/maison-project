@@ -26,13 +26,13 @@ class SettingController extends Controller
         $this->middleware('auth');
     }
 
-    function index()
-    {
-        $setting = Setting::firstOrCreate(['name' => 'section', 'type' => 'setting']);
-        $result = empty($setting->content) ? [] : $setting->content;
-        // dd($result);
-        return view('admin.settings.index', ['page_name' => 'Trang Settings', 'result' => $result]);
-    }
+    // function index()
+    // {
+    //     $setting = Setting::firstOrCreate(['name' => 'section', 'type' => 'setting']);
+    //     $result = empty($setting->content) ? [] : $setting->content;
+    //     // dd($result);
+    //     return view('admin.settings.index', ['page_name' => 'Trang Settings', 'result' => $result]);
+    // }
 
     function general_index()
     {
