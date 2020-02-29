@@ -118,7 +118,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'anh_slide_1'.'.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['anh_slide_1']->move($uploadDir, $file_rename);
+                $data['anh_slide_1']->move(public_path($uploadDir), $file_rename);
                 $setting['anh_slide_1'] = $uploadDir . $file_rename;
             }
         }
@@ -127,7 +127,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'anh_slide_2'.'.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['anh_slide_2']->move($uploadDir, $file_rename);
+                $data['anh_slide_2']->move(public_path($uploadDir), $file_rename);
                 $setting['anh_slide_2'] = $uploadDir . $file_rename;
             }
         }
@@ -136,7 +136,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'anh_slide_3'.'.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['anh_slide_3']->move($uploadDir, $file_rename);
+                $data['anh_slide_3']->move(public_path($uploadDir), $file_rename);
                 $setting['anh_slide_3'] = $uploadDir . $file_rename;
             }
         }
@@ -145,7 +145,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'anh_slide_4'.'.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['anh_slide_4']->move($uploadDir, $file_rename);
+                $data['anh_slide_4']->move(public_path($uploadDir), $file_rename);
                 $setting['anh_slide_4'] = $uploadDir . $file_rename;
             }
         }
@@ -154,7 +154,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'anh_slide_5'.'.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['anh_slide_5']->move($uploadDir, $file_rename);
+                $data['anh_slide_5']->move(public_pat($uploadDir), $file_rename);
                 $setting['anh_slide_5'] =$uploadDir . $file_rename;
             }
         }
