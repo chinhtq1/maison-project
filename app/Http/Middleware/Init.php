@@ -24,7 +24,7 @@ class Init
         \Carbon\Carbon::setLocale('vi');
         if (!cache()->has('general')) {
             $result = Setting::firstOrCreate(['name' => 'general', 'type' => 'setting']);
-            $general = is_null($result->content)? []: json_decode($result->content, true);
+            $general = is_null($result->content)? []: json_decode(json_encode($result->content), true);
             cache()->put('general', $general, env('CACHE_TIME', 30));
         }else{
             $general = cache('general');

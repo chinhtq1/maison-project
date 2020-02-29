@@ -13,8 +13,8 @@
 
       <div class="card-tools">
         @if(env('APP_ENV') === 'dev')
-          <a href="{{ route('slide_list_api')}}" type="button" class="btn btn-warning" >Api - List</a>
-          <a href="{{ route('slide_list_api')}}?public" type="button" class="btn btn-warning" >Api - List - Public</a>
+          <a href="{{ route('slide_list_api','image')}}?public" type="button" class="btn btn-warning" >Api - List - Image</a>
+          <a href="{{ route('slide_list_api','text')}}?public" type="button" class="btn btn-warning" >Api - List - Text</a>
         @endif
       </div>
     </div>

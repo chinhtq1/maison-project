@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Setting;
 use App\Helper\Helper;
 use Response;
+use App\Models\Slides;
 
 class HomeController extends Controller
 {
@@ -21,9 +22,17 @@ class HomeController extends Controller
     {
         $articles = Article::where('is_public', true)->get()->sortByDesc('date_public')->toArray();
         $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
-        $setting = is_null($result->content) ? [] : json_decode($result->content, true);
+        $setting = is_null($result->content) ? [] : json_decode(json_encode($result->content), true);
         // dd($setting);
-        return view('index', compact('articles','setting'));
+        $result = Setting::firstOrCreate(['name' => 'slides', 'type' => 'setting']);
+        $slide_setting = is_null($result->content) ? [] : json_decode($result->content, true);
+        // dd($slide_setting);
+        $slide_chu = [];
+        if(array_key_exists('slide_chu', $slide_setting)){
+            $slide_chu = Slides::where('id', $slide_setting['slide_chu'])->first();
+            $slide_chu = is_null($slide_chu->data) ? [] : json_decode(json_encode($slide_chu->data), true);
+        }
+        return view('index', compact('articles','setting','slide_chu'));
     }
 
     public function pdf($id)

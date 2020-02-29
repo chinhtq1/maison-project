@@ -320,16 +320,11 @@
         <section class="text-slider">
             <div data-aos="fade-down" data-aos-duration="1500" class="container-text-slider">
                 <div id="owl-carousel-2" class="owl-carousel">
+                    @foreach($slide_chu["slides"] as $slide )
                     <div class="inner-text-slider">
-                        <h1><strong>Niềm Tin</strong> Trọn Vẹn</h1>
-                        <p>Công ty TNHH Phát triển đô thị và Xây dựng 379 tiên phong kiến tạo những khu <br> đô thị kiểu
-                            mẫu tại Thái Bình và là phát triển uy tín các dự án chung cư phức <br> hợp tại Hà Nội</p>
+                        {!! $slide['text'] ?? '' !!}
                     </div>
-                    <div class="inner-text-slider">
-                        <h1><strong>Niềm Tin</strong> Đã Trọn Vẹn</h1>
-                        <p>Lorem lorem lorem <br> đô thị kiểu mẫu tại Thái Bình và là phát triển uy tín các dự án chung
-                            cư phức <br> hợp tại Hà Nội</p>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="btn btn-pre-slider">
                     <span><i class="fa fa-2x fa-long-arrow-left" aria-hidden="true"></i></span>
