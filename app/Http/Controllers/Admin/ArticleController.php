@@ -28,7 +28,7 @@ class ArticleController extends Controller
 
     public function index(Request $request){
         $page_name = "Danh sách bài viết";
-        $articles = Article::all();
+        $articles = Article::all()->sortByDesc('date_public');
         return view('admin.articles.index',['articles'=>$articles,'page_name'=> $page_name]);
     }
 
@@ -158,10 +158,10 @@ class ArticleController extends Controller
                 $thumbnail = Image::make($file_path)->resize(
                     config("config.article.thumbnail_size.width"), 
                     config("config.article.thumbnail_size.height"))->save(public_path($uploadDir .$thumbnail_name));
-                $picture_data['thumbnail'] = asset($uploadDir . $thumbnail_name);
+                $picture_data['thumbnail'] = $uploadDir . $thumbnail_name;
 
                 $picture_data['main_picture']->move($uploadDir, $file_rename);
-                $picture_data['main_picture'] = asset($uploadDir . $file_rename);
+                $picture_data['main_picture'] = $uploadDir . $file_rename;
 
                 $article->main_picture = $picture_data["main_picture"];
                 $article->thumbnail = $picture_data["thumbnail"];

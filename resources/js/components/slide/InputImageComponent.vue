@@ -29,10 +29,11 @@
                                 class="form-control-file" >
                             <img alt="Chưa có ảnh" width="auto" height="200"
                                 style="margin-top:15px;margin-bottom: 15px;" 
-                                :src="image?image:placeholder">
+                                :src="getImageSrc">
                             <br>
 
-                            <input type="text"  v-bind:name="input_type" readonly hidden v-bind:value="type">                  
+                            <input type="text"  v-bind:name="input_type" readonly hidden v-bind:value="type">
+                            <input type="text"  v-bind:name="input_text" readonly hidden v-bind:value="image">                                    
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -57,7 +58,19 @@
 
             input_type() {
                 return "slides[" + this.id + "][type]"
+            },
+
+            getImageSrc() {
+                if (this.image !== "") {
+                    if (this.image.includes("slides/slide-",)){
+                        return "/" + this.image
+                    }
+                    return this.image
+                }
+                return this.placeholder
+
             }
+
         },
 
         methods: {

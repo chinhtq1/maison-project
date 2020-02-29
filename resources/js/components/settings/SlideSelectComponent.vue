@@ -7,7 +7,7 @@
     </select>
     <br>
     <p><b>Bạn đã chọn :</b></p>
-    <p>{{ getSlide(selected) }}</p>
+    <p style="color: green">{{ getSlide(selected) }}</p>
 </div>
 
 </template>
@@ -30,7 +30,7 @@
         methods:{
             getSlide(id){
                 let slide = this.list.find(element => element.id == id)
-                if(typeof slide !== 'undefined')return slide.title
+                if(typeof slide !== 'undefined') return slide.id +" : "+slide.title
                 else return  ''
                 }
         },
