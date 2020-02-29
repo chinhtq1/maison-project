@@ -40,12 +40,15 @@ class SlideController extends Controller
                 // Active
         if ($request->has('public') && !is_null($slide)) {
             $slide->fill(['is_public' => true])->save();
+            Helper::update_time_public($slide);
+
             session()->flash('message', ['text' => 'Đã xuất bản bài viết: '.$slide->title, 'type' => 'success']);
             return redirect()->back();
         }
 
         if ($request->has('unpublic') && !is_null($slide)) {
             $slide->fill(['is_public' => false])->save();
+            $slide->date_public=null;
             session()->flash('message', ['text' => 'Đã xét trạng thái chưa xuất bản cho bài viết: '.$slide->title, 'type' => 'warning']);
             return redirect()->back();
         }

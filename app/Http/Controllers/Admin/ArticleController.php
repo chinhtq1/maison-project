@@ -40,12 +40,15 @@ class ArticleController extends Controller
         // Active
         if ($request->has('public') && !is_null($article)) {
             $article->fill(['is_public' => true])->save();
+            Helper::update_time_public($article);
+
             session()->flash('message', ['text' => 'Đã xuất bản bài viết: '.$article->title, 'type' => 'success']);
             return redirect()->back();
         }
 
         if ($request->has('unpublic') && !is_null($article)) {
             $article->fill(['is_public' => false])->save();
+            $article->date_public=null;
             session()->flash('message', ['text' => 'Đã xét trạng thái chưa xuất bản cho bài viết: '.$article->title, 'type' => 'warning']);
             return redirect()->back();
         }
