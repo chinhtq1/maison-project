@@ -38,15 +38,15 @@ class Helper {
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
-        try {
+        // try {
             if($width == 0 || $height == 0) {
                 $img = Image::make($originPath)->save($uploadDir.$filename); // public/web/articles/article-id/{slug}.extension
             }else{
                 $img = Image::make($originPath)->resize($width, $height)->save($uploadDir.$filename); // public/web/articles/article-id/{slug}.extension
             }
-        } catch (\Exception $e){
-            Session::flash('message_errors', ['text' => "Không tìm thấy ảnh gốc", 'type' => 'error']);
-        }
+        // } catch (\Exception $e){
+        //     Session::flash('message_errors', ['text' => "Không tìm thấy ảnh gốc", 'type' => 'error']);
+        // }
         return $targetPath.$filename;
     }
 
