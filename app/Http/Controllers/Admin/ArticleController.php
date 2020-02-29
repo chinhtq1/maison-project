@@ -90,7 +90,6 @@ class ArticleController extends Controller
             $data['is_public'] = false;
         }
 
-        $uploadDir = 'articles/article-'.$article->id.'/';
 
         if (!is_null($article)) {
             $article->fill($data);
@@ -98,11 +97,14 @@ class ArticleController extends Controller
         }else{
             $data['user_id'] = $user->id;
             $article = Article::create($data);
+            $uploadDir = 'articles/article-'.$article->id.'/';
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0777, true);
             }
             $user->articles()->save($article);
         }
+
+        $uploadDir = 'articles/article-'.$article->id.'/';
 
         // $pic_data["picture_data"]["main_picture_data"]["url"]="";
         // $pic_data["picture_data"]["thumb_data"]["url"] = "";
