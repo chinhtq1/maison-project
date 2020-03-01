@@ -1494,7 +1494,7 @@
         
         .text-slider {
             text-align: center;
-            background: blue url('../../static/niem_tin_tron_ven.png') no-repeat scroll left center;
+            background: transparent url('../../static/niem_tin_tron_ven.png') no-repeat scroll center center;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
@@ -1854,6 +1854,32 @@
         }
         
         @media only screen and (max-width: 768px) {
+            .text-slider::before {
+                display: none;
+            }
+            .inner-text-slider h1 {
+                font-size: 3.8rem;
+                font-family: "Playfair Display";
+                color: rgb(62, 53, 52);
+                font-weight: bold;
+                line-height: 1.579;
+                text-align: center;
+                margin-bottom: 13rem;
+            }
+            .container-text-slider .btn {
+                display: none;
+            }
+            .text-slider h2 {
+                padding-bottom: 23rem;
+            }
+            .logo-379 {
+                padding-top: 6.5rem;
+            }
+            .text-slider {
+                background: transparent url('../../static/niem_tin_tron_ven_mobile.png') no-repeat scroll center center;
+                padding-bottom: 0;
+                padding-top: 9rem;
+            }
             #customNav {
                 display: none;
             }

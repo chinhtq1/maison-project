@@ -257,6 +257,15 @@ class SettingController extends Controller
                 $setting['niem_tin_tron_ven'] = asset($uploadDir . $file_rename);
             }
         }
+        if (\Request::hasFile('niem_tin_tron_ven_mobile')) {
+            $extension = $data['niem_tin_tron_ven_mobile']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'niem_tin_tron_ven_mobile.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['niem_tin_tron_ven_mobile']->move(public_path($uploadDir), $file_rename);
+                $setting['niem_tin_tron_ven_mobile'] = asset($uploadDir . $file_rename);
+            }
+        }
         if (\Request::hasFile('map_desktop')) {
             $extension = $data['map_desktop']->getClientOriginalExtension();
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');

@@ -39,6 +39,7 @@ $(document).ready(function() {
     });
 
     var center = isTabletScreen();
+    // SLider tin tức
     $('#owl-carousel-1').owlCarousel({
         lazyLoad: false,
         autoplay: false,
@@ -52,9 +53,10 @@ $(document).ready(function() {
         slideSpeed: 300,
         paginationSpeed: 400
     });
+    // SLider text static
     $('#owl-carousel-2').owlCarousel({
         lazyLoad: false,
-        autoplay: false,
+        autoplay: center ? false : false,
         loop: true,
         nav: false,
         navSpeed: 500,
