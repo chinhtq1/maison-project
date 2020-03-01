@@ -70,7 +70,7 @@ $(document).ready(function() {
         $('html, body').animate({ scrollTop: 0 }, 700);
         return false;
     });
-    scrollEventListener();
+    // scrollEventListener();
     newsSliderController();
     textSliderController();
     addAnimationWhenScroll();
@@ -89,18 +89,18 @@ function activeRoute() {
     });
 }
 
-function scrollEventListener() {
-    $(window).scroll(function(event) {
-        var scroll = $(window).scrollTop();
-        if (scroll == 0) {
-            $(".header-background-image a.company-logo").removeClass("outTop");
-            $(".fb-logo").removeClass("outRight");
-        } else if (scroll > 0) {
-            $(".header-background-image a.company-logo").addClass("outTop");
-            $(".fb-logo").addClass("outRight");
-        }
-    });
-}
+// function scrollEventListener() {
+//     $(window).scroll(function(event) {
+//         var scroll = $(window).scrollTop();
+//         if (scroll == 0) {
+//             $(".header-background-image a.company-logo").removeClass("outTop");
+//             $(".fb-logo").removeClass("outRight");
+//         } else if (scroll > 0) {
+//             $(".header-background-image a.company-logo").addClass("outTop");
+//             $(".fb-logo").addClass("outRight");
+//         }
+//     });
+// }
 
 function preLoadController() {
     var count = $('.count');
