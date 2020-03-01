@@ -40,7 +40,7 @@
     <div class="modal-wrapper">
         <div class="overlay"> </div>
         <div class="modal" id="article-modal">
-            <a class="btn-close-modal trigger" > <i class="fa fa-times" aria-hidden="true"></i></a>
+            <a class="btn-close-modal " > <i class="fa fa-times" aria-hidden="true"></i></a>
             <div class="content">
                 <div class="img-banner-modal">
                     <img  id="article-image">

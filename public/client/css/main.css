@@ -1496,13 +1496,12 @@
             text-align: center;
             background: blue url('../../static/niem_tin_tron_ven.png') no-repeat scroll left center;
             background-size: cover;
-            /* <------ */
             background-repeat: no-repeat;
             background-position: center center;
-            /* optional, center the image */
             padding-bottom: 41rem;
             padding-top: 0;
             margin-top: 25rem;
+            position: relative;
         }
         
         .text-slider::before {
