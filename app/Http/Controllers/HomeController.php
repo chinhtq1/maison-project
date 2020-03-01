@@ -26,7 +26,7 @@ class HomeController extends Controller
         // dd($setting);
         $result = Setting::firstOrCreate(['name' => 'slides', 'type' => 'setting']);
         $slide_setting = is_null($result->content) ? [] : json_decode($result->content, true);
-        // dd($slide_setting);
+
         $slide_chu = [];
         if(array_key_exists('slide_chu', $slide_setting)){
             $slide_chu = Slides::where('id', $slide_setting['slide_chu'])->first();
