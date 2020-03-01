@@ -47,8 +47,8 @@ Route::group(['prefix' => 'slides'], function(){
     Route::group(['middleware' => ['slides.backend']],function(){
         Route::get('/{type}/{id}', 'Admin\SlideController@edit')->name('admin_slide');
         Route::post('/store/{type}/{id}', 'Admin\SlideController@store')->name('admin_slide_store');
-        Route::get('/delete/{id}', 'Admin\SlideController@delete')->name('admin_slide_delete');
-        Route::get('/delete-comfirm/{id}','Admin\SlideController@delete_comfirm')->name('admin_slide_delete_comfirm');
+        Route::get('/delete/ask/{id}', 'Admin\SlideController@delete')->name('admin_slide_delete');
+        Route::get('/delete/comfirm/{id}','Admin\SlideController@delete_comfirm')->name('admin_slide_delete_comfirm');
     });
 });
 
