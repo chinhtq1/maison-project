@@ -23,7 +23,7 @@
                         <div class="block">
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input">Thơ</label>
-                                <span class="text-danger"> ( Không được dùng thẻ heading , viết liền không xuống dòng) </span>
+                                <span class="text-danger"> ( Không được dùng thẻ heading , chữ thường viết liền không enter xuống dòng) </span>
                                 <textarea id="editor1" name="poem_text" rows="7" class="form-control ckeditor"
                                     placeholder="Write your text..."> {{$data->poem_text ?? ''}}</textarea>
                             </div>
@@ -33,7 +33,7 @@
                         <div class="block">
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input">Tiện Ích Toàn Mỹ</label>
-                                <span class="text-danger"> ( Dùng Thẻ H1 làm tiêu đề ) </span>
+                                <span class="text-danger"> ( Dùng Thẻ H1 làm tiêu đề , chữ thường viết liền không enter xuống dòng) </span>
                                 <textarea id="editor2" name="tien_ich_toan_my" rows="7" class="form-control ckeditor"
                                     placeholder="Write your text..."> {{$data->tien_ich_toan_my ?? ''}}</textarea>
                             </div>

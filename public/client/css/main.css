@@ -60,7 +60,7 @@
         }
         
         .btn-to-top {
-            width: 45px;
+            width: 4.5rem;
             border: solid 1px #9d9898;
             position: absolute;
             top: 0;
@@ -523,14 +523,6 @@
             position: absolute;
         }
         
-        .outTop {
-            top: -50px !important;
-        }
-        
-        .outRight {
-            right: -50px!important;
-        }
-        
         .header-background-image a.company-logo {
             right: 60px;
             top: 87px;
@@ -636,8 +628,8 @@
             color: rgb(125, 115, 114);
             line-height: 1.875;
             max-width: 770px;
-            margin-bottom: 35px;
             margin: auto;
+            padding-bottom: 5.2rem;
         }
         
         #customNav .am-prev.btn {
@@ -1425,6 +1417,7 @@
             line-height: 1.545;
             text-align: left;
             margin-top: 20px;
+            margin-bottom: 0;
         }
         
         .intro-post p {
@@ -1441,8 +1434,13 @@
             background-color: #d9d2cc;
         }
         
+        .above-footer-left .u-ul-footer li:first-child img {
+            width: 16rem;
+        }
+        
         .fb-link {
             cursor: pointer;
+            width: 3.5rem;
         }
         
         .more-info .more-info-title:hover {
@@ -1531,20 +1529,20 @@
             max-width: 1320px;
             margin: auto;
             background-color: #f4eee7;
-            padding: 20px;
+            padding: 2rem;
             padding-bottom: 10rem;
             display: flex;
             position: relative;
         }
         
         .inner-project-feed .project-feed-content-left {
-            padding-right: 10px;
+            padding-right: 1rem;
             width: 50%;
             text-align: center;
         }
         
         .inner-project-feed .project-feed-content-right {
-            padding-left: 10px;
+            padding-left: 1rem;
             width: 50%;
         }
         
@@ -1632,6 +1630,8 @@
             line-height: 2.083;
             text-align: center;
             margin-bottom: 0;
+            max-width: 960px;
+            margin: auto;
         }
         
         .text-slider h2 {
@@ -1647,7 +1647,7 @@
         
         .call-footer-right h1 {
             font-size: 2rem;
-            font-family: "Playfair Display";
+            font-family: "Playfair Display Bold";
             color: rgba(255, 255, 255, 0.6);
             font-weight: bold;
             text-align: right;
@@ -1863,6 +1863,11 @@
         }
         
         @media only screen and (max-width: 768px) {
+            .inner-text-slider p {
+                max-width: 620px;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
             .poem p {
                 max-width: 768px;
             }
@@ -2019,7 +2024,7 @@
             }
             .detail-infomation .info-right {
                 width: 100%;
-                padding-right: 50px;
+                padding-right: 5rem;
                 margin-top: 8rem;
             }
             .button-image-project {
@@ -2064,6 +2069,7 @@
                 padding-left: 5.2rem;
                 padding-right: 5.2rem;
                 max-width: 641px;
+                padding-bottom: 4.5rem;
             }
             .utilities img {
                 padding-left: 5rem;
@@ -2116,8 +2122,8 @@
             }
             .project-feed {
                 padding: 0;
-                padding-left: 5rem;
-                padding-right: 5rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
             }
             .project-feed .inner-project-feed {
                 display: block;
