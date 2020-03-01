@@ -40,9 +40,9 @@
     <div class="modal-wrapper">
         <div class="overlay"> </div>
         <div class="modal" id="article-modal">
-            <a class="btn-close-modal " > <i class="fa fa-times" aria-hidden="true"></i></a>
             <div class="content">
                 <div class="img-banner-modal">
+                        <a class="btn-close-modal " > <i class="fa fa-times" aria-hidden="true"></i></a>
                     <img  id="article-image">
                     <div class="time-post">
                         <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>

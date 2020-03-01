@@ -23,7 +23,7 @@
         
         #article-image {
             width: 100%;
-            height: 545px;
+            height: 434px;
             object-fit: cover;
         }
         
@@ -232,6 +232,7 @@
         
         .img-banner-modal {
             position: relative;
+            overflow: visible;
         }
         
         .img-banner-modal .time-post {
