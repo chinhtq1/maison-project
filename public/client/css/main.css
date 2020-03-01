@@ -400,6 +400,11 @@
         
         .logo-379 {
             padding-top: 12rem;
+            /* width: 9.6rem; */
+        }
+        
+        .logo-379 img {
+            width: 9.6rem;
         }
         
         .detail-infomation {
@@ -410,7 +415,8 @@
         }
         
         .poem img {
-            margin-bottom: 35px;
+            margin-bottom: 3.5rem;
+            width: 8rem;
         }
         
         .poem p {
@@ -420,6 +426,8 @@
             color: rgb(125, 115, 114);
             line-height: 2.308;
             margin-bottom: 0px;
+            margin: auto;
+            max-width: 810px;
         }
         
         .detail-infomation .info-left {
@@ -627,8 +635,9 @@
             font-size: 1.6rem;
             color: rgb(125, 115, 114);
             line-height: 1.875;
+            max-width: 770px;
             margin-bottom: 35px;
-            rotate: 180;
+            margin: auto;
         }
         
         #customNav .am-prev.btn {
@@ -1854,6 +1863,9 @@
         }
         
         @media only screen and (max-width: 768px) {
+            .poem p {
+                max-width: 768px;
+            }
             .text-slider::before {
                 display: none;
             }
@@ -2051,6 +2063,7 @@
             .utilities p {
                 padding-left: 5.2rem;
                 padding-right: 5.2rem;
+                max-width: 641px;
             }
             .utilities img {
                 padding-left: 5rem;
