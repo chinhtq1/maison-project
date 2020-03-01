@@ -43,11 +43,11 @@ $(document).ready(function() {
         lazyLoad: false,
         autoplay: false,
         loop: true,
-        nav: true,
+        nav: false,
         center: center,
         navSpeed: 500,
         items: center ? 2 : 3,
-        dots: false,
+        dots: center ? true : false,
         margin: 40,
         slideSpeed: 300,
         paginationSpeed: 400
@@ -125,12 +125,13 @@ function preLoadController() {
 
 function modalController() {
     $('.more-info-title').click(function() {
+        $('html').addClass('is-main-menu-open');
         var id = $(this).data("id");
         getDataArticle(id);
         $('.modal-wrapper ').toggleClass('open');
         $('.modal-wrapper .overlay').toggleClass('open');
         $('.modal-wrapper .modal').toggleClass('open');
-        $('html').addClass('is-main-menu-open');
+
 
     });
     $('.modal-wrapper .overlay').click(function() {
@@ -141,6 +142,7 @@ function modalController() {
     });
 
     $('.intro-post .inner-image-post-container').click(function() {
+        $('html').addClass('is-main-menu-open');
         var id = $(this).data("id");
         getDataArticle(id);
         $('.modal-wrapper ').toggleClass('open');
