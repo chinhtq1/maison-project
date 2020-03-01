@@ -23,7 +23,7 @@
             <form enctype="multipart/form-data" method="post" action="{{ route('admin_settings_general_store') }}"
                 class="form-horizontal" role="form">
                 {!! csrf_field() !!}
-                <?php $data = json_decode($result->content); ?>
+                <?php $data = json_decode(json_encode($result->content)); ?>
                 <div class="row">
                     <div class="col-md-6">          
                         <div class="block">

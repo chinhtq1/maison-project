@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'slides'], function(){
 
     Route::get('/detail/{id}', 'Api\SlidesController@show')->name('slide_show_api');
-    Route::get('/', 'Api\SlidesController@index')->name('slide_list_api');
+    Route::get('/{type}', 'Api\SlidesController@index')->name('slide_list_api');
 
 });
 
@@ -33,7 +33,6 @@ Route::group(['prefix' => 'articles'], function(){
 });
 
 Route::group(['prefix' => 'settings'], function(){
-
     Route::get('/{name}', 'Api\SettingsController@show')->name('settings_show_api');
 
 });

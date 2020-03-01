@@ -79,14 +79,18 @@ class SettingController extends Controller
     function slides_index()
     {
         $result = Setting::firstOrCreate(['name' => 'slides', 'type' => 'setting']);
-        // dd($result->content);
+        if(is_null($result->content)){
+            $result->content = '{}';
+        }
         return view('admin.settings.slides-index', ['page_name' => 'Chỉnh Sửa Text Đơn', 'result' => $result]);
     }
 
     function text_single_store(Request $request) {
         $data = $request->all();
-        dd($data);
         $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
+        if(is_null($result->content)){
+            $result->content = '{}';
+        }
         $setting = is_null($result->content) ? [] : json_decode($result->content, true);
         foreach ($data as $key => $value) {
             $setting[$key] = $value;
@@ -98,7 +102,6 @@ class SettingController extends Controller
 
     function slides_store(Request $request) {
         $data = $request->all();
-        // dd($data);
         $result = Setting::firstOrCreate(['name' => 'slides', 'type' => 'setting']);
         $setting = is_null($result->content) ? [] : json_decode($result->content, true);
 
@@ -108,11 +111,57 @@ class SettingController extends Controller
         foreach ($data as $key => $value) {
             $setting[$key] = $value;
         }
-
-
-
-
         $uploadDir = 'static/';
+
+        if (\Request::hasFile('anh_slide_1')) {
+            $extension = $data['anh_slide_1']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'anh_slide_1'.'.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['anh_slide_1']->move(public_path($uploadDir), $file_rename);
+                $setting['anh_slide_1'] = $uploadDir . $file_rename;
+            }
+        }
+        if (\Request::hasFile('anh_slide_2')) {
+            $extension = $data['anh_slide_2']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'anh_slide_2'.'.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['anh_slide_2']->move(public_path($uploadDir), $file_rename);
+                $setting['anh_slide_2'] = $uploadDir . $file_rename;
+            }
+        }
+        if (\Request::hasFile('anh_slide_3')) {
+            $extension = $data['anh_slide_3']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'anh_slide_3'.'.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['anh_slide_3']->move(public_path($uploadDir), $file_rename);
+                $setting['anh_slide_3'] = $uploadDir . $file_rename;
+            }
+        }
+        if (\Request::hasFile('anh_slide_4')) {
+            $extension = $data['anh_slide_4']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'anh_slide_4'.'.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['anh_slide_4']->move(public_path($uploadDir), $file_rename);
+                $setting['anh_slide_4'] = $uploadDir . $file_rename;
+            }
+        }
+        if (\Request::hasFile('anh_slide_5')) {
+            $extension = $data['anh_slide_5']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'anh_slide_5'.'.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['anh_slide_5']->move(public_path($uploadDir), $file_rename);
+                $setting['anh_slide_5'] =$uploadDir . $file_rename;
+            }
+        }
+
+        $result->content = json_encode($setting);
+        $result->save();
+        return redirect()->back()->with('status', 'Settings has been saved.');
 
 
     }
@@ -143,7 +192,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'home_image.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['home_image']->move($uploadDir, $file_rename);
+                $data['home_image']->move(public_path($uploadDir), $file_rename);
                 $setting['home_image'] = asset($uploadDir . $file_rename);
             }
         }
@@ -153,7 +202,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'logo_desktop.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['logo_desktop']->move($uploadDir, $file_rename);
+                $data['logo_desktop']->move(public_path($uploadDir), $file_rename);
                 $setting['logo_desktop'] = '/' . $uploadDir . $file_rename;
             }
         }
@@ -165,7 +214,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'logo_mobile.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['logo_mobile']->move($uploadDir, $file_rename);
+                $data['logo_mobile']->move(public_path($uploadDir), $file_rename);
                 $setting['logo_mobile'] = asset($uploadDir . $file_rename);
             }
         }
@@ -175,7 +224,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'banner_desktop.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['banner_desktop']->move($uploadDir, $file_rename);
+                $data['banner_desktop']->move(public_path($uploadDir), $file_rename);
                 $setting['banner_desktop'] = asset($uploadDir . $file_rename);
             }
         }
@@ -185,7 +234,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'banner_mobile.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['banner_mobile']->move($uploadDir, $file_rename);
+                $data['banner_mobile']->move(public_path($uploadDir), $file_rename);
                 $setting['banner_mobile'] = asset($uploadDir . $file_rename);
             }
         }
@@ -195,7 +244,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'logo_poem.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['logo_poem']->move($uploadDir, $file_rename);
+                $data['logo_poem']->move(public_path($uploadDir), $file_rename);
                 $setting['logo_poem'] = asset($uploadDir . $file_rename);
             }
         }
@@ -205,7 +254,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'niem_tin_tron_ven.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['niem_tin_tron_ven']->move($uploadDir, $file_rename);
+                $data['niem_tin_tron_ven']->move(public_path($uploadDir), $file_rename);
                 $setting['niem_tin_tron_ven'] = asset($uploadDir . $file_rename);
             }
         }
@@ -214,7 +263,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'map_desktop.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['map_desktop']->move($uploadDir, $file_rename);
+                $data['map_desktop']->move(public_path($uploadDir), $file_rename);
                 $setting['map_desktop'] = asset($uploadDir . $file_rename);
             }
         }
@@ -223,7 +272,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'map_mobile.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['map_mobile']->move($uploadDir, $file_rename);
+                $data['map_mobile']->move(public_path($uploadDir), $file_rename);
                 $setting['map_mobile'] = asset($uploadDir . $file_rename);
             }
         }
@@ -232,7 +281,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'logo_footer.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['logo_footer']->move($uploadDir, $file_rename);
+                $data['logo_footer']->move(public_path($uploadDir), $file_rename);
                 $setting['logo_footer'] = asset($uploadDir . $file_rename);
             }
         }
@@ -241,7 +290,7 @@ class SettingController extends Controller
             $allowedExtensions = array('pdf');
             $file_rename   = 'mau_biet_thu_moi.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['mau_biet_thu_moi']->move($uploadDir, $file_rename);
+                $data['mau_biet_thu_moi']->move(public_path($uploadDir), $file_rename);
                 $setting['mau_biet_thu_moi'] = asset($uploadDir . $file_rename);
             }
         }
@@ -251,7 +300,7 @@ class SettingController extends Controller
             $file_rename   = 'ban_do_vi_tri.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
                 $data['ban_do_vi_tri']->move($uploadDir, $file_rename);
-                $setting['ban_do_vi_tri'] = asset($uploadDir . $file_rename);
+                $setting['ban_do_vi_tri'] = asset(public_path($uploadDir) . $file_rename);
             }
         }
         if (\Request::hasFile('hinh_anh_du_an')) {
@@ -259,7 +308,7 @@ class SettingController extends Controller
             $allowedExtensions = array('pdf');
             $file_rename   = 'hinh_anh_du_an.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['hinh_anh_du_an']->move($uploadDir, $file_rename);
+                $data['hinh_anh_du_an']->move(public_path($uploadDir), $file_rename);
                 $setting['hinh_anh_du_an'] = asset($uploadDir . $file_rename);
             }
         }
@@ -269,7 +318,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'tien_ich_toan_my_image.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['tien_ich_toan_my_image']->move($uploadDir, $file_rename);
+                $data['tien_ich_toan_my_image']->move(public_path($uploadDir), $file_rename);
                 $setting['tien_ich_toan_my_image'] = asset($uploadDir . $file_rename);
             }
         }
@@ -278,7 +327,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'kien_truc_chau_au_image.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['kien_truc_chau_au_image']->move($uploadDir, $file_rename);
+                $data['kien_truc_chau_au_image']->move(public_path($uploadDir), $file_rename);
                 $setting['kien_truc_chau_au_image'] = asset($uploadDir . $file_rename);
             }
         }
@@ -287,7 +336,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'thuong_ngoan_my_canh_big.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['thuong_ngoan_my_canh_big']->move($uploadDir, $file_rename);
+                $data['thuong_ngoan_my_canh_big']->move(public_path($uploadDir), $file_rename);
                 $setting['thuong_ngoan_my_canh_big'] = asset($uploadDir . $file_rename);
             }
         }
@@ -296,7 +345,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'vi_tri_kim_cuong_image.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['vi_tri_kim_cuong_image']->move($uploadDir, $file_rename);
+                $data['vi_tri_kim_cuong_image']->move(public_path($uploadDir), $file_rename);
                 $setting['vi_tri_kim_cuong_image'] = asset($uploadDir . $file_rename);
             }
         }
@@ -305,7 +354,7 @@ class SettingController extends Controller
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
             $file_rename   = 'thuong_ngoan_my_canh_small.' . $extension;
             if (in_array($extension, $allowedExtensions)) {
-                $data['thuong_ngoan_my_canh_small']->move($uploadDir, $file_rename);
+                $data['thuong_ngoan_my_canh_small']->move(public_path($uploadDir), $file_rename);
                 $setting['thuong_ngoan_my_canh_small'] = asset($uploadDir . $file_rename);
             }
         }

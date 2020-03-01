@@ -2438,7 +2438,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["name", "value"],
+  props: ["name", "value", 'type'],
   data: function data() {
     return {
       list: [],
@@ -2448,7 +2448,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('/api/slides?public').then(function (response) {
+    axios.get('/api/slides/' + this.type + '?public').then(function (response) {
       return _this.list = response.data.data;
     })["catch"](function (error) {
       return;

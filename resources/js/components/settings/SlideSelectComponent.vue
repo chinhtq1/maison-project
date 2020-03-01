@@ -14,7 +14,7 @@
 
 <script>
     export default {
-        props: ["name", "value"],
+        props: ["name", "value",'type'],
         data () {
             return {
                 list: [],
@@ -22,7 +22,7 @@
             }
         },
         mounted () {
-            axios.get('/api/slides?public').then(response => (
+            axios.get('/api/slides/'+ this.type +'?public').then(response => (
                     this.list = response.data.data)).catch(error => {
                     return
             })

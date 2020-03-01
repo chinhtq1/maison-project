@@ -7,7 +7,7 @@
 
       <div class="card-tools">
         @if(env('APP_ENV') === 'dev')
-        <a href="{{ route('settings_show_api', 'section')}}" type="button" class="btn btn-warning" >Api</a>
+        <a href="{{ route('settings_show_api', 'slides')}}" type="button" class="btn btn-warning" >Api</a>
         @endif
       </div>
     </div>
@@ -23,7 +23,7 @@
             <form enctype="multipart/form-data" method="post" action="{{ route('admin_slides_store') }}"
                 class="form-horizontal" role="form">
                 {!! csrf_field() !!}
-                <?php $data = json_decode($result->content); ?>
+                <?php $data = json_decode(json_encode($result->content)); ?>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
@@ -31,8 +31,9 @@
                                 <div class="form-group">
                                     <label for="slide_chu">Chọn slide chữ</label>
                                     <slide-selected 
-                                    :name="{{ json_encode('data[slide_chu]')}}"
-                                        {{-- :value="{{json_encode($result?App\Helper\Helper::getValueField($field['name'], $result):'')}}"> --}}
+                                    :name="{{ json_encode('slide_chu')}}"
+                                    :type="{{json_encode(config('config.slides.types.0'))}}"
+                                    :value="{{json_encode(array_key_exists('slide_chu',$data)?$data->slide_chu:'')}}">
                                     >
                                     </slide-selected>
                                 </div>
@@ -46,11 +47,12 @@
                                 <label for="slide_chu">Slide 1</label>
                                 <slide-selected 
                                     :name="{{ json_encode('slide_1')}}"
-                                    {{-- :value="{{json_encode($result?App\Helper\Helper::getValueField($field['name'], $result):'')}}"> --}}
+                                    :type="{{json_encode(config('config.slides.types.1'))}}"
+                                    :value="{{json_encode(array_key_exists('slide_1',$data)?$data->slide_1:'')}}"
                                 >
                                 </slide-selected>
                                 <input type="file" accept="image/*" name="anh_slide_1" class="form-control-file" >
-                                <img src="{{asset('admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
+                                <img src="{{array_key_exists('anh_slide_1', $data) ? asset($data->anh_slide_1) : asset('admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
                                     style="margin-top:15px;margin-bottom: 15px;">
                             </div>
                         </div>
@@ -61,11 +63,12 @@
                                 <label for="slide_chu">Slide 2</label>
                                 <slide-selected 
                                     :name="{{ json_encode('slide_2')}}"
-                                    {{-- :value="{{json_encode($result?App\Helper\Helper::getValueField($field['name'], $result):'')}}"> --}}
+                                    :type="{{json_encode(config('config.slides.types.1'))}}"
+                                    :value="{{json_encode(array_key_exists('slide_2',$data)?$data->slide_2:'')}}"
                                 >
                                 </slide-selected>
                                 <input type="file" accept="image/*" name="anh_slide_2" class="form-control-file" >
-                                <img src="{{asset('admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
+                                <img src="{{array_key_exists('anh_slide_2',$data) ?asset($data->anh_slide_2) :asset('admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
                                     style="margin-top:15px;margin-bottom: 15px;">
                             </div>
                         </div>
@@ -77,11 +80,12 @@
                                 <label for="slide_chu">Slide 3</label>
                                 <slide-selected 
                                     :name="{{ json_encode('slide_3')}}"
-                                    {{-- :value="{{json_encode($result?App\Helper\Helper::getValueField($field['name'], $result):'')}}"> --}}
+                                    :type="{{json_encode(config('config.slides.types.1'))}}"
+                                    :value="{{json_encode(array_key_exists('slide_3',$data)?$data->slide_3:'')}}"
                                 >
                                 </slide-selected>
                                 <input type="file" accept="image/*" name="anh_slide_3" class="form-control-file" >
-                                <img src="{{asset('admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
+                                <img src="{{array_key_exists('anh_slide_3',$data) ?asset($data->anh_slide_3) : asset('admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
                                     style="margin-top:15px;margin-bottom: 15px;">
                             </div>
                         </div>
@@ -93,11 +97,12 @@
                                 <label for="slide_chu">Slide 4</label>
                                 <slide-selected 
                                     :name="{{ json_encode('slide_4')}}"
-                                    {{-- :value="{{json_encode($result?App\Helper\Helper::getValueField($field['name'], $result):'')}}"> --}}
+                                    :type="{{json_encode(config('config.slides.types.1'))}}"
+                                    :value="{{json_encode(array_key_exists('slide_4',$data)?$data->slide_4:'')}}"
                                 >
                                 </slide-selected>
                                 <input type="file" accept="image/*" name="anh_slide_4" class="form-control-file" >
-                                <img src="{{asset('admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
+                                <img src="{{array_key_exists('anh_slide_4',$data) ? asset($data->anh_slide_4) : asset('admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
                                     style="margin-top:15px;margin-bottom: 15px;">
                             </div>
                         </div>
@@ -109,11 +114,12 @@
                                 <label for="slide_chu">Slide 5</label>
                                 <slide-selected 
                                     :name="{{json_encode('slide_5')}}"
-                                    {{-- :value="{{json_encode($result?App\Helper\Helper::getValueField($field['name'], $result):'')}}"> --}}
+                                    :type="{{json_encode(config('config.slides.types.1'))}}"
+                                    :value="{{json_encode(array_key_exists('slide_5',$data)?$data->slide_5:'')}}"
                                 >
                                 </slide-selected>
                                 <input type="file" accept="image/*" name="anh_slide_5" class="form-control-file" >
-                                <img src="{{asset('admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
+                                <img src="{{array_key_exists('anh_slide_5',$data)? asset($data->anh_slide_5) : asset('admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
                                     style="margin-top:15px;margin-bottom: 15px;">
                             </div>
                         </div>

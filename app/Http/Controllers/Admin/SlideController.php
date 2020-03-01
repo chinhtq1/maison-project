@@ -40,12 +40,16 @@ class SlideController extends Controller
                 // Active
         if ($request->has('public') && !is_null($slide)) {
             $slide->fill(['is_public' => true])->save();
+            Helper::update_time_public($slide);
+
             session()->flash('message', ['text' => 'Đã xuất bản bài viết: '.$slide->title, 'type' => 'success']);
             return redirect()->back();
         }
 
         if ($request->has('unpublic') && !is_null($slide)) {
             $slide->fill(['is_public' => false])->save();
+            $slide->date_public=null;
+            $slide->save();
             session()->flash('message', ['text' => 'Đã xét trạng thái chưa xuất bản cho bài viết: '.$slide->title, 'type' => 'warning']);
             return redirect()->back();
         }
@@ -110,7 +114,7 @@ class SlideController extends Controller
                         $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
                         $file_rename   = 'slide-image-'.$key.'.'. $extension;
                         if (in_array($extension, $allowedExtensions)) {
-                            $slide_data['text']->move($uploadDir, $file_rename);
+                            $slide_data['text']->move(public_path($uploadDir), $file_rename);
                             $slide_data['text'] = $uploadDir . $file_rename;
                             $slides_data['slides'][$key]["text"] = $slide_data['text'];
                         }

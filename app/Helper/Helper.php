@@ -79,12 +79,14 @@ class Helper {
         return null;
     }
 
-    static function upload_image($filename, $uploadDir) {
-        if (\Request::hasFile('icon')) {
-            $extension = $data['icon']->getClientOriginalExtension();
-            $file_rename   = 'favicon.' . $extension;
-            if ($extension == 'ico') {
-                move_uploaded_file($_FILES['icon']['tmp_name'], $file_rename);
+    static function upload_image($filename, $uploadDir, $data) {
+        if (\Request::hasFile($filename)) {
+            $extension = $data[$filename]->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = $filename.'.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data[$filename]->move($uploadDir, $file_rename);
+                return asset($uploadDir . $file_rename);
             }
         }
     }

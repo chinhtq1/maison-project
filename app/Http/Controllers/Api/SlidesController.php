@@ -15,11 +15,15 @@ class SlidesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index($type="image", Request $request)
     {
         //
         if($request->has('public')){
-            $slides = Slides::where('is_public', true)->get();
+            if($type === config('config.slides.types.0')){
+                $slides = Slides::where('is_public', true)->where('type',config('config.slides.types.0'))->get();
+            }elseif ($type === config('config.slides.types.1')){
+                $slides = Slides::where('is_public', true)->where('type',config('config.slides.types.1'))->get();
+            }
         }else {
             $slides = Slides::all();
         }
