@@ -3,7 +3,6 @@
         html {
             font-size: 10px;
             scroll-behavior: smooth;
-            overflow: hidden !important;
         }
         
         .description-project {
@@ -29,7 +28,7 @@
             overflow-x: hidden;
             max-width: 1920px;
             margin: auto;
-            overflow-x: hidden !important;
+            overflow-y: hidden;
         }
         
         body .container-fluid {
