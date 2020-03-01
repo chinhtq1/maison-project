@@ -30,7 +30,7 @@ class Init
             $general = cache('general');
         }
         // dd($general);
-        foreach ( json_decode($general) as $key => $value) {
+        foreach ( $general as $key => $value) {
             if (is_string($value)) {
                 MetaTag::set($key, $value);
             }
