@@ -40,10 +40,10 @@
     <div class="modal-wrapper">
         <div class="overlay"> </div>
         <div class="modal" id="article-modal">
-            <a class="btn-close-modal trigger" href="javascript:;"></a>
+            <a class="btn-close-modal trigger" > <i class="fa fa-times" aria-hidden="true"></i></a>
             <div class="content">
                 <div class="img-banner-modal">
-                    <img class="img-fluid" id="article-image">
+                    <img  id="article-image">
                     <div class="time-post">
                         <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
                         <span id="article-public-date">21 Tháng 5 Năm 2020</span>
@@ -51,23 +51,8 @@
 
                 </div>
                 <div class="description-modal-text">
-                    <h1 id="article-title">Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit </h1>
-                    <p id="article-content"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    </p>
+                    <h1 id="article-title"></h1>
+                    <p id="article-content"> </p>
                 </div>
             </div>
         </div>

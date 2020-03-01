@@ -128,11 +128,6 @@ function modalController() {
         $('html').addClass('is-main-menu-open');
         var id = $(this).data("id");
         getDataArticle(id);
-        $('.modal-wrapper ').toggleClass('open');
-        $('.modal-wrapper .overlay').toggleClass('open');
-        $('.modal-wrapper .modal').toggleClass('open');
-
-
     });
     $('.modal-wrapper .overlay').click(function() {
         $('.modal-wrapper ').toggleClass('open');
@@ -140,14 +135,16 @@ function modalController() {
         $('.modal-wrapper .modal').toggleClass('open');
         $('html').removeClass('is-main-menu-open');
     });
-
+    $('.btn-close-modal').click(function() {
+        $('.modal-wrapper ').toggleClass('open');
+        $('.modal-wrapper .overlay').toggleClass('open');
+        $('.modal-wrapper .modal').toggleClass('open');
+        $('html').removeClass('is-main-menu-open');
+    })
     $('.intro-post .inner-image-post-container').click(function() {
         $('html').addClass('is-main-menu-open');
         var id = $(this).data("id");
         getDataArticle(id);
-        $('.modal-wrapper ').toggleClass('open');
-        $('.modal-wrapper .overlay').toggleClass('open');
-        $('.modal-wrapper .modal').toggleClass('open');
     });
 
     return false;
@@ -165,7 +162,9 @@ function getDataArticle(id) {
             $("#article-public-date").text(result["date_public"])
             $("#article-title").text(result["title"])
             $("#article-content").html(result["content"])
-
+            $('.modal-wrapper ').toggleClass('open');
+            $('.modal-wrapper .overlay').toggleClass('open');
+            $('.modal-wrapper .modal').toggleClass('open');
         }
     });
 }
