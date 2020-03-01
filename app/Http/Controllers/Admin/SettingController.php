@@ -79,18 +79,15 @@ class SettingController extends Controller
     function slides_index()
     {
         $result = Setting::firstOrCreate(['name' => 'slides', 'type' => 'setting']);
-        if(is_null($result->content)){
-            $result->content = '{}';
-        }
+
+        // dd($result);
+
         return view('admin.settings.slides-index', ['page_name' => 'Chỉnh Sửa Text Đơn', 'result' => $result]);
     }
 
     function text_single_store(Request $request) {
         $data = $request->all();
         $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
-        if(is_null($result->content)){
-            $result->content = '{}';
-        }
         $setting = is_null($result->content) ? [] : json_decode($result->content, true);
         foreach ($data as $key => $value) {
             $setting[$key] = $value;
@@ -161,6 +158,7 @@ class SettingController extends Controller
 
         $result->content = json_encode($setting);
         $result->save();
+
         return redirect()->back()->with('status', 'Settings has been saved.');
 
 
