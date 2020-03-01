@@ -72,15 +72,15 @@ class SettingController extends Controller
     function text_single_index()
     {
         $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
-        // dd($result->content);
+        // dd($result);
         return view('admin.settings.text-single-index', ['page_name' => 'Chỉnh Sửa Text Đơn', 'result' => $result]);
     }
 
     function slides_index()
-    {
+    { 
         $result = Setting::firstOrCreate(['name' => 'slides', 'type' => 'setting']);
 
-        // dd($result);
+        
 
         return view('admin.settings.slides-index', ['page_name' => 'Chỉnh Sửa Text Đơn', 'result' => $result]);
     }
@@ -88,7 +88,8 @@ class SettingController extends Controller
     function text_single_store(Request $request) {
         $data = $request->all();
         $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
-        $setting = is_null($result->content) ? [] : json_decode($result->content, true);
+        // dd($result);
+        $setting = is_null($result->content) ? [] : json_decode($result->content,true);
         foreach ($data as $key => $value) {
             $setting[$key] = $value;
         }

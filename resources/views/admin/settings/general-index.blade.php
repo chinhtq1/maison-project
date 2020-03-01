@@ -24,6 +24,7 @@
                 class="form-horizontal" role="form">
                 {!! csrf_field() !!}
                 <?php $data = json_decode($result->content); ?>
+                @inject('helper', 'App\Helper\Helper')
                 <div class="row">
                     <div class="col-md-6">          
                         <div class="block">
@@ -58,19 +59,19 @@
                                     <label class="control-label" for="example-text-input"> File PDF Hình Ảnh Dự Án </label>
                                     <input type="file" accept="application/pdf,application/vnd.ms-excel" class="form-control"
                                         name="mau_biet_thu_moi" >
-                                        <span class="text-danger"> {{$data->mau_biet_thu_moi ?? ''}}</span>
+                                        <span class="text-danger"> {{$helper->replaceDomain($data->mau_biet_thu_moi ?? null)}}</span>
                                 </div>
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input"> File PDF Hình Ảnh Dự Án </label>
                                 <input type="file" accept="application/pdf,application/vnd.ms-excel" class="form-control"
                                     name="hinh_anh_du_an" >
-                                    <span class="text-danger"> {{$data->hinh_anh_du_an ?? ''}}</span>
+                                    <span class="text-danger"> {{$helper->replaceDomain($data->hinh_anh_du_an ?? null)}}</span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input"> File PDF Bản Đồ Vị Trí </label>
                                 <input type="file" accept="application/pdf,application/vnd.ms-excel" class="form-control"
                                     name="ban_do_vi_tri" >
-                                    <span class="text-danger"> {{$data->ban_do_vi_tri ?? ''}}</span>
+                                    <span class="text-danger"> {{$helper->replaceDomain($data->ban_do_vi_tri ?? null)}}</span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="example-text-input"> Số Điện Thoại </label>
@@ -86,7 +87,7 @@
                                 <div class="block">
                                     <label class="control-label" for="example-text-input">Ảnh Niềm Tin Trọn Vẹn</label>
                                     <input type="file" accept="image/*" class="form-control" name="niem_tin_tron_ven">
-                                    <img src="{{$data->niem_tin_tron_ven ?? null}}" alt="Chưa có ảnh"
+                                    <img src="{{ $helper->replaceDomain($data->niem_tin_tron_ven)?? null}}" alt="Chưa có ảnh"
                                         style="max-width: 150px;" class="img-fluid">
                                 </div>
                             </div>
@@ -95,7 +96,7 @@
                                 <div class="block">
                                     <label class="control-label" for="example-text-input">Ảnh Bản Đồ Desktop </label>
                                     <input type="file" accept="image/*" class="form-control" name="map_desktop">
-                                    <img src="{{$data->map_desktop ?? null}}" alt="Chưa có ảnh"
+                                    <img src=" {{ $helper->replaceDomain($data->map_desktop ?? null)}}" alt="Chưa có ảnh"
                                         style="max-width: 150px;" class="img-fluid">
                                 </div>
                             </div>
@@ -103,7 +104,7 @@
                                 <div class="block">
                                     <label class="control-label" for="example-text-input">Ảnh Bản Đồ Mobile </label>
                                     <input type="file" accept="image/*" class="form-control" name="map_mobile">
-                                    <img src="{{$data->map_mobile ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                    <img src="{{ $helper->replaceDomain($data->map_mobile ?? null)}}" alt="Chưa có ảnh" style="max-width: 150px;"
                                         class="img-fluid">
                                 </div>
                             </div>
@@ -112,7 +113,7 @@
                                 <div class="block">
                                     <label class="control-label" for="example-text-input">Ảnh Vị Trí Kim Cương ( Bên Phải) </label>
                                     <input type="file" accept="image/*" class="form-control" name="vi_tri_kim_cuong_image">
-                                    <img src="{{$data->vi_tri_kim_cuong_image ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                    <img src="{{ $helper->replaceDomain($data->vi_tri_kim_cuong_image ?? null)}}" alt="Chưa có ảnh" style="max-width: 150px;"
                                         class="img-fluid">
                                 </div>
                             </div>
@@ -120,7 +121,7 @@
                             <div class="block">
                                 <label class="control-label" for="example-text-input"> Ảnh Tiện Ích Toàn Mỹ </label>
                                 <input type="file" accept="image/*" class="form-control" name="tien_ich_toan_my_image">
-                                <img src="{{$data->tien_ich_toan_my_image ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                <img src="{{$helper->replaceDomain($data->tien_ich_toan_my_image ?? null)}}" alt="Chưa có ảnh" style="max-width: 150px;"
                                     class="img-fluid">
                             </div>
                         </div>
@@ -128,7 +129,7 @@
                             <div class="block">
                                 <label class="control-label" for="example-text-input"> Ảnh Kiến Trúc Châu Âu</label>
                                 <input type="file" accept="image/*" class="form-control" name="kien_truc_chau_au_image">
-                                <img src="{{$data->kien_truc_chau_au_image ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                <img src="{{$helper->replaceDomain($data->kien_truc_chau_au_image ?? null)}}" alt="Chưa có ảnh" style="max-width: 150px;"
                                     class="img-fluid">
                             </div>
                         </div>
@@ -137,7 +138,7 @@
                                         <div class="block">
                                             <label class="control-label" for="example-text-input"> Ảnh Thưởng NGoạn Mỹ Cảnh (Lớn)</label>
                                             <input type="file" accept="image/*" class="form-control" name="thuong_ngoan_my_canh_big">
-                                            <img src="{{$data->thuong_ngoan_my_canh_big ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                            <img src="{{$helper->replaceDomain($data->thuong_ngoan_my_canh_big ?? null)}}" alt="Chưa có ảnh" style="max-width: 150px;"
                                                 class="img-fluid">
                                         </div>
                                     </div>
@@ -145,7 +146,7 @@
                                         <div class="block">
                                             <label class="control-label" for="example-text-input"> Ảnh Thưởng Ngoạn Mỹ Cảnh (Nhỏ)</label>
                                             <input type="file" accept="image/*" class="form-control" name="thuong_ngoan_my_canh_small">
-                                            <img src="{{$data->thuong_ngoan_my_canh_small ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                            <img src="{{$helper->replaceDomain($data->thuong_ngoan_my_canh_small ?? null)}}" alt="Chưa có ảnh" style="max-width: 150px;"
                                                 class="img-fluid">
                                         </div>
                                     </div>
@@ -166,7 +167,7 @@
                                 <label class="control-label" for="example-text-input">Thẻ image (hiển thị khi chia sẻ
                                     trang)</label>
                                 <input type="file" accept="image/*" class="form-control" name="home_image">
-                                <img src="{{$data->home_image ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                <img src="{{$helper->replaceDomain($data->home_image ?? null)}}" alt="Chưa có ảnh" style="max-width: 150px;"
                                     class="img-fluid">
                             </div>
                         </div>
@@ -175,7 +176,7 @@
                             <div class="block">
                                 <label class="control-label" for="example-text-input">Logo Desktop</label>
                                 <input type="file" accept="image/*" class="form-control" name="logo_desktop">
-                                <img src="{{$data->logo_desktop ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                <img src="{{$helper->replaceDomain($data->logo_desktop) ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
                                     class="img-fluid">
                             </div>
                         </div>
@@ -193,7 +194,7 @@
                             <div class="block">
                                 <label class="control-label" for="example-text-input">Ảnh Banner Desktop</label>
                                 <input type="file" accept="image/*" class="form-control" name="banner_desktop">
-                                <img src="{{$data->banner_desktop ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                <img src="{{$helper->replaceDomain($data->banner_desktop ?? null)}}" alt="Chưa có ảnh" style="max-width: 150px;"
                                     class="img-fluid">
                             </div>
                         </div>
@@ -202,7 +203,7 @@
                                 <label class="control-label" for="example-text-input">Ảnh Banner Mobile (750 x
                                     840)</label>
                                 <input type="file" accept="image/*" class="form-control" name="banner_mobile">
-                                <img src="{{$data->banner_mobile ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                <img src="{{$helper->replaceDomain($data->banner_mobile ?? null)}}" alt="Chưa có ảnh" style="max-width: 150px;"
                                     class="img-fluid">
                             </div>
                         </div>
@@ -211,7 +212,7 @@
                             <div class="">
                                 <label class="control-label" for="example-text-input">Logo Phía Trên Bài Thơ</label>
                                 <input type="file" accept="image/*" class="form-control" name="logo_poem">
-                                <img src="{{$data->logo_poem ?? null}}" alt="Chưa có ảnh" style="max-width: 150px;"
+                                <img src="{{$helper->replaceDomain($data->logo_poem ?? null)}}" alt="Chưa có ảnh" style="max-width: 150px;"
                                     class="img-fluid">
                             </div>
                         </div>
@@ -219,19 +220,12 @@
                             <div class="">
                                 <label class="control-label" for="example-text-input">Logo Footer</label>
                                 <input type="file" accept="image/*" class="form-control" name="logo_footer">
-                                <img src="{{$data->logo_footer ?? null}}" alt="Chưa có ảnh"
+                                <img src="{{$helper->replaceDomain($data->logo_footer ?? null)}}" alt="Chưa có ảnh"
                                     style="max-width: 150px;  background-color:grey;" class="img-fluid">
                             </div>
                         </div>
                     </div>
                 </div>
-                {{-- @if(count(config('setting_fields', [])) )
-    
-                            @foreach(config('settings_general') as $section => $fields)
-                                @includeIf('admin.settings.section.'.$fields['template'])
-                            @endforeach
-    
-                        @endif --}}
 
                 <div class="row m-b-md">
                     <div class="col-md-12">

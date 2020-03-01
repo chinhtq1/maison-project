@@ -138,13 +138,7 @@
                     </div>
 
                 </div>
-                {{-- @if(count(config('setting_fields', [])) )
-    
-                            @foreach(config('settings_general') as $section => $fields)
-                                @includeIf('admin.settings.section.'.$fields['template'])
-                            @endforeach
-    
-                        @endif --}}
+          
 
                 <div class="row m-b-md">
                     <div class="col-md-12">

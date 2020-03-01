@@ -1,1 +1,0 @@
-@include('admin.settings.section.section-common')

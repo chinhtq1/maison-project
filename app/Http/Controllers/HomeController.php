@@ -22,8 +22,7 @@ class HomeController extends Controller
     {
         $articles = Article::where('is_public', true)->get()->sortByDesc('date_public')->toArray();
         $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
-        $setting = is_null($result->content) ? [] : json_decode(json_encode($result->content), true);
-        // dd($setting);
+        $setting = is_null($result->content) ? [] : json_decode($result->content, true);
         $result = Setting::firstOrCreate(['name' => 'slides', 'type' => 'setting']);
         $slide_setting = is_null($result->content) ? [] : json_decode($result->content, true);
 

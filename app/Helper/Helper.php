@@ -32,6 +32,16 @@ class Helper {
         return '';
 
     }
+    
+    static function replaceDomain($url) {
+        if(!is_null($url) ) {
+            $domain = parse_url($url, PHP_URL_PATH);
+            return $domain;
+        } else {
+            return null;
+        }
+
+    }
 
     static function upload_picture($width=0, $height=0, $originPath, $targetPath, $filename) {
         $originPath = base_path(Str::replaceFirst('/','\\',$originPath));
