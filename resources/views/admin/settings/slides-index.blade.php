@@ -44,7 +44,7 @@
                     <div class="col-md-6">
                         <div class="block">
                             <div class="form-group">
-                                <label for="slide_chu">Slide 1</label>
+                                <label for="slide_chu">Slide 1 </br><small class="text-muted">Kích thước ảnh chuẩn (600x600)</small></label>
                                 <slide-selected 
                                     :name="{{ json_encode('slide_1')}}"
                                     :type="{{json_encode(config('config.slides.types.1'))}}"
@@ -54,7 +54,7 @@
                                 <input type="file" accept="image/*" name="anh_slide_1" class="form-control-file" >
                                 <img src="{{ asset($data->anh_slide_1 ?? 'admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
                                     style="margin-top:15px;margin-bottom: 15px;">
-                                </br><input type="text" name="text_slide_1" placeholder="Exp: 379 REAL ESTATE" class="form-control">     
+                                </br><input type="text" name="text_slide_1" placeholder="Exp: 379 REAL ESTATE" class="form-control" value="{{$data->text_slide_1 ?? ''}}">     
                                 
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                     <div class="col-md-6">
                         <div class="block">
                             <div class="form-group">
-                                <label for="slide_chu">Slide 2</label>
+                                <label for="slide_chu">Slide 2 </br><small class="text-muted">Kích thước ảnh chuẩn (300x300)</small></label>
                                 <slide-selected 
                                     :name="{{ json_encode('slide_2')}}"
                                     :type="{{json_encode(config('config.slides.types.1'))}}"
@@ -72,7 +72,7 @@
                                 <input type="file" accept="image/*" name="anh_slide_2" class="form-control-file" >
                                 <img src="{{ asset($data->anh_slide_2 ??'admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
                                     style="margin-top:15px;margin-bottom: 15px;">
-                                </br><input type="text" name="text_slide_2" placeholder="Exp: 379 REAL ESTATE"   class="form-control">    
+                                </br><input type="text" name="text_slide_2" placeholder="Exp: 379 REAL ESTATE"   class="form-control" value="{{$data->text_slide_2 ?? ''}}">    
                                 
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                     <div class="col-md-6">
                         <div class="block">
                             <div class="form-group">
-                                <label for="slide_chu">Slide 3</label>
+                                <label for="slide_chu">Slide 3 </br><small class="text-muted">Kích thước ảnh chuẩn (300x300)</small></label>
                                 <slide-selected 
                                     :name="{{ json_encode('slide_3')}}"
                                     :type="{{json_encode(config('config.slides.types.1'))}}"
@@ -91,7 +91,7 @@
                                 <input type="file" accept="image/*" name="anh_slide_3" class="form-control-file" >
                                 <img src="{{asset($data->anh_slide_3 ?? 'admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
                                     style="margin-top:15px;margin-bottom: 15px;">
-                            </br><input type="text" name="text_slide_3" placeholder="Exp: 379 REAL ESTATE"  class="form-control">        
+                            </br><input type="text" name="text_slide_3" placeholder="Exp: 379 REAL ESTATE"  class="form-control" value="{{$data->text_slide_3 ?? ''}}">        
                                 
 
                             </div>
@@ -101,7 +101,7 @@
                     <div class="col-md-6">
                         <div class="block">
                             <div class="form-group">
-                                <label for="slide_chu">Slide 4</label>
+                                <label for="slide_chu">Slide 4 </br><small class="text-muted">Kích thước ảnh chuẩn (300x300)</small></label>
                                 <slide-selected 
                                     :name="{{ json_encode('slide_4')}}"
                                     :type="{{json_encode(config('config.slides.types.1'))}}"
@@ -111,7 +111,7 @@
                                 <input type="file" accept="image/*" name="anh_slide_4" class="form-control-file" >
                                 <img src="{{ asset($data->anh_slide_4 ?? 'admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
                                     style="margin-top:15px;margin-bottom: 15px;">
-                                </br><input type="text" name="text_slide_4" placeholder="Exp: 379 REAL ESTATE"  class="form-control">       
+                                </br><input type="text" name="text_slide_4" placeholder="Exp: 379 REAL ESTATE"  class="form-control" value="{{$data->text_slide_4 ?? ''}}">       
                                 
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                     <div class="col-md-6">
                         <div class="block">
                             <div class="form-group">
-                                <label for="slide_chu">Slide 5</label>
+                                <label for="slide_chu">Slide 5 </br><small class="text-muted">Kích thước ảnh chuẩn (300x300)</small></label>
                                 <slide-selected 
                                     :name="{{json_encode('slide_5')}}"
                                     :type="{{json_encode(config('config.slides.types.1'))}}"
@@ -130,7 +130,7 @@
                                 <input type="file" accept="image/*" name="anh_slide_5" class="form-control-file" >
                                 <img src="{{asset($data->anh_slide_5 ?? 'admin-theme/img/placeholder_thumbnail.png')}}" alt="Chưa có ảnh" width="auto" height="200"
                                     style="margin-top:15px;margin-bottom: 15px;">
-                                </br><input type="text" name="text_slide_5" placeholder="Exp: 379 REAL ESTATE"  class="form-control">     
+                                </br><input type="text" name="text_slide_5" placeholder="Exp: 379 REAL ESTATE"  class="form-control" value="{{$data->text_slide_5 ?? ''}}">     
                                 
 
                             </div>

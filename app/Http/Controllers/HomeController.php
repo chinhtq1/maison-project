@@ -23,10 +23,11 @@ class HomeController extends Controller
         $articles = Article::where('is_public', true)->get()->sortByDesc('date_public')->toArray();
         $result = Setting::firstOrCreate(['name' => 'text_single', 'type' => 'setting']);
         $setting = is_null($result->content) ? [] : json_decode($result->content, true);
+
         $result = Setting::firstOrCreate(['name' => 'slides', 'type' => 'setting']);
         $slide_setting = is_null($result->content) ? [] : json_decode($result->content, true);
 
-        $slide_chu = [];
+        $slide_chu = "";
         if(array_key_exists('slide_chu', $slide_setting)){
             $slide_chu = Slides::where('id', $slide_setting['slide_chu'])->first();
 
@@ -36,7 +37,10 @@ class HomeController extends Controller
         if(array_key_exists('slides', $slide_chu)){
             $slide_chu = $slide_chu['slides'];
         }
-        return view('index', compact('articles','setting','slide_chu'));
+
+        // dd($slide_setting);
+
+        return view('index', compact('articles','setting','slide_chu', 'slide_setting'));
     }
 
     public function pdf($id)

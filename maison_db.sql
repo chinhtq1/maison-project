@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 01, 2020 at 09:01 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.27
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th3 02, 2020 lúc 03:25 PM
+-- Phiên bản máy phục vụ: 10.4.8-MariaDB
+-- Phiên bản PHP: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `maison_db`
+-- Cơ sở dữ liệu: `maison_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `articles`
+-- Cấu trúc bảng cho bảng `articles`
 --
 
 CREATE TABLE `articles` (
@@ -45,7 +45,7 @@ CREATE TABLE `articles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `articles`
+-- Đang đổ dữ liệu cho bảng `articles`
 --
 
 INSERT INTO `articles` (`id`, `created_at`, `updated_at`, `title`, `slug`, `is_public`, `date_public`, `content`, `description`, `fb_link`, `main_picture`, `thumbnail`, `user_id`) VALUES
@@ -57,7 +57,7 @@ INSERT INTO `articles` (`id`, `created_at`, `updated_at`, `title`, `slug`, `is_p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Cấu trúc bảng cho bảng `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -72,7 +72,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Cấu trúc bảng cho bảng `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -82,7 +82,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Đang đổ dữ liệu cho bảng `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -96,7 +96,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Cấu trúc bảng cho bảng `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -108,7 +108,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Cấu trúc bảng cho bảng `settings`
 --
 
 CREATE TABLE `settings` (
@@ -119,7 +119,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `settings`
+-- Đang đổ dữ liệu cho bảng `settings`
 --
 
 INSERT INTO `settings` (`id`, `name`, `content`, `type`) VALUES
@@ -131,46 +131,7 @@ INSERT INTO `settings` (`id`, `name`, `content`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slides`
---
-
-CREATE TABLE `slides` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `type` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `is_public` tinyint(1) NOT NULL DEFAULT 0,
-  `date_public` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fb_link` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `user_id` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `slides`
---
-
-INSERT INTO `slides` (`id`, `type`, `created_at`, `updated_at`, `title`, `is_public`, `date_public`, `description`, `fb_link`, `data`, `user_id`) VALUES
-(9, 'image', '2020-02-29 08:59:21', '2020-02-29 14:09:08', 'Toi la ai', 1, NULL, 'aaaaaaa', NULL, '{\"slides\":[{\"text\"😕\"<p>aaaaaaaaaa<\\/p>\",\"type\"😕\"Slide ch\\u1eef\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"slides\\/slide-9\\/slide-image-1.jpg\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"slides\\/slide-9\\/slide-image-2.jpg\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"slides\\/slide-9\\/slide-image-3.jpg\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"slides\\/slide-9\\/slide-image-4.jpg\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"slides\\/slide-9\\/slide-image-5.jpg\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"slides\\/slide-9\\/slide-image-7.jpg\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"}]}', 1),
-(10, 'image', '2020-02-29 09:27:20', '2020-02-29 14:09:10', 'ádasd', 1, NULL, 'ádasdasd', 'ádasd', '{\"slides\":[{\"text\"😕\"<p>aaaaaaaaa<\\/p>\",\"type\"😕\"Slide ch\\u1eef\"},{\"text\"😕\"<p>aaaaaaaaaaaa<\\/p>\",\"type\"😕\"Slide ch\\u1eef\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"http:\\/\\/localhost:8000\\/slides\\/slide-10\\/slide-image-2.jpg\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"http:\\/\\/localhost:8000\\/slides\\/slide-10\\/slide-image-3.jpg\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"http:\\/\\/localhost:8000\\/slides\\/slide-10\\/slide-image-4.jpg\"}]}', 1),
-(11, 'image', '2020-02-29 09:32:55', '2020-02-29 16:29:52', 'aaaaaaaaa', 1, ' 29 Tháng 2 Năm 2020', 'aaaaaaaaaaa', 'aaaaaaaaaaa', '{\"slides\":[{\"text\"😕\"<p>\\u1ea5dsdaaaaaaaaa<\\/p>\",\"type\"😕\"Slide ch\\u1eef\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"slides\\/slide-11\\/slide-image-1.jpg\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"slides\\/slide-11\\/slide-image-2.jpg\"},{\"text\"😕\"<p>aaaaaaaaaaaaaa<\\/p>\",\"type\"😕\"Slide ch\\u1eef\"}]}', 1),
-(12, 'image', '2020-02-29 11:26:43', '2020-02-29 14:09:15', 'aaaaaaaaaaaa', 1, NULL, 'aaaaaaaaaaaaa', NULL, NULL, 1),
-(13, 'image', '2020-02-29 11:27:24', '2020-02-29 11:27:24', 'sdfsssssssssss', 0, NULL, 'sdfffffffffffff', NULL, NULL, 1),
-(14, 'image', '2020-02-29 11:27:57', '2020-02-29 11:30:10', 'sdfsssssssssaaaaasssssssssss', 0, NULL, 'sdfffffffffffff', NULL, '{\"slides\":[{\"type\"😕\"Slide \\u1ea3nh\"}]}', 1),
-(16, 'image', '2020-02-29 11:30:42', '2020-02-29 11:35:59', 'sssssssss', 0, NULL, 'sssssssssssssssssssssssss', NULL, '{\"slides\":[{\"type\"😕\"Slide \\u1ea3nh\"}]}', 1),
-(17, 'image', '2020-02-29 14:01:15', '2020-02-29 14:01:15', 'assssssss', 0, NULL, 'asddddddddddddd', NULL, '{\"slides\":[{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"}]}', 1),
-(18, 'image', '2020-02-29 16:03:19', '2020-02-29 16:11:49', 'Slide 1', 1, NULL, 'Slide 1', NULL, '{\"slides\":[{\"type\"😕\"Slide \\u1ea3nh\",\"text\":{}},{\"type\"😕\"Slide \\u1ea3nh\",\"text\":{}}]}', 1),
-(19, 'text', '2020-02-29 16:03:48', '2020-03-01 03:56:36', 'Slide 2', 1, ' 1 Tháng 3 Năm 2020', 'sdsdsdsds', NULL, '{\"slides\":[{\"text\":\"<p>dsdsdsds<\\/p>\",\"type\":\"Slide ch\\u1eef\"},{\"text\":\"<p>dsdsdsdsdsdsdsdsdsds<\\/p>\",\"type\":\"Slide ch\\u1eef\"}]}', 1),
-(20, 'image', '2020-02-29 16:22:13', '2020-02-29 16:30:41', 'Slide 5', 1, ' 29 Tháng 2 Năm 2020', 'Slide 5', NULL, '{\"slides\":[{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"slides\\/slide-20\\/slide-image-1.jpg\"}]}', 1),
-(21, 'image', '2020-02-29 16:30:59', '2020-02-29 16:30:59', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 0, NULL, 'aaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaa', '{\"slides\":[{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"slides\\/slide-21\\/slide-image-0.jpg\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"slides\\/slide-21\\/slide-image-1.jpg\"}]}', 1),
-(22, 'image', '2020-02-29 17:29:48', '2020-02-29 17:29:48', 'asdasdasd', 0, NULL, 'asdassa', 'adasas', '{\"slides\":[{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"},{\"type\"😕\"Slide \\u1ea3nh\",\"text\"😕\"\"}]}', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -187,94 +148,94 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `phone`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Admin', 'admin@abc.com', '$2y$10$EUH52iZWbeIaWM81tZbJ9e.OYMxc5F//a2TBKwAN4XuZSTSHXUF0G', 1, NULL, 3, NULL, '2020-02-26 09:42:56', '2020-02-26 09:42:56');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `articles`
+-- Chỉ mục cho bảng `articles`
 --
 ALTER TABLE `articles`
   ADD PRIMARY KEY (`id`),
   ADD KEY `articles_user_id_foreign` (`user_id`);
 
 --
--- Indexes for table `failed_jobs`
+-- Chỉ mục cho bảng `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Chỉ mục cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Chỉ mục cho bảng `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `settings`
+-- Chỉ mục cho bảng `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `articles`
+-- AUTO_INCREMENT cho bảng `articles`
 --
 ALTER TABLE `articles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- AUTO_INCREMENT cho bảng `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `settings`
+-- AUTO_INCREMENT cho bảng `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `articles`
+-- Các ràng buộc cho bảng `articles`
 --
 ALTER TABLE `articles`
   ADD CONSTRAINT `articles_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;

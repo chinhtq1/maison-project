@@ -57,6 +57,7 @@
             </div>
         </div>
     </div>
+
     <div id="loader">
         <div class="count">100%</div>
     </div>
@@ -330,30 +331,30 @@
             <div class="inner-project-feed">
                 <div  data-aos="zoom-in" class="project-feed-content-left">
                     <div  class="container-feed-image">
-                        <a> <img src="{{asset('client/img/feed-left.png')}}" class="img-fluid"></a>
-                        <h1>379 Real Estate</h1>
+                        <a> <img src="{{asset($slide_setting['anh_slide_1'] ?? 'client/img/feed-left.png')}}" class="img-fluid"></a>
+                        <h1>{{ $slide_setting['text_slide_1'] ?? 'Exp: 379 REAL ESTATE' }}</h1>
                     </div>
                 </div>
                 <div data-aos="zoom-in" class="project-feed-content-right">
                     <div class="feed-left">
                         <div  class="container-feed-image">
-                            <a> <img src="{{asset('client/img/-right.png')}}" class="img-fluid"> </a>
-                            <h1>Athena Complex</h1>
+                            <a> <img src="{{asset($slide_setting['anh_slide_2'] ?? 'client/img/-right.png')}}" class="img-fluid"> </a>
+                            <h1>{{ $slide_setting['text_slide_2'] ?? 'Exp: 379 REAL ESTATE' }}</h1>
                         </div>
 
                         <div  class="container-feed-image">
-                            <a> <img src="{{asset('client/img/-right.png')}}" class="img-fluid"> </a>
-                            <h1>Monkey d Luffy</h1>
+                            <a> <img src="{{asset($slide_setting['anh_slide_3'] ?? 'client/img/-right.png')}}" class="img-fluid"> </a>
+                            <h1>{{ $slide_setting['text_slide_3'] ?? 'Exp: 379 REAL ESTATE' }}</h1>
                         </div>
                     </div>
                     <div class="feed-right">
                         <div  class="container-feed-image">
-                            <a> <img  src="{{asset('client/img/-right.png')}}" class="img-fluid"> </a>
-                            <h1>hahaha</h1>
+                            <a> <img  src="{{asset($slide_setting['anh_slide_4'] ?? 'client/img/-right.png')}}" class="img-fluid"> </a>
+                            <h1>{{ $slide_setting['text_slide_4'] ?? 'Exp: 379 REAL ESTATE' }}</h1>
                         </div>
                         <div  class="container-feed-image">
-                            <a> <img src="{{asset('client/img/-right.png')}}" class="img-fluid"> </a>
-                            <h1>hahaha</h1>
+                            <a> <img src="{{asset($slide_setting['anh_slide_5'] ?? 'client/img/-right.png')}}" class="img-fluid"> </a>
+                            <h1>{{ $slide_setting['text_slide_5'] ?? 'Exp: 379 REAL ESTATE' }}</h1>
                         </div>
                     </div>
                 </div>
