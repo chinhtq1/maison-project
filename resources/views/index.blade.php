@@ -25,15 +25,14 @@
     <link rel="shortcut icon" href="{!! MetaTag::get('images.shotcut-icon.url') !!}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
     <link href="https://unpkg.com/aos@2.3.0/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('client/css/main.css?v=1.6')}}">
     <link rel="stylesheet" href="{{asset('client/font/font.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="    https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
 </head>
 
 <body>
@@ -77,10 +76,10 @@
                         <a href="#vi-tri" class="nav-link expand">Vị trí</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#kien-truc" class="nav-link expand">Kiến trúc</a>
-                    </li>
+                            <a href="#tien-ich" class="nav-link expand">Tiện ích</a>
+                        </li>
                     <li class="nav-item">
-                        <a href="#tien-ich" class="nav-link expand">Tiện ích</a>
+                        <a href="#kien-truc" class="nav-link expand">Kiến trúc</a>
                     </li>
                     <li class="nav-item">
                         <a href="#tin-tuc" class="nav-link expand">Tin tức</a>
@@ -108,9 +107,9 @@
                             <hr>
                             <li><a href="#vi-tri">Vị trí</a></li>
                             <hr>
-                            <li><a href="#kien-truc">Kiến trúc</a></li>
-                            <hr>
                             <li><a href="#tien-ich">Tiện ích</a></li>
+                            <hr>
+                            <li><a href="#kien-truc">Kiến trúc</a></li>
                             <hr>
                             <li><a href="#tin-tuc">Tin tức</a></li>
                             <hr>
@@ -126,9 +125,9 @@
 
         <section class="header-background-image">
             <div class="inner-background-image">
-                <img src="{{asset('static/banner_desktop.png')}}"
+                <img alt="banner" src="{!! MetaTag::get('banner_desktop') !!}"
                     class="header-desktop img-header img-fluid object-fit-cover">
-                <img src="{{asset('static/banner_mobile.png')}}"
+                <img  alt="banner" src="{!! MetaTag::get('banner_mobile') !!}"
                     class="header-mobile img-header img-fluid object-fit-cover">
 
                 <a target="_blank" href="{!! MetaTag::get('company_link') !!}" class="company-logo" href="#"> <img
@@ -138,14 +137,14 @@
                 <div class="container-slogan-text">
                     <div class="slogan-text">
                         <h2>Giữa Núi Đồi Cao Nguyên</h2>
-                        <h1>VIÊN KIM CƯƠNG <br> ĐỘC BẢN</h1>
+                        <h1>VIÊN KIM CƯƠNG <br> VẸN SẮC TOÀN BÍCH</h1>
                         <div class="test"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div data-aos="flip-up" class="poem text-center">
+        <div data-aos="zoom-in-down" class="poem text-center">
             <img class="img-fluid" src="{{asset('static/logo_poem.png')}}">
             {!! $setting['poem_text'] ?? '' !!}
         </div>
@@ -331,30 +330,30 @@
             <div class="inner-project-feed">
                 <div  data-aos="zoom-in" class="project-feed-content-left">
                     <div  class="container-feed-image">
-                        <a> <img src="{{asset($slide_setting['anh_slide_1'] ?? 'client/img/feed-left.png')}}" class="img-fluid"></a>
-                        <h1>{{ $slide_setting['text_slide_1'] ?? 'Exp: 379 REAL ESTATE' }}</h1>
+                        <a href="static/big_image.png"> <img alt="{!! MetaTag::get('des_big_image') !!}" src="{{asset('static/big_image.png')}}" class="img-fluid"> </a>
+                        <h1>{!! MetaTag::get('des_big_image') !!}</h1>
                     </div>
                 </div>
                 <div data-aos="zoom-in" class="project-feed-content-right">
                     <div class="feed-left">
                         <div  class="container-feed-image">
-                            <a> <img src="{{asset($slide_setting['anh_slide_2'] ?? 'client/img/-right.png')}}" class="img-fluid"> </a>
-                            <h1>{{ $slide_setting['text_slide_2'] ?? 'Exp: 379 REAL ESTATE' }}</h1>
+                            <a href="static/small_image_1.png"> <img alt="{!! MetaTag::get('des_small_image_1') !!}" src="{{asset('static/small_image_1.png')}}" class="img-fluid"> </a>
+                            <h1>{!! MetaTag::get('des_small_image_1') !!}</h1>
                         </div>
 
                         <div  class="container-feed-image">
-                            <a> <img src="{{asset($slide_setting['anh_slide_3'] ?? 'client/img/-right.png')}}" class="img-fluid"> </a>
-                            <h1>{{ $slide_setting['text_slide_3'] ?? 'Exp: 379 REAL ESTATE' }}</h1>
+                            <a href="static/small_image_2.png"> <img alt="{!! MetaTag::get('des_small_image_2') !!}" src="{{asset('static/small_image_2.png')}}" class="img-fluid"> </a>
+                            <h1>{!! MetaTag::get('des_small_image_2') !!}</h1>
                         </div>
                     </div>
                     <div class="feed-right">
                         <div  class="container-feed-image">
-                            <a> <img  src="{{asset($slide_setting['anh_slide_4'] ?? 'client/img/-right.png')}}" class="img-fluid"> </a>
-                            <h1>{{ $slide_setting['text_slide_4'] ?? 'Exp: 379 REAL ESTATE' }}</h1>
+                            <a href="static/small_image_3.png"> <img alt="{!! MetaTag::get('des_small_image_3') !!}" src="{{asset('static/small_image_3.png')}}" class="img-fluid"> </a>
+                            <h1>{!! MetaTag::get('des_small_image_3') !!}</h1>
                         </div>
                         <div  class="container-feed-image">
-                            <a> <img src="{{asset($slide_setting['anh_slide_5'] ?? 'client/img/-right.png')}}" class="img-fluid"> </a>
-                            <h1>{{ $slide_setting['text_slide_5'] ?? 'Exp: 379 REAL ESTATE' }}</h1>
+                            <a href="static/small_image_4.png"> <img alt="{!! MetaTag::get('des_small_image_4') !!}" src="{{asset('static/small_image_4.png')}}" class="img-fluid"> </a>
+                            <h1>{!! MetaTag::get('des_small_image_4') !!}</h1>
                         </div>
                     </div>
                 </div>
@@ -419,6 +418,10 @@
 
     <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.2.0/dist/simpleParallax.min.js "></script>
+
+    {{-- POPUP IMAGE --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
 </body>
 

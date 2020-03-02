@@ -111,7 +111,8 @@
                                 <div class="form-group col-md-6">
                                     <div class="block">
                                         <label class="control-label" for="example-text-input">Ảnh Bản Đồ Desktop</label>
-                                        <input type="file" accept="image/*" class="form-controle-file" name="map_desktop">
+                                        <input type="file" accept="image/*" class="form-control-file"
+                                            name="map_desktop">
                                         <img src=" {{ $helper->replaceDomain($data->map_desktop ?? null)}}"
                                             alt="Chưa có ảnh" style="max-width: 150px;" class="img-fluid">
                                     </div>
@@ -232,6 +233,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <div class="">
                                 <label class="control-label" for="example-text-input">Logo Phía Trên Bài Thơ</label>
@@ -246,6 +248,71 @@
                                 <input type="file" accept="image/*" class="form-control-file" name="logo_footer">
                                 <img src="{{$helper->replaceDomain($data->logo_footer ?? null)}}" alt="Chưa có ảnh"
                                     style="max-width: 150px;  background-color:grey; margin-top:1rem" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row w-100">
+                                <h5 class="text-success"> Thư Viện Ảnh</h5>
+                            </div>
+                            <div class="block w-100">
+                                <label class="control-label" for="example-text-input">Ảnh To Bên Trái</label>
+                                <input type="file" accept="image/*" class="form-control" name="big_image">
+                                <img src="{{$helper->replaceDomain($data->big_image ?? null)}}" alt="Chưa có ảnh"
+                                    style="max-width: 150px; " class="img-fluid">
+                                <div class="form-group">
+                                    <label class="control-label" for="example-text-input">Mô Tả</label>
+                                    <input class="form-control" name="data[des_big_image]"
+                                        value="{{$data->des_big_image ?? ''}}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="block">
+                                    <label class="control-label" for="example-text-input">Ảnh Nhỏ Bên Phải</label>
+                                    <input type="file" accept="image/*" class="form-control" name="small_image_1">
+                                    <img src="{{$helper->replaceDomain($data->small_image_1 ?? null)}}"
+                                        alt="Chưa có ảnh" style="max-width: 150px; " class="img-fluid">
+                                    <div class="form-group">
+                                        <label class="control-label" for="example-text-input">Mô Tả</label>
+                                        <input class="form-control" name="data[des_small_image_1]"
+                                            value="{{$data->des_small_image_1 ?? ''}}">
+                                    </div>
+                                </div>
+                                <div class="block">
+                                    <label class="control-label" for="example-text-input">Ảnh Nhỏ Bên Phải</label>
+                                    <input type="file" accept="image/*" class="form-control" name="small_image_2">
+                                    <img src="{{$helper->replaceDomain($data->small_image_2 ?? null)}}"
+                                        alt="Chưa có ảnh" style="max-width: 150px; " class="img-fluid">
+                                    <div class="form-group">
+                                        <label class="control-label" for="example-text-input">Mô Tả</label>
+                                        <input class="form-control" name="data[des_small_image_2]"
+                                            value="{{$data->des_small_image_2?? ''}}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="block">
+                                    <label class="control-label" for="example-text-input">Ảnh Nhỏ Bên Phải</label>
+                                    <input type="file" accept="image/*" class="form-control" name="small_image_3">
+                                    <img src="{{$helper->replaceDomain($data->small_image_3 ?? null)}}"
+                                        alt="Chưa có ảnh" style="max-width: 150px; " class="img-fluid">
+                                    <div class="form-group">
+                                        <label class="control-label" for="example-text-input">Mô Tả</label>
+                                        <input class="form-control" name="data[des_small_image_3]"
+                                            value="{{$data->des_small_image_3 ?? ''}}">
+                                    </div>
+                                </div>
+                                <div class="block">
+                                    <label class="control-label" for="example-text-input">Ảnh Nhỏ Bên Phải</label>
+                                    <input type="file" accept="image/*" class="form-control" name="small_image_4">
+                                    <img src="{{$helper->replaceDomain($data->small_image_4 ?? null)}}"
+                                        alt="Chưa có ảnh" style="max-width: 150px; " class="img-fluid">
+                                    <div class="form-group">
+                                        <label class="control-label" for="example-text-input">Mô Tả</label>
+                                        <input class="form-control" name="data[des_small_image_4]"
+                                            value="{{$data->des_small_image_4 ?? ''}}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

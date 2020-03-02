@@ -76,11 +76,35 @@ $(document).ready(function() {
     newsSliderController();
     textSliderController();
     addAnimationWhenScroll();
-    cssHeader();
     modalController();
-
+    cssHeader();
+    ScrollListener();
+    popupImage();
 });
 activeRoute();
+
+function popupImage() {
+    $('.container-feed-image a').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        mainClass: 'mfp-no-margins mfp-with-zoom',
+        image: {
+            verticalFit: true
+        },
+        zoom: {
+            enabled: true,
+
+            duration: 400, // duration of the effect, in milliseconds
+            easing: 'ease-in-out', // CSS transition easing function
+
+            opener: function(openerElement) {
+
+                return openerElement.is('img') ? openerElement : openerElement.find('img');
+            }
+        }
+
+    });
+}
 
 function activeRoute() {
     $(document).ready(function() {
@@ -108,7 +132,7 @@ function preLoadController() {
     var count = $('.count');
     var loader = $('#loader');
     $({ Counter: 0 }).animate({ Counter: count.text() }, {
-        duration: 4000,
+        duration: 5500,
         step: function() {
             count.text(Math.ceil(this.Counter) + "%");
         },
@@ -172,10 +196,11 @@ function getDataArticle(id) {
 }
 
 function cssHeader() {
-    var heightHeader = $("header").height();
-    $(".header-background-image").css("margin-top", -heightHeader);
+    if (window.matchMedia('screen and (max-width: 768px)').matches) {
+        var heightHeader = $("header").height();
+        $(".header-background-image").css("margin-top", -heightHeader);
+    }
 }
-
 
 function initAnimationForAllSection() {
     AOS.init({
@@ -190,6 +215,21 @@ function initAnimationForAllSection() {
 function setAnimationForSloganWhenFirstScroll() {
     $(window).one("scroll", function() {
         $(".test").css("transform", "scaleY(1)");
+    });
+}
+
+function ScrollListener() {
+    $(window).scroll(function() {
+        var scrollPosition = $(window).scrollTop();
+        var headerHeight = $(".header-background-image").height();
+        if (scrollPosition > headerHeight) {
+            $('body header .menu-container').css('background-color', '#f4eee7');
+            $('.menu-container .nav li a ').css('color', 'rgb(125, 115, 114)');
+        } else {
+            $('body header .menu-container').css('background-color', 'transparent');
+            $('.menu-container .nav li a ').css('color', 'rgb(244, 238, 231)');
+            $("header .nav li a").removeClass('active');
+        }
     });
 }
 

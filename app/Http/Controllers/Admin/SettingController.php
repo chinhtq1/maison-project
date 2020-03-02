@@ -357,6 +357,16 @@ class SettingController extends Controller
                 $setting['vi_tri_kim_cuong_image'] = asset($uploadDir . $file_rename);
             }
         }
+        if (\Request::hasFile('big_image')) {
+            $extension = $data['big_image']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'big_image.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['big_image']->move(public_path($uploadDir), $file_rename);
+                $setting['big_image'] = asset($uploadDir . $file_rename);
+            }
+        }
+
         if (\Request::hasFile('thuong_ngoan_my_canh_small')) {
             $extension = $data['thuong_ngoan_my_canh_small']->getClientOriginalExtension();
             $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
@@ -366,6 +376,51 @@ class SettingController extends Controller
                 $setting['thuong_ngoan_my_canh_small'] = asset($uploadDir . $file_rename);
             }
         }
+
+
+        if (\Request::hasFile('small_image_1')) {
+            $extension = $data['small_image_1']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'small_image_1.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['small_image_1']->move(public_path($uploadDir), $file_rename);
+                $setting['small_image_1'] = asset($uploadDir . $file_rename);
+            }
+        }
+
+
+        if (\Request::hasFile('small_image_2')) {
+            $extension = $data['small_image_2']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'small_image_2.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['small_image_2']->move(public_path($uploadDir), $file_rename);
+                $setting['small_image_2'] = asset($uploadDir . $file_rename);
+            }
+        }
+
+
+        if (\Request::hasFile('small_image_3')) {
+            $extension = $data['small_image_3']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'small_image_3.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['small_image_3']->move(public_path($uploadDir), $file_rename);
+                $setting['small_image_3'] = asset($uploadDir . $file_rename);
+            }
+        }
+
+
+        if (\Request::hasFile('small_image_4')) {
+            $extension = $data['small_image_4']->getClientOriginalExtension();
+            $allowedExtensions = array('jpeg', 'jpg', 'png', 'bmp', 'gif');
+            $file_rename   = 'small_image_4.' . $extension;
+            if (in_array($extension, $allowedExtensions)) {
+                $data['small_image_4']->move(public_path($uploadDir), $file_rename);
+                $setting['small_image_4'] = asset($uploadDir . $file_rename);
+            }
+        }
+
 
 
         $result->content = json_encode($setting);
