@@ -201,7 +201,7 @@
             <div data-aos="fade-right" class="container-image-map">
                 <img class="map-desktop custom-image-map" src="{{asset('static/map_desktop.png')}}">
                 <img class="map-mobile custom-image-map" src="{{asset('static/map_mobile.png')}}">
-                <div class="Absolute-Center">
+                <div data-aos="fade-down" data-aos-duration="1000"  class="Absolute-Center">
                     <span class="bg-position-project">
                         <img class="logo-position-project" src="{{asset('client/img/logo-project-position.png')}}">
                         <span class="circle-fill-level-1"> </span>
@@ -212,7 +212,7 @@
             </div>
             <div data-aos="fade-left" class="map-info-content-right">
                 {!! $setting['vi_tri_kim_cuong'] ?? '' !!}
-                <a target="_blank" href="{{route('pdf','ban_do_vi_tri')}}" class="custom-button ">
+                <a data-aos="fade-up" data-aos-duration="1000" target="_blank" href="{{route('pdf','ban_do_vi_tri')}}" class="custom-button ">
                     <div class="custom-button-div button-style-map"><span>Bản Đồ Vị Trí</span></div>
                     <div class="container-arrow">
                         <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -224,10 +224,11 @@
             </div>
         </section>
 
-        <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="tien-ich" class="utilities">
+        <section  id="tien-ich" class="utilities">
+            <div data-aos="zoom-out"> 
             {!! $setting['tien_ich_toan_my'] ?? '' !!}
-
-            <img class="img-fluid" src="{{asset('static/tien_ich_toan_my_image.png')}}">
+            </div>
+            <img data-aos="zoom-in-down" class="img-fluid" src="{{asset('static/tien_ich_toan_my_image.png')}}">
 
         </section>
         <section id="kien-truc" class="design-building">
@@ -238,7 +239,7 @@
                 <div class="design-building-content">
                     <div class="inner-design-building-content">
                         {!! $setting['kien_truc_chau_au'] ?? '' !!}
-                        <a target="_blank" href="{{route('pdf','mau_biet_thu_moi')}}" class="custom-button ">
+                        <a data-aos="fade-up" data-aos-duration="1000" target="_blank" href="{{route('pdf','mau_biet_thu_moi')}}" class="custom-button ">
                             <div class="custom-button-div button-style-house"><span>Mẫu Biệt Thự</span></div>
                             <div class="container-arrow">
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -328,13 +329,13 @@
         </section>
         <section id="thu-vien" class="project-feed">
             <div class="inner-project-feed">
-                <div  data-aos="zoom-in" class="project-feed-content-left">
+                <div  data-aos="zoom-in-up"  class="project-feed-content-left">
                     <div  class="container-feed-image">
                         <a href="static/big_image.png"> <img alt="{!! MetaTag::get('des_big_image') !!}" src="{{asset('static/big_image.png')}}" class="img-fluid"> </a>
                         <h1>{!! MetaTag::get('des_big_image') !!}</h1>
                     </div>
                 </div>
-                <div data-aos="zoom-in" class="project-feed-content-right">
+                <div data-aos="zoom-in-up" class="project-feed-content-right">
                     <div class="feed-left">
                         <div  class="container-feed-image">
                             <a href="static/small_image_1.png"> <img alt="{!! MetaTag::get('des_small_image_1') !!}" src="{{asset('static/small_image_1.png')}}" class="img-fluid"> </a>

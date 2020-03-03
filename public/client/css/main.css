@@ -11,10 +11,21 @@ html {
     width: 100%;
 }
 
+@font-face {
+    font-family: 'Playfair Display Italic';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v20/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDTbtPY_Q.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
 @media only screen and (min-width: 1116px) {
-    #tien-ich,
     #tin-tuc,
     #gioi-thieu {
+        scroll-margin: 110px;
+    }
+    #tien-ich {
         scroll-margin: 110px;
     }
     #thu-vien {
@@ -250,13 +261,12 @@ footer {
     position: relative;
     overflow: visible;
     width: 100%;
-    padding-bottom: 25%;
+    height: 30%;
 }
 
 .img-banner-modal .time-post {
     position: absolute;
     bottom: 0;
-    position: absolute;
     width: 15%;
     background-color: white;
     left: 0;
@@ -268,9 +278,15 @@ footer {
 .description-modal-text {
     padding-left: 3rem;
     padding-top: 3rem;
-    padding-bottom: 50%;
     position: relative;
-    overflow-y: scroll;
+    overflow-y: auto;
+    height: 70%;
+}
+
+#article-content img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .description-modal-text h1 {
@@ -345,12 +361,12 @@ a.btn {
 .modal-wrapper .modal.open {
     opacity: 1;
     visibility: visible;
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 .modal {
-    width: 55%;
-    height: auto;
+    width: 58%;
+    height: 90%;
     display: block;
     position: relative;
     top: 0;
@@ -359,10 +375,10 @@ a.btn {
     margin-top: 100%;
     background-color: white;
     opacity: 0;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
 }
 
 .modal-wrapper.open .modal {
@@ -381,6 +397,11 @@ a.btn {
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
+}
+
+.modal.open .content {
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -454,8 +475,8 @@ a.btn {
 
 .poem p {
     font-style: italic;
-    font-family: "Playfair Display";
-    font-size: 2.2rem;
+    font-family: "Playfair Display Italic";
+    font-size: 2.6rem;
     color: rgb(125, 115, 114);
     line-height: 2.308;
     margin-bottom: 0px;
@@ -835,11 +856,40 @@ a.btn {
 .container-slogan-text h1 {
     font-size: 6rem;
     font-family: "Playfair Display";
+    /* color: rgba(255, 255, 255, 0.3); */
     color: rgb(244, 238, 231);
     font-weight: bold;
     text-transform: uppercase;
     line-height: 1.333;
     text-align: left;
+    background: #222 -webkit-gradient(linear, left top, right top, from(#fff), to(#fff), color-stop(0.5, #fff)) 0 0 no-repeat;
+    background-size: 200px;
+    background-clip: text;
+    animation-name: shine;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    -webkit-background-size: 200px;
+    -webkit-background-clip: text;
+    -webkit-animation-name: shine;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+@-webkit-keyframes shine {
+    0%,
+    10% {
+        background-position: -1000px;
+    }
+    20% {
+        background-position: top left;
+    }
+    90% {
+        background-position: top right;
+    }
+    100% {
+        background-position: 1000px;
+    }
 }
 
 .container-slogan-text h2 {
@@ -1940,6 +1990,10 @@ a.btn {
 }
 
 @media only screen and (max-width: 768px) {
+    .modal {
+        width: 85%;
+        height: 90%;
+    }
     .inner-text-slider p {
         max-width: 620px;
         padding-left: 2rem;
@@ -2287,7 +2341,7 @@ a.btn {
     }
     .test {
         width: 0.55rem;
-        top: 4.5rem;
-        height: 40rem;
+        top: 8.5rem;
+        height: 33rem;
     }
 }

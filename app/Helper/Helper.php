@@ -23,11 +23,8 @@ class Helper {
 
     static function render_time_to_vietnamese($datetime){
         if(!is_null($datetime)){
-            $datetime = Carbon::parse($datetime);
-            $datetime_vn = config('config.DATE_TIME_VN.day').$datetime->day.' '
-                            .config('config.DATE_TIME_VN.month').$datetime->month.' '
-                            .config('config.DATE_TIME_VN.year').$datetime->year;
-            return $datetime_vn;
+            $datetime = Carbon::parse($datetime)->format('d/m/Y');
+            return $datetime;
         }
         return '';
 
