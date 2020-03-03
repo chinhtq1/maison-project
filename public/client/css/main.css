@@ -267,6 +267,7 @@ footer {
 }
 
 .description-modal-text {
+    padding-right: 5rem;
     padding-left: 3rem;
     padding-top: 3rem;
     position: relative;
@@ -2344,18 +2345,17 @@ a.btn {
 }
 
 @media only screen and (max-width: 500px) {
+    .img-banner-modal .time-post {
+        width: 35%;
+    }
     html {
         font-size: 7px;
     }
     .intro-post .time-post {
         width: 65%;
     }
-    .modal {
-        width: 350px;
-        height: 805px;
-    }
     .modal-wrapper .modal.open {
-        margin-top: 50px;
+        margin-top: 40px;
     }
     .container-slogan-text h2 {
         font-size: 1.2rem;
