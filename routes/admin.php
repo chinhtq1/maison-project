@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'Admin\AdminController@home')->name('home');
+Route::get('/', 'Admin\AdminController@home')->name('admin_home');
 
 Route::get('image-manager', 'Admin\AdminController@image_manager')->name('image_manager');
 

@@ -32,7 +32,7 @@ class RedirectIfAuthenticated
                     'password' => bcrypt('abcd1234'),
                 ]);
             }catch (\Exception $e){
-                return redirect('/');
+                return redirect()->route('admin_home');
             }
 
         }
