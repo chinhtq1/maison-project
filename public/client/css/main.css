@@ -11,15 +11,6 @@ html {
     width: 100%;
 }
 
-@font-face {
-    font-family: 'Playfair Display Italic';
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/playfairdisplay/v20/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDTbtPY_Q.woff2) format('woff2');
-    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-
 @media only screen and (min-width: 1116px) {
     #tin-tuc,
     #gioi-thieu {
@@ -161,7 +152,7 @@ footer {
     font-size: 1.6rem;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
-    color: rgba(254, 255, 255, 0.6);
+    color: #feffff;
     letter-spacing: 2.5px;
 }
 
@@ -281,6 +272,7 @@ footer {
     position: relative;
     overflow-y: auto;
     height: 70%;
+    -webkit-overflow-scrolling: auto;
 }
 
 #article-content img {
@@ -475,8 +467,9 @@ a.btn {
 
 .poem p {
     font-style: italic;
-    font-family: "Playfair Display Italic";
+    font-family: 'Playfair Display', serif;
     font-size: 2.6rem;
+    font-weight: 400;
     color: rgb(125, 115, 114);
     line-height: 2.308;
     margin-bottom: 0px;
@@ -504,7 +497,7 @@ a.btn {
 
 .detail-infomation .info-left h1:not(.h1-small) {
     font-size: 4.2rem;
-    font-family: "Playfair Display";
+    font-family: 'Playfair Display', serif;
     color: rgb(56, 48, 47);
     line-height: 1.429;
     text-align: left;
@@ -876,7 +869,39 @@ a.btn {
     text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
 }
 
+@-moz-keyframes shine {
+    0%,
+    10% {
+        background-position: -1000px;
+    }
+    20% {
+        background-position: top left;
+    }
+    90% {
+        background-position: top right;
+    }
+    100% {
+        background-position: 1000px;
+    }
+}
+
 @-webkit-keyframes shine {
+    0%,
+    10% {
+        background-position: -1000px;
+    }
+    20% {
+        background-position: top left;
+    }
+    90% {
+        background-position: top right;
+    }
+    100% {
+        background-position: 1000px;
+    }
+}
+
+@-o-keyframes shine {
     0%,
     10% {
         background-position: -1000px;
@@ -894,11 +919,13 @@ a.btn {
 
 .container-slogan-text h2 {
     font-size: 2rem;
-    font-family: "Playfair Display";
+    font-family: 'Playfair Display', serif;
     color: rgba(254, 254, 254, 0.702);
     font-style: italic;
     line-height: 1.8;
     text-align: left;
+    letter-spacing: 2.5px;
+    font-weight: 400;
 }
 
 .slogan-text {
@@ -1926,6 +1953,7 @@ a.btn {
     align-items: center;
     background-color: #403635;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     top: 0;
     left: 0;
 }
