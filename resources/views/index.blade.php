@@ -125,15 +125,13 @@
 
         <section class="header-background-image">
             <div class="inner-background-image">
-                <img alt="banner" src="{!! MetaTag::get('banner_desktop') !!}"
+                <img alt="banner" src="{{asset('static/banner_desktop.png')}}"
                     class="header-desktop img-header img-fluid object-fit-cover">
-                <img  alt="banner" src="{!! MetaTag::get('banner_mobile') !!}"
+                <img  alt="banner"  src="{{asset('static/banner_mobile.png')}}"
                     class="header-mobile img-header img-fluid object-fit-cover">
 
-                <a target="_blank" href="{!! MetaTag::get('company_link') !!}" class="company-logo" href="#"> <img
-                        src="{{asset('client/img/company-logo.png')}}" class="img-fluid"></a>
-                <a target="_blank" href="{!! MetaTag::get('fb_link') !!}" class="fb-logo" href="#"> <img
-                        src="{{asset('client/img/facebook-header.png')}}" class="img-fluid"></a>
+                <a target="_blank" href="{!! MetaTag::get('company_link') !!}" class="company-logo" href="#"> <img class="img-fluid"></a>
+                <a target="_blank" href="{!! MetaTag::get('fb_link') !!}" class="fb-logo" href="#"> <img class="img-fluid"></a>
                 <div class="container-slogan-text">
                     <div class="slogan-text">
                         <h2>Giữa Núi Đồi Cao Nguyên</h2>
