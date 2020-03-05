@@ -138,7 +138,7 @@
                     <div class="slogan-text">
                         <h2>Giữa Núi Đồi Cao Nguyên</h2>
                         <h1>VIÊN KIM CƯƠNG <br> VẸN SẮC TOÀN BÍCH</h1>
-                        <div class="test"></div>
+                        <!-- <div class="test"></div> -->
                     </div>
                 </div>
             </div>
