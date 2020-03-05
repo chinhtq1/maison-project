@@ -69,6 +69,10 @@ body header .menu-container {
     top: 0px;
     z-index: 2;
     max-width: 1920px;
+
+    transition: all .5s cubic-bezier(.59, .08, .385, 1);
+    -webkit-transition: all .5s cubic-bezier(.59, .08, .385, 1);
+    -ms-transition: all .5s cubic-bezier(.59, .08, .385, 1);
 }
 
 .btn-to-top {
@@ -1634,7 +1638,25 @@ a.btn {
     margin-top: 25rem;
     position: relative;
 }
+.company-logo img {
+    transition: all .5s cubic-bezier(.59, .08, .385, 1);
+    -webkit-transition: all .5s cubic-bezier(.59, .08, .385, 1);
+    -ms-transition: all .5s cubic-bezier(.59, .08, .385, 1);
+    content:url('../../client/img/company-logo.png');
+}
+.fb-logo img {
+    transition: all .5s cubic-bezier(.59, .08, .385, 1);
+    -webkit-transition: all .5s cubic-bezier(.59, .08, .385, 1);
+    -ms-transition: all .5s cubic-bezier(.59, .08, .385, 1);
+    content:url('../../client/img/facebook-header.png');
+}
 
+.company-logo img.scroll {
+    content:url('../../client/img/company-logo-scroll.png');
+}
+.fb-logo img.scroll {
+    content:url('../../client/img/facebook-header-scroll.png');
+}
 .text-slider::before {
     position: absolute;
     top: -16rem;
@@ -2134,6 +2156,7 @@ a.btn {
         padding-right: 5rem;
         max-width: 750px;
         background-color: transparent;
+        
     }
     .header-background-image {
         padding-top: 0;

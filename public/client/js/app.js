@@ -220,21 +220,29 @@ function setAnimationForSloganWhenFirstScroll() {
 
 function ScrollListener() {
     $(window).scroll(function() {
+        if (window.matchMedia('screen and (min-width: 900px)').matches) {
         var scrollPosition = $(window).scrollTop();
         var headerHeight = $(".header-background-image").height();
 
-        if (scrollPosition > headerHeight) {
+        if ((scrollPosition + 300 ) > headerHeight ) {
             $('body header .menu-container').css('background-color', '#f4eee7');
+                $('.company-logo img').addClass('scroll');
+                $('.fb-logo img').addClass('scroll');
         } else {
             $('body header .menu-container').css('background-color', 'transparent');
             $("header .nav li a").removeClass('active');
+
+ 
+                $('.company-logo img').removeClass('scroll');
+                $('.fb-logo img').removeClass('scroll');
+            
         }
         if (scrollPosition === 0) {
             $('.menu-container .nav li a ').css('color', 'rgb(244, 238, 231)');
         } else {
             $('.menu-container .nav li a ').css('color', 'rgb(125, 115, 114)');
         }
-    });
+    }});
 }
 
 function addAnimationWhenScroll() {
