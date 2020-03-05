@@ -222,13 +222,17 @@ function ScrollListener() {
     $(window).scroll(function() {
         var scrollPosition = $(window).scrollTop();
         var headerHeight = $(".header-background-image").height();
+
         if (scrollPosition > headerHeight) {
             $('body header .menu-container').css('background-color', '#f4eee7');
-            $('.menu-container .nav li a ').css('color', 'rgb(125, 115, 114)');
         } else {
             $('body header .menu-container').css('background-color', 'transparent');
-            $('.menu-container .nav li a ').css('color', 'rgb(244, 238, 231)');
             $("header .nav li a").removeClass('active');
+        }
+        if (scrollPosition === 0) {
+            $('.menu-container .nav li a ').css('color', 'rgb(244, 238, 231)');
+        } else {
+            $('.menu-container .nav li a ').css('color', 'rgb(125, 115, 114)');
         }
     });
 }

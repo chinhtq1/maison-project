@@ -9,7 +9,7 @@
     <meta property="og:title" content="{!! MetaTag::get('title') !!}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="Content-Language" content="vi_VN">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('client/css/bootstrap.min.css?v=1.6')}}">
     <meta name="description" content="{!! MetaTag::get('description') !!}">
     <meta property="og:description" content="{!! MetaTag::get('description') !!}">
     <meta property="og:type" content="{{ MetaTag::get('home_image') }}">
@@ -329,30 +329,30 @@
         </section>
         <section id="thu-vien" class="project-feed">
             <div class="inner-project-feed">
-                <div  data-aos="zoom-in-up"  class="project-feed-content-left">
-                    <div  class="container-feed-image">
+                <div    class="project-feed-content-left">
+                    <div data-aos="zoom-in-up" class="container-feed-image">
                         <a href="static/big_image.png"> <img alt="{!! MetaTag::get('des_big_image') !!}" src="{{asset('static/big_image.png')}}" class="img-fluid"> </a>
                         <h1>{!! MetaTag::get('des_big_image') !!}</h1>
                     </div>
                 </div>
-                <div data-aos="zoom-in-up" class="project-feed-content-right">
+                <div class="project-feed-content-right">
                     <div class="feed-left">
-                        <div  class="container-feed-image">
+                        <div data-aos="zoom-in-up"  class="container-feed-image">
                             <a href="static/small_image_1.png"> <img alt="{!! MetaTag::get('des_small_image_1') !!}" src="{{asset('static/small_image_1.png')}}" class="img-fluid"> </a>
                             <h1>{!! MetaTag::get('des_small_image_1') !!}</h1>
                         </div>
 
-                        <div  class="container-feed-image">
+                        <div data-aos="zoom-in-up"  class="container-feed-image">
                             <a href="static/small_image_2.png"> <img alt="{!! MetaTag::get('des_small_image_2') !!}" src="{{asset('static/small_image_2.png')}}" class="img-fluid"> </a>
                             <h1>{!! MetaTag::get('des_small_image_2') !!}</h1>
                         </div>
                     </div>
                     <div class="feed-right">
-                        <div  class="container-feed-image">
+                        <div data-aos="zoom-in-up"  class="container-feed-image">
                             <a href="static/small_image_3.png"> <img alt="{!! MetaTag::get('des_small_image_3') !!}" src="{{asset('static/small_image_3.png')}}" class="img-fluid"> </a>
                             <h1>{!! MetaTag::get('des_small_image_3') !!}</h1>
                         </div>
-                        <div  class="container-feed-image">
+                        <div data-aos="zoom-in-up"  class="container-feed-image">
                             <a href="static/small_image_4.png"> <img alt="{!! MetaTag::get('des_small_image_4') !!}" src="{{asset('static/small_image_4.png')}}" class="img-fluid"> </a>
                             <h1>{!! MetaTag::get('des_small_image_4') !!}</h1>
                         </div>
