@@ -112,14 +112,58 @@ body header .menu-container {
     text-decoration: none;
 }
 
-.burgerIcon {
-    float: right;
-    cursor: pointer;
-    z-index: 20;
-    display: none;
+
+#hamburger {
+    float: right;   
+    display: none; 
+    cursor: pointer; 
+    position: absolute;
+    top: 5.5rem;
+    right: 5rem;
+}
+
+#hamburger span, #hamburger span:before, #hamburger span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 3px;
+  width: 20px;
+  background: white;
+  position: absolute;
+  display: inline-block;
+  content: '';
+}
+
+#hamburger span:before {
+  top: -5px; 
+}
+#hamburger span:after {
+  bottom: -5px;
+  width: 10px;
+  right: 0;
 }
 
 
+#hamburger span, #hamburger span:before, #hamburger span:after {
+-webkit-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+   -moz-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+     -o-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+        transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000); /* easeInOutCubic */
+}
+#hamburger.active span {
+  background-color: transparent;
+}
+#hamburger.active span:before, #hamburger.active span:after {
+  top: 0;
+  width: 20px;
+  right: unset;
+}
+#hamburger.active span:before {
+  transform: rotate(45deg);
+}
+#hamburger.active span:after {
+  transform: translateY(-10px) rotate(-45deg);
+  top: 10px;
+}
 /* FOOTER */
 
 .logo-mobile {
@@ -1995,18 +2039,10 @@ a.btn {
 }
 
 
+
 /* RESPONSIVE MOBILE  */
 
-.burgerLine {
-    width: 20px;
-    height: 2px;
-    background-color: white;
-    margin-bottom: 5px;
-}
 
-.lineBot.burgerLine {
-    background: -webkit-linear-gradient(125deg, white 60%, transparent 50%);
-}
 
 
 /*NAV MENU*/
@@ -2187,7 +2223,7 @@ a.btn {
         width: 25px;
         position: absolute;
     }
-    .burgerIcon {
+    #hamburger {
         display: inline;
         z-index: 100;
     }
@@ -2220,8 +2256,8 @@ a.btn {
         padding-top: 5rem;
         padding-left: 5rem;
         padding-right: 5rem;
-        max-width: 750px;
-        background-color: #403635;
+        max-width: 768px;
+        background-color: transparent;
     }
     .header-background-image {
         padding-top: 0;

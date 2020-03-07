@@ -1,25 +1,15 @@
 $(document).ready(function () {
+
     preLoadController();
     $(window).resize(function () {
         if ($(window).width() <= 768) {
             cssHeader();
         }
     });
-
-    $('.burgerIcon').hover(function () {
-        TweenMax.to('.burgerLine:first-child', 0.2, { x: -10 });
-        TweenMax.to('.burgerLine:last-child', 0.2, { x: 10 });
-    },
-
-        function () {
-            TweenMax.to('.burgerLine:first-child', 0.2, { x: 0 });
-            TweenMax.to('.burgerLine:last-child', 0.2, { x: 0 });
-        });
     var tlmenu = new TimelineMax({ paused: true });
-
-    tlmenu.to('.navMobie', 0.3, { autoAlpha: 1 })
-        .staggerFromTo('.navMobie li', 0.5, { y: 100, opacity: 0 }, { y: 0, opacity: 1 }, 0.1);
-    $('.burgerIcon').click(function () {
+    tlmenu.to('.navMobie', 0.3, { autoAlpha: 1 }).staggerFromTo('.navMobie li', 0.5, { y: 100, opacity: 0 }, { y: 0, opacity: 1 }, 0.1);
+    $('#hamburger').click(function() {
+        $(this).toggleClass('active');
         if ($('html').hasClass('is-main-menu-open')) {
             $('html').removeClass('is-main-menu-open');
             tlmenu.reverse(0);
@@ -27,7 +17,7 @@ $(document).ready(function () {
             tlmenu.play(0);
             $('html').addClass('is-main-menu-open');
         }
-    });
+       });
     $('.closeButton').click(function () {
         tlmenu.reverse(0);
         $('html').removeClass('is-main-menu-open');

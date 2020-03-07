@@ -94,11 +94,12 @@
                     <div class="quick-alo-ph-circle-fill"></div>
                     <div class="quick-alo-ph-img-circle"> </div>
                 </a>
-                <div class="burgerIcon">
+                {{-- <div class="burgerIcon">
                     <div class="burgerLine"></div>
                     <div class="burgerLine"></div>
                     <div class="burgerLine lineBot"></div>
-                </div>
+                </div> --}}
+                <a id="hamburger" href="#"><span></span></a>
                 <!-- MENU MOBIE -->
                 <nav class="navMobie">
                     <div class="container-menu-mobie">
