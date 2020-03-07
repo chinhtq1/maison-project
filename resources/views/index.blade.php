@@ -328,29 +328,29 @@
             <div class="inner-project-feed">
                 <div    class="project-feed-content-left">
                     <div data-aos="zoom-in-up" class="container-feed-image">
-                        <a href="static/big_image.png"> <img alt="{!! MetaTag::get('des_big_image') !!}" src="{{asset('static/big_image.png')}}" class="img-fluid"> </a>
+                        <a href="{!! MetaTag::get('big_image') !!}"> <img alt="{!! MetaTag::get('des_big_image') !!}" src="{!! MetaTag::get('big_image') !!}" class="img-fluid"> </a>
                         <h1>{!! MetaTag::get('des_big_image') !!}</h1>
                     </div>
                 </div>
                 <div class="project-feed-content-right">
                     <div class="feed-left">
                         <div data-aos="zoom-in-up"  class="container-feed-image">
-                            <a href="static/small_image_1.png"> <img alt="{!! MetaTag::get('des_small_image_1') !!}" src="{{asset('static/small_image_1.png')}}" class="img-fluid"> </a>
+                            <a href="{!! MetaTag::get('small_image_1') !!}"> <img alt="{!! MetaTag::get('des_small_image_1') !!}" src="{!! MetaTag::get('small_image_1') !!}" class="img-fluid"> </a>
                             <h1>{!! MetaTag::get('des_small_image_1') !!}</h1>
                         </div>
 
                         <div data-aos="zoom-in-up"  class="container-feed-image">
-                            <a href="static/small_image_2.png"> <img alt="{!! MetaTag::get('des_small_image_2') !!}" src="{{asset('static/small_image_2.png')}}" class="img-fluid"> </a>
+                            <a href="{!! MetaTag::get('small_image_2') !!}"> <img alt="{!! MetaTag::get('des_small_image_2') !!}" src="{!! MetaTag::get('small_image_2') !!}" class="img-fluid"> </a>
                             <h1>{!! MetaTag::get('des_small_image_2') !!}</h1>
                         </div>
                     </div>
                     <div class="feed-right">
                         <div data-aos="zoom-in-up"  class="container-feed-image">
-                            <a href="static/small_image_3.png"> <img alt="{!! MetaTag::get('des_small_image_3') !!}" src="{{asset('static/small_image_3.png')}}" class="img-fluid"> </a>
+                            <a href="{!! MetaTag::get('small_image_3') !!}"> <img alt="{!! MetaTag::get('des_small_image_3') !!}" src="{!! MetaTag::get('small_image_3') !!}" class="img-fluid"> </a>
                             <h1>{!! MetaTag::get('des_small_image_3') !!}</h1>
                         </div>
                         <div data-aos="zoom-in-up"  class="container-feed-image">
-                            <a href="static/small_image_4.png"> <img alt="{!! MetaTag::get('des_small_image_4') !!}" src="{{asset('static/small_image_4.png')}}" class="img-fluid"> </a>
+                            <a href="{!! MetaTag::get('small_image_4') !!}"> <img alt="{!! MetaTag::get('des_small_image_4') !!}" src="{!! MetaTag::get('small_image_4') !!}" class="img-fluid"> </a>
                             <h1>{!! MetaTag::get('des_small_image_4') !!}</h1>
                         </div>
                     </div>
