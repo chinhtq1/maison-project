@@ -142,9 +142,9 @@
             </div>
         </section>
 
-        <div data-aos="zoom-in-down" class="poem text-center">
-            <img class="img-fluid" src="{{asset('static/logo_poem.png')}}">
-            {!! $setting['poem_text'] ?? '' !!}
+        <div class="poem text-center">
+            <img  data-aos="fade-down" class="img-fluid" src="{{asset('static/logo_poem.png')}}">
+           <div data-aos="fade-up" > {!! $setting['poem_text'] ?? '' !!} </div>
         </div>
         <div id="gioi-thieu" class="full-width">
             <div class="detail-infomation">
@@ -196,10 +196,10 @@
         </div>
 
         <section id="vi-tri" class="map-info">
-            <div data-aos="fade-right" class="container-image-map">
+            <div data-aos="zoom-in" class="container-image-map">
                 <img class="map-desktop custom-image-map" src="{{asset('static/map_desktop.png')}}">
                 <img class="map-mobile custom-image-map" src="{{asset('static/map_mobile.png')}}">
-                <div data-aos="fade-down" data-aos-duration="1000"  class="Absolute-Center">
+                <div data-aos-delay = "400" data-aos="fade-down" class="Absolute-Center">
                     <span class="bg-position-project">
                         <img class="logo-position-project" src="{{asset('client/img/logo-project-position.png')}}">
                         <span class="circle-fill-level-1"> </span>
@@ -208,15 +208,15 @@
 
                 </div>
             </div>
-            <div data-aos="fade-left" class="map-info-content-right">
-                {!! $setting['vi_tri_kim_cuong'] ?? '' !!}
-                <a data-aos="fade-up" data-aos-duration="1000" target="_blank" href="{{route('pdf','ban_do_vi_tri')}}" class="custom-button ">
+            <div  class="map-info-content-right">
+                <div data-aos="fade-right">  {!! $setting['vi_tri_kim_cuong'] ?? '' !!} </div>
+                <a data-aos-delay = "0" data-aos="fade-up"  target="_blank" href="{{route('pdf','ban_do_vi_tri')}}" class="custom-button ">
                     <div class="custom-button-div button-style-map"><span>Bản Đồ Vị Trí</span></div>
                     <div class="container-arrow">
                         <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                     </div>
                 </a>
-                <div class="image-tower">
+                <div data-aos-delay = "0"  data-aos="fade-up" class="image-tower">
                     <img src="{{asset('static/vi_tri_kim_cuong_image.png')}}" class="img-fluid">
                 </div>
             </div>
@@ -230,14 +230,14 @@
 
         </section>
         <section id="kien-truc" class="design-building">
-            <div data-aos="fade-right" class="design-building-left">
+            <div data-aos="zoom-in" class="design-building-left">
                 <img src="{{asset('static/kien_truc_chau_au_image.png')}}" class=" u-pos-tl u-fit u-object-fit-cover">
             </div>
-            <div data-aos="fade-left" class="design-building-right">
+            <div  class="design-building-right">
                 <div class="design-building-content">
                     <div class="inner-design-building-content">
-                        {!! $setting['kien_truc_chau_au'] ?? '' !!}
-                        <a data-aos="fade-up" data-aos-duration="1000" target="_blank" href="{{route('pdf','mau_biet_thu_moi')}}" class="custom-button ">
+                         <div data-aos="fade-right"  > {!! $setting['kien_truc_chau_au'] ?? '' !!}   </div>
+                        <a data-aos-delay = "0" data-aos="fade-up"  target="_blank" href="{{route('pdf','mau_biet_thu_moi')}}" class="custom-button ">
                             <div class="custom-button-div button-style-house"><span>Mẫu Biệt Thự</span></div>
                             <div class="container-arrow">
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -247,13 +247,13 @@
                 </div>
             </div>
         </section>
-        <section data-aos="fade-down" id="tin-tuc" class="news-section">
+        <section id="tin-tuc" class="news-section">
             <div class="title-news ">
-                <h2><strong>Tin tức</strong> Của Chúng Tôi</h2>
+                <h2 data-aos="fade-right" ><strong>Tin tức</strong> Của Chúng Tôi</h2>
                 <!-- <div class="slider_nav">
                  
                     </div> -->
-                <div id="customNav">
+                <div  data-aos="fade-left" id="customNav">
                     <span class="btn am-next">
                         <svg viewBox="0 0 38.07 13.8799">
                             <path
@@ -268,16 +268,15 @@
                     </span>
                 </div>
             </div>
-            <div id="owl-carousel-1" class="owl-carousel">
-
+            <div data-aos="zoom-in"  id="owl-carousel-1" class="owl-carousel">
                 @foreach ($articles as $article)
                 <div class="intro-post">
                     <a class="image-post-container">
-                        <div class="inner-image-post-container" data-id="{{ $article['id'] }}">
+                        <div class="inner-image-post-container" data-id="{{ $article['id'] ?? null }}">
                             <img class=" img-fluid " src="{{ $article['thumbnail'] ?? null }}">
                             <div class="time-post">
                                 <i class="fa fa-2x fa-calendar-alt" aria-hidden="true"></i>
-                                <span>{{ $article['date_public'] }}</span>
+                                <span>{{ $article['date_public'] ?? null }}</span>
                             </div>
                         </div>
 
@@ -302,7 +301,7 @@
         </section>
 
         <section class="text-slider">
-            <div data-aos="fade-down" data-aos-duration="1500" class="container-text-slider">
+            <div data-aos="fade-down"  class="container-text-slider">
                 <div id="owl-carousel-2" class="owl-carousel">
                     @foreach($slide_chu as $slide )
                     <div class="inner-text-slider">
@@ -318,7 +317,7 @@
                 </div>
             </div>
 
-            <div data-aos="fade-up" data-aos-duration="1500">
+            <div data-aos="fade-up" >
                 <div class="logo-379">
                     <img src="{{asset('client/img/logo-379.png')}}" class="img-fluid">
                 </div>
