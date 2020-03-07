@@ -271,7 +271,7 @@ footer {
 }
 
 .description-modal-text {
-    padding-right: 5rem;
+    padding-right: 3rem;
     padding-left: 3rem;
     padding-top: 3rem;
     position: relative;
@@ -875,13 +875,13 @@ a.btn {
     background-clip: text;
     animation-name: shine;
     animation-iteration-count: infinite;
-    animation-duration: 2s;
+    animation-duration: 1s;
     -webkit-background-size: 200px;
     -webkit-background-clip: text;
     -webkit-animation-name: shine;
-    -webkit-animation-duration: 2s;
+    -webkit-animation-duration: 1s;
     -webkit-animation-iteration-count: infinite;
-    text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+    /* text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5); */
 }
 
 @-moz-keyframes shine {
@@ -2010,7 +2010,7 @@ a.btn {
 }
 
 .container-menu-mobie {
-    padding-top: 34.5rem;
+    padding-top: 30%;
     text-align: center;
     padding-left: 5rem;
     padding-right: 5rem;
@@ -2028,6 +2028,9 @@ a.btn {
     text-transform: uppercase;
     line-height: 5;
     text-align: center;
+    -webkit-transition: color .3s cubic-bezier(.59, .08, .385, 1);
+    -moz-transition: color .3s cubic-bezier(.59, .08, .385, 1);
+    -o-transition: color .3s cubic-bezier(.59, .08, .385, 1);
     transition: color .3s cubic-bezier(.59, .08, .385, 1);
 }
 
@@ -2069,6 +2072,16 @@ a.btn {
 }
 
 @media only screen and (max-width: 768px) {
+
+    .img-banner-modal .time-post {
+        position: absolute;
+        bottom: 0;
+        width: 31.2%;
+        background-color: white;
+        left: 0;
+        text-align: left;
+        padding-left: 3rem;
+    }
     .modal {
         width: 85%;
         height: 90%;
@@ -2119,7 +2132,7 @@ a.btn {
         padding-bottom: 11rem;
     }
     .intro-post .time-post {
-        width: 50%;
+        width: 41.89%;
     }
     .utilities h1 {
         font-size: 2.8rem;
@@ -2183,8 +2196,7 @@ a.btn {
         padding-left: 5rem;
         padding-right: 5rem;
         max-width: 750px;
-        background-color: transparent;
-        
+        background-color: #403635;
     }
     .header-background-image {
         padding-top: 0;

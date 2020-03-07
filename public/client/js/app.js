@@ -250,8 +250,8 @@ function ScrollListener() {
 function addAnimationWhenScroll() {
     var image = document.getElementsByClassName('img-header');
     new simpleParallax(image, {
-        delay: 2,
-        scale: 1.2
+        delay: 3,
+        scale: 1.1
     });
 }
 
