@@ -372,10 +372,10 @@ a.btn {
     margin-top: 100%;
     background-color: white;
     opacity: 0;
-    -webkit-transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    -o-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .modal-wrapper.open .modal {
@@ -394,8 +394,15 @@ a.btn {
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
-
+.btn-close-modal:hover {
+    background-color: rgb(211, 164, 104);
+    color: white;
+}
 .modal.open .content {
     width: 100%;
     height: 100%;
@@ -428,7 +435,10 @@ a.btn {
     border-width: 1px;
     padding: 1.8rem;
     color: #8d5c48;
-    transition: all .5s;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .btn-pre-slider:hover,
@@ -581,20 +591,20 @@ a.btn {
 .header-background-image a.company-logo {
     right: 60px;
     top: 197px;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     z-index: 80;
 }
 
 .header-background-image a.fb-logo {
     top: 250px;
     right: 70px;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     z-index: 80;
 }
 
@@ -716,7 +726,7 @@ a.btn {
     -o-transition: transform .6s cubic-bezier(.165, .84, .44, 1);
 }
 
-.test {
+/* .test {
     width: 1.2rem;
     height: 38rem;
     background-image: -webkit-linear-gradient(-90deg, rgb(244, 238, 231)0, rgba(255, 255, 255, 0) 100%);
@@ -738,7 +748,7 @@ a.btn {
     -webkit-transition: transform 2s cubic-bezier(.165, .84, .44, 1);
     -moz-transition: transform 2s cubic-bezier(.165, .84, .44, 1);
     -o-transition: transform 2s cubic-bezier(.165, .84, .44, 1);
-}
+} */
 
 
 /* @keyframes bgHeaderAnimation {
@@ -1201,6 +1211,9 @@ a.btn {
     z-index: 2;
     position: relative;
     display: inline-block;
+    -webkit-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -moz-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -o-transition: all .6s cubic-bezier(.165, .84, .44, 1);
     transition: all .6s cubic-bezier(.165, .84, .44, 1);
 }
 
@@ -1216,7 +1229,10 @@ a.btn {
 }
 
 #customNav span {
-    transition: all .5s;
+    -webkit-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -moz-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -o-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    transition: all .6s cubic-bezier(.165, .84, .44, 1);  
 }
 
 .number {
@@ -1242,7 +1258,10 @@ a.btn {
     border-radius: 100%;
     opacity: .1;
     animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
-    transition: all .5s;
+    -webkit-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -moz-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -o-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    transition: all .6s cubic-bezier(.165, .84, .44, 1);
     transform-origin: 50% 50%;
     top: -26px;
     right: -26px;
@@ -1260,7 +1279,10 @@ a.btn {
     border: 2px solid transparent;
     opacity: .1;
     animation: quick-alo-circle-fill-anim 2.3s infinite ease-in-out;
-    transition: all .5s;
+    -webkit-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -moz-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -o-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    transition: all .6s cubic-bezier(.165, .84, .44, 1);
     transform-origin: 50% 50%;
 }
 
@@ -1579,7 +1601,10 @@ a.btn {
     fill: black;
     width: 3.7rem;
     margin-left: 2.5rem;
-    transition: all .5s;
+    -webkit-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -moz-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -o-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    transition: all .6s cubic-bezier(.165, .84, .44, 1);
 }
 
 .more-info .more-info-title svg:hover {
@@ -1597,7 +1622,10 @@ a.btn {
     align-items: center;
     text-decoration: none;
     cursor: pointer;
-    transition: color .3s cubic-bezier(.59, .08, .385, 1);
+    -webkit-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -moz-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -o-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    transition: all .6s cubic-bezier(.165, .84, .44, 1);
 }
 
 .more-info .more-info-title:hover {
