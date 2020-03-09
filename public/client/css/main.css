@@ -10,6 +10,10 @@ html {
 .description-project {
     width: 100%;
 }
+.opacity-1 {
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
 
 @media only screen and (min-width: 1116px) {
     #tin-tuc,
@@ -28,6 +32,49 @@ html {
     #vi-tri {
         scroll-margin: 175px;
     }
+}
+
+@media only screen and (max-width: 500px) {
+    #tin-tuc,
+    #gioi-thieu {
+        scroll-margin: 93px;
+    }
+    #tien-ich {
+        scroll-margin: 110px;
+    }
+    #thu-vien {
+        scroll-margin: 93px;
+    }
+    #kien-truc {
+        scroll-margin: 105px;
+    }
+    #vi-tri {
+        scroll-margin: 93px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #tin-tuc {
+        scroll-margin: 120px;
+    }
+    #gioi-thieu {
+        scroll-margin: 200px;
+    }
+    #tien-ich {
+        scroll-margin: 140px;
+    }
+    #thu-vien {
+        scroll-margin: 120px;
+    }
+    #kien-truc {
+        scroll-margin: 135px;
+    }
+    #vi-tri {
+        scroll-margin: 120px;
+    }
+}
+.copy_logo_mobile {
+    display: none;
 }
 
 #article-image {
@@ -69,7 +116,6 @@ body header .menu-container {
     top: 0px;
     z-index: 2;
     max-width: 1920px;
-
     transition: all .5s cubic-bezier(.59, .08, .385, 1);
     -webkit-transition: all .5s cubic-bezier(.59, .08, .385, 1);
     -ms-transition: all .5s cubic-bezier(.59, .08, .385, 1);
@@ -114,15 +160,11 @@ body header .menu-container {
 
 
 #hamburger {
-    float: right;   
     display: none; 
     cursor: pointer; 
-    position: absolute;
-    top: 5.5rem;
-    right: 5rem;
 }
 
-#hamburger span, #hamburger span:before, #hamburger span:after {
+ #hamburger span:before, #hamburger span:after {
   cursor: pointer;
   border-radius: 1px;
   height: 3px;
@@ -132,7 +174,16 @@ body header .menu-container {
   display: inline-block;
   content: '';
 }
-
+#hamburger span {
+    position: relative;
+    display: inline-block;
+    content: '';
+    cursor: pointer;
+    border-radius: 1px;
+    height: 3px;
+    width: 20px;
+    background: white;
+}
 #hamburger span:before {
   top: -5px; 
 }
@@ -537,9 +588,11 @@ a.btn {
     display: flex;
     max-width: 1600px;
     margin-left: 16.666%;
-    margin-top: 160px;
+    margin-top: 32rem;
 }
-
+.poem  {
+    margin-top: 13rem;
+}
 .poem img {
     margin-bottom: 3.5rem;
     width: 8rem;
@@ -572,7 +625,7 @@ a.btn {
     width: 55.4%;
     height: auto;
     left: -27.7%;
-    top: 25.4vw;
+    top: 27.4vw;
 }
 
 .detail-infomation .info-left h1:not(.h1-small) {
@@ -654,8 +707,8 @@ a.btn {
 }
 
 .header-background-image a.company-logo {
-    right: 60px;
-    top: 197px;
+    right: 6rem;
+    top: 19.7rem;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -932,7 +985,7 @@ a.btn {
     /* color: rgba(255, 255, 255, 0.3); */
     color: rgb(244, 238, 231);
     font-weight: bold;
-    text-transform: uppercase;
+
     line-height: 1.333;
     text-align: left;
     background: #222 -webkit-gradient(linear, left top, right top, from(#fff), to(#fff), color-stop(0.5, #fff)) 0 0 no-repeat;
@@ -1600,6 +1653,16 @@ a.btn {
 
 .inner-image-post-container {
     position: relative;
+    overflow: hidden;
+}
+.inner-image-post-container img {
+    -webkit-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -moz-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    -o-transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    transition: all .6s cubic-bezier(.165, .84, .44, 1);
+}
+.inner-image-post-container:hover img {
+    transform: scale(1.2);
 }
 
 .intro-post .time-post {
@@ -1773,7 +1836,36 @@ a.btn {
     display: flex;
     position: relative;
 }
+.container-feed-image a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
 
+.project-feed-content-left a , .container-feed-image {
+    overflow: hidden;
+}
+ .project-feed-content-left a img ,  .container-feed-image img {
+
+    -webkit-transition: all .5s cubic-bezier(.59, .08, .385, 1);
+    -moz-transition: all .5s  cubic-bezier(.59, .08, .385, 1);
+    -o-transition: all .5s  cubic-bezier(.59, .08, .385, 1);
+    transition: all .5s  cubic-bezier(.59, .08, .385, 1);
+}
+.project-feed-content-left:hover a::before , .container-feed-image:hover a::before  {
+    background: black;
+    opacity: .5;
+    z-index: 1;
+}
+
+.project-feed-content-left:hover a img , .container-feed-image:hover img  {
+    transform: scale(1.2);
+}
+.project-feed-content-left:hover a h1, .container-feed-image:hover h1 {
+    z-index: 2;
+}
 .inner-project-feed .project-feed-content-left {
     margin-right: 1rem;
     width: calc(50% - 1rem);
@@ -1871,7 +1963,7 @@ a.btn {
     margin-bottom: 20px;
 }
 
-.container-feed-image::before {
+.project-feed-content-left .container-feed-image::before , .container-feed-image a::before {
     background: transparent;
     width: 100%;
     height: 100%;
@@ -1879,9 +1971,9 @@ a.btn {
     top: 0;
     left: 0;
     content: '';
-    -webkit-transition: background ease .25s;
-    -ms-transition: background ease .25s;
-    transition: background ease .25s;
+    -webkit-transition: all ease .25s;
+    -ms-transition: all ease .25s;
+    transition: all ease .25s;
     cursor: pointer;
 }
 
@@ -2129,6 +2221,18 @@ a.btn {
 }
 
 @media only screen and (max-width: 768px) {
+    .copy_logo_mobile {
+        width: 16.3rem;
+        position: absolute;
+        top: 5rem;
+        left: 5rem;
+        z-index: 1;
+        display: unset;
+    }
+    
+    .custom-button.block-1 {
+        margin-top: 6.5rem;
+    }
     html {
         font-size: 10px;
     }
@@ -2209,22 +2313,21 @@ a.btn {
     }
     body header .menu-container {
         position: inherit;
+        z-index: 100;
     }
     .header-background-image a.company-logo {
-        right: 19rem;
-        top: 5rem;
-        z-index: 100;
         position: absolute;
+        right: 5rem;
+        top: 33rem;
     }
     .header-background-image a.fb-logo {
-        top: 5rem;
-        right: 13.6rem;
-        z-index: 100;
         width: 25px;
         position: absolute;
+        right: 5rem;
+        top: 38rem;
     }
     #hamburger {
-        display: inline;
+        display: block;
         z-index: 100;
     }
     .map-desktop {
@@ -2257,7 +2360,10 @@ a.btn {
         padding-left: 5rem;
         padding-right: 5rem;
         max-width: 768px;
-        background-color: transparent;
+        background-color: #403635;
+        position: fixed;
+        opacity: 0;
+        pointer-events: none;
     }
     .header-background-image {
         padding-top: 0;
@@ -2283,12 +2389,12 @@ a.btn {
         line-height: 2.273;
     }
     .detail-infomation {
-        display: block;
+        display: flex;
         margin-left: 0;
-        margin-top: 8.5rem;
+        flex-direction: column-reverse;
     }
     .detail-infomation .info-left {
-        padding-right: 0;
+        margin-top: 5rem;
         width: 100%;
         padding-left: 5rem;
         padding-right: 5rem;
@@ -2408,8 +2514,8 @@ a.btn {
     }
     .project-feed {
         padding: 0;
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
     }
     .project-feed .inner-project-feed {
         display: block;
@@ -2469,13 +2575,24 @@ a.btn {
 }
 
 @media only screen and (max-width: 500px) {
+    .project-feed {
+        padding: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .header-background-image a.company-logo {
+       width: 30px;
+       top: 27rem
+    }
+    .header-background-image a.fb-logo {
+        width: 20px;
+        top: 30rem
+    }
     .inner-image-post-container img {
         height: auto;
         object-fit: cover;
     }
-    .map-info {
-        margin-top: 5rem;
-    }
+
     .detail-infomation .info-right {
         margin-top: 20rem;
     }
