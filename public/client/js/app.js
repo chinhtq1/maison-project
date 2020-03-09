@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
     preLoadController();
-    $(window).resize(function () {
-        if ($(window).width() <= 768) {
-            cssHeader();
-        }
-    });
+    // $(window).resize(function () {
+    //     if ($(window).width() <= 768) {
+    //         cssHeader();
+    //     }
+    // });
     var tlmenu = new TimelineMax({ paused: true });
     tlmenu.to('.navMobie', 0.3, { autoAlpha: 1 }).staggerFromTo('.navMobie li', 0.5, { y: 100, opacity: 0 }, { y: 0, opacity: 1 }, 0.1);
     $('#hamburger').click(function() {
@@ -21,12 +21,14 @@ $(document).ready(function () {
     $('.closeButton').click(function () {
         tlmenu.reverse(0);
         $('html').removeClass('is-main-menu-open');
-
     });
     $(".navMobie ul li").click(function () {
-        tlmenu.reverse(0);
         $('html').removeClass('is-main-menu-open');
+        $('#hamburger').toggleClass('active');
+        tlmenu.reverse(0);
     });
+
+
 
     var center = isTabletScreen();
     // SLider tin tức
@@ -67,14 +69,14 @@ $(document).ready(function () {
     textSliderController();
     addAnimationWhenScroll();
     modalController();
-    cssHeader();
+    // cssHeader();
     ScrollListener();
     popupImage();
 });
 activeRoute();
 
 function popupImage() {
-    $('.container-feed-image a').magnificPopup({
+    $('.inner-project-feed a').magnificPopup({
         type: 'image',
         closeOnContentClick: true,
         mainClass: 'mfp-no-margins mfp-with-zoom',
@@ -211,10 +213,10 @@ function setAnimationForSloganWhenFirstScroll() {
 
 function ScrollListener() {
     $(window).scroll(function () {
-        if (window.matchMedia('screen and (min-width: 900px)').matches) {
-            var scrollPosition = $(window).scrollTop();
-            var headerHeight = $(".header-background-image").height();
+        var scrollPosition = $(window).scrollTop();
 
+        if (window.matchMedia('screen and (min-width: 900px)').matches) {
+            var headerHeight = $(".header-background-image").height();
             if ((scrollPosition + 300) > headerHeight) {
                 $('body header .menu-container').css('background-color', '#f4eee7');
                 $('.company-logo img').addClass('scroll');
@@ -232,6 +234,13 @@ function ScrollListener() {
                 $('.menu-container .nav li a ').css('color', 'rgb(244, 238, 231)');
             } else {
                 $('.menu-container .nav li a ').css('color', 'rgb(125, 115, 114)');
+            }
+        } else if (window.matchMedia('screen and (max-width: 768px)').matches) {
+            var menuHeight = $('body header .menu-container').outerHeight();
+            if(scrollPosition > menuHeight) {
+                $('body header .menu-container').addClass('opacity-1');
+            } else if (!$('html').hasClass('is-main-menu-open')) {
+                $('body header .menu-container').removeClass('opacity-1');
             }
         }
     });
