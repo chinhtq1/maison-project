@@ -34,24 +34,7 @@ html {
     }
 }
 
-@media only screen and (max-width: 500px) {
-    #tin-tuc,
-    #gioi-thieu {
-        scroll-margin: 93px;
-    }
-    #tien-ich {
-        scroll-margin: 110px;
-    }
-    #thu-vien {
-        scroll-margin: 93px;
-    }
-    #kien-truc {
-        scroll-margin: 105px;
-    }
-    #vi-tri {
-        scroll-margin: 93px;
-    }
-}
+
 
 @media only screen and (max-width: 768px) {
     #tin-tuc {
@@ -73,6 +56,24 @@ html {
         scroll-margin: 120px;
     }
 }
+@media only screen and (max-width: 500px) {
+    #tin-tuc,
+    #gioi-thieu {
+        scroll-margin: 93px;
+    }
+    #tien-ich {
+        scroll-margin: 110px;
+    }
+    #thu-vien {
+        scroll-margin: 93px;
+    }
+    #kien-truc {
+        scroll-margin: 105px;
+    }
+    #vi-tri {
+        scroll-margin: 93px;
+    }
+}
 .copy_logo_mobile {
     display: none;
 }
@@ -86,9 +87,7 @@ html {
     object-fit: cover;
 }
 
-.header-mobile {
-    display: none;
-}
+
 
 body {
     overflow-x: hidden;
@@ -587,11 +586,12 @@ a.btn {
 .detail-infomation {
     display: flex;
     max-width: 1600px;
-    margin-left: 16.666%;
-    margin-top: 32rem;
+    margin-left: auto;
+    margin-top: 30rem;
+    position: relative;
 }
 .poem  {
-    margin-top: 13rem;
+    margin-top: 15rem;
 }
 .poem img {
     margin-bottom: 3.5rem;
@@ -616,16 +616,30 @@ a.btn {
 }
 
 .detail-infomation .info-right {
+    height: inherit;
+    width: 45.25%;
     position: relative;
-    width: 45.25%
 }
+.detail-infomation .info-right img:nth-child(1) {
+    width: 100%;
+    height: 79.11%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* @media only screen and (min-width: 1366px) {
+    .container-slogan-text {
+        top: 13rem;
+        right: 14rem;
+    }
+} */
 
 .detail-infomation .info-right img:nth-child(2) {
     position: absolute;
     width: 55.4%;
-    height: auto;
-    left: -27.7%;
-    top: 27.4vw;
+    height: 45%;
+    bottom: 0;
+    left: -27.5%;
 }
 
 .detail-infomation .info-left h1:not(.h1-small) {
@@ -698,9 +712,19 @@ a.btn {
 }
 
 
-/* .header-background-image {
-            padding-top: 110px;
-        } */
+.header-background-image {
+    background: transparent url('../../static/banner_desktop.png') no-repeat scroll center center;   
+    height: 100vh;
+    background-size: cover;
+}
+@media only screen and (max-width: 768px) {
+    .header-background-image {
+        background: transparent url('../../static/banner_mobile.png') no-repeat scroll center center;  
+        height: 100vh; 
+        background-size: cover;
+    }
+}
+
 
 .header-background-image a {
     position: fixed;
@@ -760,10 +784,18 @@ a.btn {
 .image-tower {
     position: absolute;
     right: 0;
-    top: 11.1rem;
+    bottom: -8rem;
     width: 32%;
+    height: 100%;
 }
-
+.image-tower img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
 .map-info-content-right h1 {
     font-size: 3.8rem;
     font-family: "Playfair Display";
@@ -1158,12 +1190,14 @@ a.btn {
     display: -ms-flexbox;
     height: 734px;
     margin-top: 14.5rem;
+    max-width: 1600px;
+    margin-right: auto;
 }
 
 .design-building-left {
     position: relative;
     display: inline-block;
-    width: 52%;
+    width: 62.5%;
     height: 100%;
 }
 
@@ -1178,14 +1212,14 @@ a.btn {
 .design-building-right {
     position: relative;
     display: inline-block;
-    width: 48%;
+    width: 37.5%;
     height: 100%;
     background-color: #f4eee7;
 }
 
 .design-building-content {
     height: 100%;
-    width: 73.91%;
+    max-width: 100%;
     margin-left: -80px;
     background-color: transparent;
     padding-top: 73px;
@@ -1203,7 +1237,7 @@ a.btn {
 
 .inner-design-building-content h1 {
     text-align: left;
-    font-size: 42px;
+    font-size: 4.2rem;
     font-family: "Playfair Display";
     color: rgb(62, 53, 52);
     line-height: 1.429;
@@ -2221,6 +2255,9 @@ a.btn {
 }
 
 @media only screen and (max-width: 768px) {
+    .detail-infomation .info-right {
+        height: unset;
+    }
     .copy_logo_mobile {
         width: 16.3rem;
         position: absolute;
@@ -2286,6 +2323,7 @@ a.btn {
         background: transparent url('../../static/niem_tin_tron_ven_mobile.png') no-repeat scroll center center;
         padding-bottom: 0;
         padding-top: 9rem;
+        background-size: cover;
     }
     #customNav {
         display: none;
@@ -2343,12 +2381,7 @@ a.btn {
     .logo-desktop {
         display: none;
     }
-    .header-mobile {
-        display: block;
-    }
-    .header-desktop {
-        display: none;
-    }
+
     .phone-call {
         display: none;
     }
@@ -2382,6 +2415,7 @@ a.btn {
     .poem {
         padding-left: 5rem;
         padding-right: 5rem;
+        margin-top: 0;
     }
     .poem p {
         font-size: 2.2rem;
@@ -2416,17 +2450,24 @@ a.btn {
     }
     .detail-infomation .info-right {
         width: 100%;
-        padding-right: 5rem;
-        margin-top: 8rem;
+     
+        /* margin-top: 8rem; */
+        padding-bottom: 60.13%;
+        position: relative;
+    }
+    .detail-infomation .info-right img:nth-child(1) {
+        height: 100%;
+        width: calc(100% - 5rem);
     }
     .button-image-project {
         width: 22rem;
     }
     .detail-infomation .info-right img:nth-child(2) {
-        right: 10px;
-        top: -15rem;
+        right: 25px;
+        top: -34.22%;
         left: unset;
-        width: 45.87%;
+        width: 45.72%;
+        height: 65.41%;
     }
     .map-info {
         display: block;
@@ -2575,6 +2616,9 @@ a.btn {
 }
 
 @media only screen and (max-width: 500px) {
+    .detail-infomation {
+        margin-top: 15rem;
+    }
     .project-feed {
         padding: 0;
         padding-left: 2rem;

@@ -131,10 +131,10 @@
 
         <section class="header-background-image">
             <div class="inner-background-image">
-                <img alt="banner" src="{{asset('static/banner_desktop.png')}}"
-                    class="header-desktop img-header img-fluid object-fit-cover">
+                {{-- <img alt="banner" src="{{asset('static/banner_desktop.png')}}"
+                    class="header-desktop  img-fluid object-fit-cover">
                 <img alt="banner" src="{{asset('static/banner_mobile.png')}}"
-                    class="header-mobile img-header img-fluid object-fit-cover">
+                    class="header-mobile  img-fluid object-fit-cover"> --}}
 
                 <a target="_blank" href="{!! MetaTag::get('company_link') !!}" class="company-logo" href="#"> <img
                         class="img-fluid"></a>
@@ -197,7 +197,7 @@
                     </a>
                 </div>
                 <div data-aos="fade-right" class="info-right">
-                    <img class="img-fluid object-fit-cover" src="{{asset('static/thuong_ngoan_my_canh_big.png')}}">
+                    <img class="object-fit-cover" src="{{asset('static/thuong_ngoan_my_canh_big.png')}}">
                     <img class="object-fit-cover" src="static/thuong_ngoan_my_canh_small.png">
                 </div>
             </div>
@@ -226,7 +226,7 @@
                     </div>
                 </a>
                 <div data-aos-delay="0" data-aos="fade-up" class="image-tower">
-                    <img src="{{asset('static/vi_tri_kim_cuong_image.png')}}" class="img-fluid">
+                    <img src="{{asset('static/vi_tri_kim_cuong_image.png')}}">
                 </div>
             </div>
         </section>

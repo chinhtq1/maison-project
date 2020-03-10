@@ -67,7 +67,7 @@ $(document).ready(function () {
     // scrollEventListener();
     newsSliderController();
     textSliderController();
-    addAnimationWhenScroll();
+    // addAnimationWhenScroll();
     modalController();
     // cssHeader();
     ScrollListener();
@@ -246,13 +246,13 @@ function ScrollListener() {
     });
 }
 
-function addAnimationWhenScroll() {
-    var image = document.getElementsByClassName('img-header');
-    new simpleParallax(image, {
-        delay: 3,
-        scale: 1.1
-    });
-}
+// function addAnimationWhenScroll() {
+//     var image = document.getElementsByClassName('img-header');
+//     new simpleParallax(image, {
+//         delay: 3,
+//         scale: 1.1
+//     });
+// }
 
 function newsSliderController() {
     var owl1 = $('#owl-carousel-1');
